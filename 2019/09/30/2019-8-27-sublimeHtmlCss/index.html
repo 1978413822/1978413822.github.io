@@ -15,15 +15,20 @@
   </script>
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>sublime安装便于写HTML，Css的插件Emmet介绍 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&amp;gt;Package Control，出现可输入命令行。2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。  3.最后可通过Perferences–&amp;gt;P">
+<meta name="keywords" content="目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sublime安装便于写HTML，Css的插件Emmet介绍">
+<meta property="og:url" content="http://yoursite.com/2019/09/30/2019-8-27-sublimeHtmlCss/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&amp;gt;Package Control，出现可输入命令行。2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。  3.最后可通过Perferences–&amp;gt;P">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-24T08:12:36.264Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="sublime安装便于写HTML，Css的插件Emmet介绍">
+<meta name="twitter:description" content="1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&amp;gt;Package Control，出现可输入命令行。2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。  3.最后可通过Perferences–&amp;gt;P">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -101,500 +106,111 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2019/09/30/2019-9-26-lookingafter/">
-            <div class="full-height post-hover"
-                 style="
-                         background-image: url('');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            观后感
-                        </h1>
-                        <div>
-                        
-                            `
-                                <span class="tag is-post-tag">目录</span>
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            
-
-
-观后感
-   二十世纪初期的中国，正处于命运的危难时刻  帝国主义列强虎视眈眈，妄图灭我中华，瓜分我领土。一些有识之士纷纷行动，寻求救国之路。其中伟大的革命先行者孙中山先生领导了辛亥革命，推翻了中国二千多年的封建帝制。然而这一革命..
-                        </p>
-                        <p class="date text-shadow">2019-09-30</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>sublime安装便于写HTML，Css的插件Emmet介绍</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Diskobólos</span>
+                <span class="post-date sub-title">at: 2019-09-30</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2019/09/30/2019-9-28-cpmn/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                安装nodejs后改成cnpm时配置环境变量问题
-            </h3>
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/目录/">目录</a>
+                    
+                </div>
             
-            
-            <span class="tag is-post-tag">目录</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                
-
-
-今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情..
-            </p>
-            <p class="date text-shadow is-marginless">2019-09-30</p>
         </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2019/09/30/2019-9-20-thrty-six/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Bootstrap环境部署
-            </h3>
-            
-            
-            <span class="tag is-post-tag">目录</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                
+        <div class="content" style="overflow: auto">
+            <br>
 
 
+<h3 id="1-按住快捷键Ctrl-Shift-P或者在菜单栏选择Perferences–-gt-Package-Control，出现可输入命令行。"><a href="#1-按住快捷键Ctrl-Shift-P或者在菜单栏选择Perferences–-gt-Package-Control，出现可输入命令行。" class="headerlink" title="1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&gt;Package Control，出现可输入命令行。"></a>1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&gt;Package Control，出现可输入命令行。<br></h3><h3 id="2-找到package-control-install-package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。"><a href="#2-找到package-control-install-package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。" class="headerlink" title="2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。"></a>2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。</h3><br>
 
-快速部署使用 Bootstrap CDN嵌入4行代码就能完成导入！
-方式一:1行 CSS..
-            </p>
-            <p class="date text-shadow is-marginless">2019-09-30</p>
+<h3 id="3-最后可通过Perferences–-gt-Package-Settings–-gt-Emmet查看是否成功，如果Emmet在说明安装成功"><a href="#3-最后可通过Perferences–-gt-Package-Settings–-gt-Emmet查看是否成功，如果Emmet在说明安装成功" class="headerlink" title="3.最后可通过Perferences–&gt;Package Settings–&gt;Emmet查看是否成功，如果Emmet在说明安装成功"></a>3.最后可通过Perferences–&gt;Package Settings–&gt;Emmet查看是否成功，如果Emmet在说明安装成功<br></h3><h3 id="最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。"><a href="#最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。" class="headerlink" title="最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。"></a>最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。</h3><h2 id="若没看明白还可详见～此处"><a href="#若没看明白还可详见～此处" class="headerlink" title="若没看明白还可详见～此处"></a><a href="https://jingyan.baidu.com/article/ce43664935b90c3772afd377.html" target="_blank" rel="noopener">若没看明白还可详见～此处</a></h2>
         </div>
-    </div>
-</a>
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
             
         </div>
     </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2019/09/30/2019-9-28-cpmn/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                安装nodejs后改成cnpm时配置环境变量问题
-            </h3>
-            
-            
-            <span class="tag is-post-tag">目录</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
 
-今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情..
-            </p>
-            <p class="date text-shadow is-marginless">2019-09-30</p>
-        </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2019/09/30/2019-9-20-thrty-six/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Bootstrap环境部署
-            </h3>
-            
-            
-            <span class="tag is-post-tag">目录</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                
-
-
-
-快速部署使用 Bootstrap CDN嵌入4行代码就能完成导入！
-方式一:1行 CSS..
-            </p>
-            <p class="date text-shadow is-marginless">2019-09-30</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-28-cpmn/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>安装nodejs后改成cnpm时配置环境变量问题</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情况，配置环境变量到我的电脑的属性里 不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path变量，即可执行。
-安装nodejs到配置下载路径详解配置cnpm的path详解
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-20-thrty-six/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Bootstrap环境部署</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-
-快速部署使用 Bootstrap CDN嵌入4行代码就能完成导入！
-方式一:1行 CSS复制下面的 样式表粘贴到网页  里面，并放在其它CSS文件之前.
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-21-thrty-seven/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>css响应式布局的head中content属性</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
- &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;
-
-content属性值 :
-
-width:可视区域的宽度，值可为数字或关键词device-width
-height:同width
-intial-scale:页..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-24-fourty/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>MySQL和Oracle的区别</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-MySQL和Oracle的区别
-123456789101112131415161718192021222324252627282930313233343536373839(1) 对事务的提交    MySQL默认是自动提交，而Oracle默认不自动提交，需要用户手动提交，需要在写commit;指令或者点击commit按钮(2) 分页查询    My..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-26-fourty-two/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>MySQL与oracle安装</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-MySQL和Oracle的安装
-1.mysql首先下载安装包之后按教程链接安装并测试。其中配置path环境很重要得注意。
-
-mysql安装详解
-
-
-2.oracle安装使用的安装包比较简洁自动配置的环境直接可用，顺带安装个sqldevelop可视工具。
-
-Oracal安装卸载
-
-
-
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-17-thrty-three/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>第33天,了解vue基础</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-了解ｖｕｅ.ｊｓ的基础语法，看了看菜鸟的ｖｕｅ介绍． 
-
-ｖｕｅ.ｊｓ菜鸟教程
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-18-thrty-four/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>第33天</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-什么是vue.js
-
-  vue.js 是目前最火的前端框架,react是最流行的一个前端框架(react除了开发网站,还可以开发手机app,vue语法也是可以进行手机app开发的,需要借助于weex)
-
-vue.js 是前端的主流框架之一,和angular.js、react.js 一起,并成为前端三大主流框架!
-
-
-vue.js 是一套构建用户界..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-19-thrty-five-ganwu/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile"
-                                         style="margin: 10px; background-size: cover;background-image: url('./img/%E5%A5%A5%E8%BF%AA.jpg')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>学习感悟</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-在兄弟会学习的感悟：　　  在兄弟会学习也一个来月了，从刚开始的对兄弟会学习模式的怀疑和迷惘到现在对未来充满希望的状态，从刚开始遇到新同学那种陌生尴尬变成现在的开车伙伴;大家也从初始的小白晋升到大白，外表充满着可爱，脑子充满着我们每天被代码ｂｕｇ折磨的酸爽．这就是为什么都大家不爱扫地呢？你说头发这种东西它像长在地板上一样;咱也不懂．．．(当然是玩笑..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-19-thrty-fivequbie/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Bootstrap3和Bootstrap4区别</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-123456789101112131415161718192021222324252627282930313233343536&gt;Bootstrap3:	Less	  4种栅格类	使用px为单位  使用push和pull向左右移动	 使用float的布局方式	    ---Bootstrap4:  Sass语言编写   5种栅格类    使用r..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
-            
-        </div>
-    </div>
-</div>
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>

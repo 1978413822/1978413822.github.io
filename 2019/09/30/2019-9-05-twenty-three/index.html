@@ -15,15 +15,20 @@
   </script>
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>第23天，后三天铺淘宝主页，附录个放大镜代码 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="后三天任务： 淘宝首页、列表页、详情页、购物车页、订单页、登录页、注册页 要求一个页面里有两个js特效（轮播，表单验证、选项卡、导航栏等） 所有js、css外联 注释全部要提取不能用定位，全用浮动外边距、内边距混合布局用html5和css3写放大镜的代码：1234567891011121314151617181920212223242526272829303132333435363738394">
+<meta name="keywords" content="目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第23天，后三天铺淘宝主页，附录个放大镜代码">
+<meta property="og:url" content="http://yoursite.com/2019/09/30/2019-9-05-twenty-three/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="后三天任务： 淘宝首页、列表页、详情页、购物车页、订单页、登录页、注册页 要求一个页面里有两个js特效（轮播，表单验证、选项卡、导航栏等） 所有js、css外联 注释全部要提取不能用定位，全用浮动外边距、内边距混合布局用html5和css3写放大镜的代码：1234567891011121314151617181920212223242526272829303132333435363738394">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-24T08:12:36.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="第23天，后三天铺淘宝主页，附录个放大镜代码">
+<meta name="twitter:description" content="后三天任务： 淘宝首页、列表页、详情页、购物车页、订单页、登录页、注册页 要求一个页面里有两个js特效（轮播，表单验证、选项卡、导航栏等） 所有js、css外联 注释全部要提取不能用定位，全用浮动外边距、内边距混合布局用html5和css3写放大镜的代码：1234567891011121314151617181920212223242526272829303132333435363738394">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -101,500 +106,114 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
+          <!--博文页面-->
 
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2019/09/30/2019-9-26-lookingafter/">
-            <div class="full-height post-hover"
-                 style="
-                         background-image: url('');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            观后感
-                        </h1>
-                        <div>
-                        
-                            `
-                                <span class="tag is-post-tag">目录</span>
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            
-
-
-观后感
-   二十世纪初期的中国，正处于命运的危难时刻  帝国主义列强虎视眈眈，妄图灭我中华，瓜分我领土。一些有识之士纷纷行动，寻求救国之路。其中伟大的革命先行者孙中山先生领导了辛亥革命，推翻了中国二千多年的封建帝制。然而这一革命..
-                        </p>
-                        <p class="date text-shadow">2019-09-30</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>第23天，后三天铺淘宝主页，附录个放大镜代码</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Diskobólos</span>
+                <span class="post-date sub-title">at: 2019-09-30</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2019/09/30/2019-9-28-cpmn/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                安装nodejs后改成cnpm时配置环境变量问题
-            </h3>
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/目录/">目录</a>
+                    
+                </div>
             
-            
-            <span class="tag is-post-tag">目录</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                
-
-
-今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情..
-            </p>
-            <p class="date text-shadow is-marginless">2019-09-30</p>
         </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2019/09/30/2019-9-20-thrty-six/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Bootstrap环境部署
-            </h3>
-            
-            
-            <span class="tag is-post-tag">目录</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                
+        <div class="content" style="overflow: auto">
+            <br>
 
+<h4 id="后三天任务："><a href="#后三天任务：" class="headerlink" title="后三天任务："></a>后三天任务：</h4><ul>
+<li>淘宝首页、列表页、详情页、购物车页、订单页、登录页、注册页</li>
+<li>要求一个页面里有两个js特效（轮播，表单验证、选项卡、导航栏等）</li>
+<li>所有js、css外联</li>
+<li>注释<br>全部要提取<br>不能用定位，全用浮动<br>外边距、内边距<br>混合布局<br>用html5和css3写<h4 id="放大镜的代码："><a href="#放大镜的代码：" class="headerlink" title="放大镜的代码："></a>放大镜的代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;放大镜&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            margin: 0px;</span><br><span class="line">            padding: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .img &#123;</span><br><span class="line">            width: 350px;</span><br><span class="line">            height: 350px;</span><br><span class="line">            border: 1px solid #ccc;</span><br><span class="line">            margin: 100px;</span><br><span class="line">            position: relative;</span><br><span class="line">            cursor: move;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .bimg &#123;</span><br><span class="line">            position: relative;</span><br><span class="line">            top: -350px;</span><br><span class="line">            left: 350px;</span><br><span class="line">            border: 1px solid #ccc;</span><br><span class="line">            width: 350px;</span><br><span class="line">            height: 350px;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">            display: none;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        #move &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background-color: rgba(8, 152, 202, 0.2);</span><br><span class="line">            top: 0px;</span><br><span class="line">            left: 0px;</span><br><span class="line">            display: none;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .simg &#123;</span><br><span class="line">            width: 350px;</span><br><span class="line">            height: 350px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .bimg&gt;img &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 0px;</span><br><span class="line">            top: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;img&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;simg&quot;&gt;</span><br><span class="line">            &lt;!--小图片--&gt;</span><br><span class="line">            &lt;img src=&quot;/home/yueyang/图片/lun2.png&quot; style=&quot;width:350px;height: 350px;&quot; /&gt;</span><br><span class="line">            &lt;div id=&quot;move&quot;&gt;&lt;/div&gt;</span><br><span class="line">            &lt;!--放大区域--&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;bimg&quot;&gt;</span><br><span class="line">            &lt;!--大图片--&gt;</span><br><span class="line">            &lt;img src=&quot;/home/yueyang/图片/lun1.jpg&quot; style=&quot;width:1400px;height: 1400px;&quot; /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(document).ready(function() &#123;</span><br><span class="line"></span><br><span class="line">            //鼠标移动到图片显示，移除隐藏     </span><br><span class="line">            $(&quot;.img&quot;).hover(function() &#123;</span><br><span class="line">                $(&quot;.bimg&quot;).css(&quot;display&quot;, &quot;block&quot;);</span><br><span class="line">                $(&quot;#move&quot;).css(&quot;display&quot;, &quot;block&quot;);</span><br><span class="line">            &#125;, function() &#123;</span><br><span class="line">                $(&quot;.bimg&quot;).css(&quot;display&quot;, &quot;none&quot;);</span><br><span class="line">                $(&quot;#move&quot;).css(&quot;display&quot;, &quot;none&quot;);</span><br><span class="line">            &#125;);</span><br><span class="line">            //放大区域移动，大图片移动</span><br><span class="line">            $(&quot;.img&quot;).mousemove(function(event) &#123;</span><br><span class="line">                var x = event.pageX;</span><br><span class="line">                var y = event.pageY;</span><br><span class="line">                var nx = x - $(&quot;.img&quot;).offset().left - $(&quot;#move&quot;).width() / 2;</span><br><span class="line">                var ny = y - $(&quot;.img&quot;).offset().top - $(&quot;#move&quot;).height() / 2;</span><br><span class="line">                if (nx &lt; 0) &#123;</span><br><span class="line">                    nx = 0;</span><br><span class="line">                &#125;</span><br><span class="line">                if (nx &gt; $(&quot;.img&quot;).width() - $(&quot;#move&quot;).width()) &#123;</span><br><span class="line">                    nx = $(&quot;.img&quot;).width() - $(&quot;#move&quot;).width();</span><br><span class="line">                &#125;</span><br><span class="line">                if (ny &lt; 0) &#123;</span><br><span class="line">                    ny = 0;</span><br><span class="line">                &#125;</span><br><span class="line">                if (ny &gt; $(&quot;.img&quot;).height() - $(&quot;#move&quot;).height()) &#123;</span><br><span class="line">                    ny = $(&quot;.img&quot;).height() - $(&quot;#move&quot;).height();</span><br><span class="line">                &#125;</span><br><span class="line">                $(&quot;#move&quot;).css(&#123;</span><br><span class="line">                    left: nx + &quot;px&quot;,</span><br><span class="line">                    top: ny + &quot;px&quot;</span><br><span class="line">                &#125;);</span><br><span class="line">                $(&quot;.bimg&gt;img&quot;).css(&#123;</span><br><span class="line">                    left: -nx * $(&quot;.bimg&quot;).width() / $(&quot;#move&quot;).width() + &quot;px&quot;,</span><br><span class="line">                    top: -ny * $(&quot;.bimg&quot;).height() / $(&quot;#move&quot;).height() + &quot;px&quot;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
-
-快速部署使用 Bootstrap CDN嵌入4行代码就能完成导入！
-方式一:1行 CSS..
-            </p>
-            <p class="date text-shadow is-marginless">2019-09-30</p>
         </div>
-    </div>
-</a>
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
             
         </div>
     </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2019/09/30/2019-9-28-cpmn/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                安装nodejs后改成cnpm时配置环境变量问题
-            </h3>
-            
-            
-            <span class="tag is-post-tag">目录</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
 
-今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情..
-            </p>
-            <p class="date text-shadow is-marginless">2019-09-30</p>
-        </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2019/09/30/2019-9-20-thrty-six/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Bootstrap环境部署
-            </h3>
-            
-            
-            <span class="tag is-post-tag">目录</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                
-
-
-
-快速部署使用 Bootstrap CDN嵌入4行代码就能完成导入！
-方式一:1行 CSS..
-            </p>
-            <p class="date text-shadow is-marginless">2019-09-30</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
-
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-28-cpmn/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>安装nodejs后改成cnpm时配置环境变量问题</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情况，配置环境变量到我的电脑的属性里 不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path变量，即可执行。
-安装nodejs到配置下载路径详解配置cnpm的path详解
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-20-thrty-six/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Bootstrap环境部署</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-
-快速部署使用 Bootstrap CDN嵌入4行代码就能完成导入！
-方式一:1行 CSS复制下面的 样式表粘贴到网页  里面，并放在其它CSS文件之前.
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-21-thrty-seven/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>css响应式布局的head中content属性</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
- &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;
-
-content属性值 :
-
-width:可视区域的宽度，值可为数字或关键词device-width
-height:同width
-intial-scale:页..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-24-fourty/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>MySQL和Oracle的区别</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-MySQL和Oracle的区别
-123456789101112131415161718192021222324252627282930313233343536373839(1) 对事务的提交    MySQL默认是自动提交，而Oracle默认不自动提交，需要用户手动提交，需要在写commit;指令或者点击commit按钮(2) 分页查询    My..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-26-fourty-two/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>MySQL与oracle安装</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-MySQL和Oracle的安装
-1.mysql首先下载安装包之后按教程链接安装并测试。其中配置path环境很重要得注意。
-
-mysql安装详解
-
-
-2.oracle安装使用的安装包比较简洁自动配置的环境直接可用，顺带安装个sqldevelop可视工具。
-
-Oracal安装卸载
-
-
-
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-17-thrty-three/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>第33天,了解vue基础</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-了解ｖｕｅ.ｊｓ的基础语法，看了看菜鸟的ｖｕｅ介绍． 
-
-ｖｕｅ.ｊｓ菜鸟教程
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-18-thrty-four/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>第33天</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-什么是vue.js
-
-  vue.js 是目前最火的前端框架,react是最流行的一个前端框架(react除了开发网站,还可以开发手机app,vue语法也是可以进行手机app开发的,需要借助于weex)
-
-vue.js 是前端的主流框架之一,和angular.js、react.js 一起,并成为前端三大主流框架!
-
-
-vue.js 是一套构建用户界..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-19-thrty-five-ganwu/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile"
-                                         style="margin: 10px; background-size: cover;background-image: url('./img/%E5%A5%A5%E8%BF%AA.jpg')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>学习感悟</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-在兄弟会学习的感悟：　　  在兄弟会学习也一个来月了，从刚开始的对兄弟会学习模式的怀疑和迷惘到现在对未来充满希望的状态，从刚开始遇到新同学那种陌生尴尬变成现在的开车伙伴;大家也从初始的小白晋升到大白，外表充满着可爱，脑子充满着我们每天被代码ｂｕｇ折磨的酸爽．这就是为什么都大家不爱扫地呢？你说头发这种东西它像长在地板上一样;咱也不懂．．．(当然是玩笑..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2019/09/30/2019-9-19-thrty-fivequbie/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Bootstrap3和Bootstrap4区别</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">目录</span>
-                                            
-                                        </p>
-                                        <p>
-                                            
-
-
-123456789101112131415161718192021222324252627282930313233343536&gt;Bootstrap3:	Less	  4种栅格类	使用px为单位  使用push和pull向左右移动	 使用float的布局方式	    ---Bootstrap4:  Sass语言编写   5种栅格类    使用r..
-                                        </p>
-                                        <p>2019-09-30</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
-            
-        </div>
-    </div>
-</div>
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
 
       </div>
   </div>
