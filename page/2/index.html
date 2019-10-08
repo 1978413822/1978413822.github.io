@@ -259,65 +259,9 @@
 </header>
 
     
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color:rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-    
-    html, body {
-        height:100%;
-    }
-
-    #page {
-        height:100%;
-        min-height: 100%;
-        width:100%;
-    }
-</style>
-
-
-
-<div id="page" class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container" style="right: 0px;left: 0px;">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -353,123 +297,12 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fas fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
-                    <i class="fab fa-github-alt"></i>Github
-                </a>
-                
-            </div>
-            <div class="cover-social-link">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-$(function () {
-    let coverSlider = $('.carousel');
-    coverSlider.carousel({
-        duration: Number('120'),
-        fullWidth: true,
-        indicators: 'true' === 'true'
-    });
-
-    let carouselIntervalId;
-    
-    // Loop to call the next cover article picture.
-    let autoCarousel = function() {
-        carouselIntervalId = setInterval(function () {
-            coverSlider.carousel('next');
-        }, 5000);
-    };
-    autoCarousel();
-    
-
-    let restartPlay = function () {
-        
-        clearInterval(carouselIntervalId);
-        autoCarousel();
-        
-    };
-
-    
-    // prev and next cover post.
-    $('#prev-cover').click(function () {
-        coverSlider.carousel('prev');
-        restartPlay();
-    });
-    $('#next-cover').click(function () {
-        coverSlider.carousel('next');
-        restartPlay();
-    });
-    
-});
-</script>
-
 
 
 <main class="content">
 
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
-        </div>
-    </div>
-</div>
-                    
-
-                    
-
-                    
-
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     
 
     
@@ -480,13 +313,13 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-28-cpmn/">
+                    <a href="/2019/10/08/2019-9-17-thrty-three/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="安装nodejs后改成cnpm时配置环境变量问题">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第33天,了解vue基础">
                             
-                            <span class="card-title">安装nodejs后改成cnpm时配置环境变量问题</span>
+                            <span class="card-title">第33天,了解vue基础</span>
                         </div>
                     </a>
 
@@ -495,8 +328,9 @@ $(function () {
                             
                                 
 
+了解ｖｕｅ.ｊｓ的基础语法，看了看菜鸟的ｖｕｅ介绍． 
 
-今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情况，配置环境变量到我的电脑的属性里 不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path
+ｖｕｅ.ｊｓ菜鸟教程
                             
                         </div>
                         <div class="publish-info">
@@ -526,13 +360,13 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-26-lookingafter/">
+                    <a href="/2019/10/08/2019-9-12-twenty-nine/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="观后感">
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第29天,蛇形字，进度条，右键点击，点名器.">
                             
-                            <span class="card-title">观后感</span>
+                            <span class="card-title">第29天,蛇形字，进度条，右键点击，点名器.</span>
                         </div>
                     </a>
 
@@ -541,9 +375,7 @@ $(function () {
                             
                                 
 
-
-观后感
-   二十世纪初期的中国，正处于命运的危难时刻  帝国主义列强虎视眈眈，妄图灭我中华，瓜分我领土。一些有识之士纷纷行动，寻求救国之路。其中伟大的革命先行者孙中山先生领导了辛亥革命，推翻了中国二千多年的封建帝制。然而这一革命的果
+蛇形文字:12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061
                             
                         </div>
                         <div class="publish-info">
@@ -573,13 +405,13 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-26-fourty-two/">
+                    <a href="/2019/10/08/2019-9-11-twenty-eight/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="MySQL与oracle安装">
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第28天，倒计时，倒计时抢购,跑马灯,时间钟">
                             
-                            <span class="card-title">MySQL与oracle安装</span>
+                            <span class="card-title">第28天，倒计时，倒计时抢购,跑马灯,时间钟</span>
                         </div>
                     </a>
 
@@ -588,14 +420,7 @@ $(function () {
                             
                                 
 
-
-MySQL和Oracle的安装
-1.mysql首先下载安装包之后按教程链接安装并测试。其中配置path环境很重要得注意。
-
-mysql安装详解
-
-
-2.oracle安装使用的安装包比较简洁自动配置的环境直接可用，顺带安装个sqldev
+倒计时：1234567891011121314151617181920212223242526272829303132&lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh&quot;&gt;&lt;he
                             
                         </div>
                         <div class="publish-info">
@@ -625,13 +450,13 @@ mysql安装详解
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-24-fourty/">
+                    <a href="/2019/10/08/2019-9-10-twenty-seven/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="MySQL和Oracle的区别">
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="第27天，表单验证，闭包">
                             
-                            <span class="card-title">MySQL和Oracle的区别</span>
+                            <span class="card-title">第27天，表单验证，闭包</span>
                         </div>
                     </a>
 
@@ -640,9 +465,7 @@ mysql安装详解
                             
                                 
 
-
-MySQL和Oracle的区别
-123456789101112131415161718192021222324252627282930313233343536373839(1) 对事务的提交    MySQL默认是自动提交，而Orac
+表单验证：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061
                             
                         </div>
                         <div class="publish-info">
@@ -672,13 +495,13 @@ MySQL和Oracle的区别
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-21-thrty-seven/">
+                    <a href="/2019/10/08/2019-9-09-twenty-six/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="css响应式布局的head中content属性">
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第26天，字符跳动，弹出层效果">
                             
-                            <span class="card-title">css响应式布局的head中content属性</span>
+                            <span class="card-title">第26天，字符跳动，弹出层效果</span>
                         </div>
                     </a>
 
@@ -687,11 +510,7 @@ MySQL和Oracle的区别
                             
                                 
 
- &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;
-
-content属性值 :
-
-width:
+字符跳动:123456789101112131415161718192021222324252627282930313233&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt
                             
                         </div>
                         <div class="publish-info">
@@ -721,13 +540,13 @@ width:
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-20-thrty-six/">
+                    <a href="/2019/10/08/2019-9-08-twenty-five/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Bootstrap环境部署">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第26天，地址联动，div转圈">
                             
-                            <span class="card-title">Bootstrap环境部署</span>
+                            <span class="card-title">第26天，地址联动，div转圈</span>
                         </div>
                     </a>
 
@@ -736,11 +555,7 @@ width:
                             
                                 
 
-
-
-快速部署使用 Bootstrap CDN嵌入4行代码就能完成导入！
-方式一:1行 CSS复制下面的 样式表粘贴到网页  里面，并放在其它CSS文件之前.
-&lt;link rel=&quot;stylesheet&quot; hre
+地址联动选择：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&lt;!doctype
                             
                         </div>
                         <div class="publish-info">
@@ -770,13 +585,13 @@ width:
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-19-thrty-fivequbie/">
+                    <a href="/2019/10/08/2019-9-07-twenty-four/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Bootstrap3和Bootstrap4区别">
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="第25天，安了deepin系统，选项卡，div转动，闭包">
                             
-                            <span class="card-title">Bootstrap3和Bootstrap4区别</span>
+                            <span class="card-title">第25天，安了deepin系统，选项卡，div转动，闭包</span>
                         </div>
                     </a>
 
@@ -785,8 +600,7 @@ width:
                             
                                 
 
-
-123456789101112131415161718192021222324252627282930313233343536&gt;Bootstrap3:	Less	  4种栅格类	使用px为单位  使用push和pull向左右移动
+日报：练习选项卡，div转动，闭包，感觉有些了解但又不是很理解的感觉，还是缺乏练习。
                             
                         </div>
                         <div class="publish-info">
@@ -816,13 +630,13 @@ width:
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-19-thrty-five-ganwu/">
+                    <a href="/2019/10/08/2019-9-05-twenty-three/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="学习感悟">
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="第23天，后三天铺淘宝主页，附录个放大镜代码">
                             
-                            <span class="card-title">学习感悟</span>
+                            <span class="card-title">第23天，后三天铺淘宝主页，附录个放大镜代码</span>
                         </div>
                     </a>
 
@@ -831,8 +645,11 @@ width:
                             
                                 
 
-
-在兄弟会学习的感悟：　　  在兄弟会学习也一个来月了，从刚开始的对兄弟会学习模式的怀疑和迷惘到现在对未来充满希望的状态，从刚开始遇到新同学那种陌生尴尬变成现在的开车伙伴;大家也从初始的小白晋升到大白，外表充满着可爱，脑子充满着我们每天
+后三天任务：
+淘宝首页、列表页、详情页、购物车页、订单页、登录页、注册页
+要求一个页面里有两个js特效（轮播，表单验证、选项卡、导航栏等）
+所有js、css外联
+注释全部要提取不能用定位，全用浮动外边距、内边距混合布局用html5和cs
                             
                         </div>
                         <div class="publish-info">
@@ -862,13 +679,13 @@ width:
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/08/2019-9-18-thrty-four/">
+                    <a href="/2019/10/08/2019-9-04-twenty-two/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第33天">
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="第22天，突击测试">
                             
-                            <span class="card-title">第33天</span>
+                            <span class="card-title">第22天，突击测试</span>
                         </div>
                     </a>
 
@@ -877,12 +694,7 @@ width:
                             
                                 
 
-
-什么是vue.js
-
-  vue.js 是目前最火的前端框架,react是最流行的一个前端框架(react除了开发网站,还可以开发手机app,vue语法也是可以进行手机app开发的,需要借助于weex)
-
-vue.js 是前端的主流框
+准备的不充分，缺乏合作精神，做事拖拉，导致目标没完成，一定注意分工协作重要。
                             
                         </div>
                         <div class="publish-info">
@@ -920,17 +732,18 @@ vue.js 是前端的主流框
     <div class="row">
         <div class="col s6 m4 l4">
             
-            <a class="left btn-floating btn-large disabled">
+            <a href="/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fas fa-angle-left"></i>
             </a>
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 5</div>
+            <div class="center-align b-text-gray">2 / 5</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a href="/page/2/"
+            <a href="/page/3/"
                class="right btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fas fa-angle-right"></i>
             </a>
