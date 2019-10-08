@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第21天,jquery事件，选择器，滑动，淡入淡出, 岳阳hexo">
+    <meta name="keywords" content="安装nodejs后改成cnpm时配置环境变量问题, 岳阳hexo">
     <meta name="description" content="
 
-准备之前学过的ｇｉｔ命令，ｖｉｍ命令，ｊｓ，ｎｏｄｅ　ｊｓ，练习ｓｏｃｋｅｔ聊天室，轮播图准备考试。
-jquery特点 所有jQuery函数位于一个document ready函数中。
-$(document).ready(functio">
+
+今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情况，配置环境变量到我的电脑的属性里 不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@ $(document).ready(functio">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第21天,jquery事件，选择器，滑动，淡入淡出 | 岳阳hexo</title>
+    <title>安装nodejs后改成cnpm时配置环境变量问题 | 岳阳hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,13 +265,13 @@ $(document).ready(functio">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第21天,jquery事件，选择器，滑动，淡入淡出
+                        安装nodejs后改成cnpm时配置环境变量问题
                     </div>
                 </div>
             </div>
@@ -384,8 +383,8 @@ $(document).ready(functio">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/代码/">
-                                <span class="chip bg-color">代码</span>
+                            <a href="/tags/技术文档/">
+                                <span class="chip bg-color">技术文档</span>
                             </a>
                         
                     </div>
@@ -417,96 +416,9 @@ $(document).ready(functio">
             <div id="articleContent">
                 <br>
 
-<h4 id="准备之前学过的git命令，vim命令，js，node-js，练习socket聊天室，轮播图准备考试。"><a href="#准备之前学过的git命令，vim命令，js，node-js，练习socket聊天室，轮播图准备考试。" class="headerlink" title="准备之前学过的ｇｉｔ命令，ｖｉｍ命令，ｊｓ，ｎｏｄｅ　ｊｓ，练习ｓｏｃｋｅｔ聊天室，轮播图准备考试。"></a>准备之前学过的ｇｉｔ命令，ｖｉｍ命令，ｊｓ，ｎｏｄｅ　ｊｓ，练习ｓｏｃｋｅｔ聊天室，轮播图准备考试。</h4><ul>
-<li>jquery<br>特点 所有jQuery函数位于一个document ready函数中。<ul>
-<li>$(document).ready(function(){<br>// 开始写 jQuery 代码…<br>});<br>或</li>
-<li>$(function(){<br>// 开始写 jQuery 代码…<br>});<br>选择器</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li><p>元素选择器</p>
-<p>基于元素名选取元素。<br>如：在页面中选取所有 </p><p> 元素:<br>$(“p”)</p>
-</li>
-<li><p>id选择器</p>
-<p>通过HTML元素的id属性选取指定的元素。<br>$(document).ready(function(){<br> $(“#test”).hide();<br>});</p>
-</li>
-<li><p>class选择器</p>
-<p>可以通过指定的 class 查找元素。<br>$(document).ready(function(){<br> $(“.test”).hide();<br>});</p>
-</li>
-</ol>
-<ul>
-<li>jquery事件</li>
-</ul>
-<ol>
-<li><p>click()</p>
-<p>当按钮点击事件被触发时会调用一个函数。<br>$(“p”).click(function(){<br> $(this).hide();<br>});</p>
-</li>
-<li><p>dblclick()</p>
-<p>当双击元素时，会发生dblclick事件。<br>$(“p”).dblclick(function(){<br> $(this).hide();<br>});</p>
-</li>
-<li><p>mouseenter()</p>
-<p>当鼠标指针穿过元素时，会发生mouseenter事件。<br>$(“#p1”).mouseenter(function(){<br> alert(‘您的鼠标移到了 id=”p1” 的元素上!’);<br>});</p>
-</li>
-<li><p>mouseleave()</p>
-<p>当鼠标指针离开元素时，会发生mouseleave事件。<br>$(“#p1”).mouseleave(function(){<br> alert(“再见，您的鼠标离开了该段落。”);<br>});</p>
-</li>
-<li><p>mousedown()</p>
-<p>当鼠标指针移动到元素上方，并按下鼠标按键时，会发生mousedown事件。<br>$(“#p1”).mousedown(function(){<br> alert(“鼠标在该段落上按下！”);<br>});</p>
-</li>
-<li><p>mouseup()</p>
-<p>当在元素上松开鼠标按钮时，会发生mouseup事件。<br>$(“#p1”).mouseup(function(){<br> alert(“鼠标在段落上松开。”);<br>});</p>
-</li>
-<li><p>hover()</p>
-<p>用于模拟光标悬停事件。<br>当鼠标移动到元素上时，会触发指定的第一个函数(mouseenter);当鼠标移出这个元素时，会触发指定的第二个函数(mouseleave)。<br>$(“#p1”).hover(<br> function(){</p>
-<pre><code>alert(&quot;你进入了p1!&quot;);</code></pre><p> },<br> function(){</p>
-<pre><code>alert(&quot;拜拜!现在你离开了p1!&quot;);</code></pre><p> }<br>);</p>
-</li>
-</ol>
-<ul>
-<li><p>jquery的隐藏和显示<br>$(selector).hide(speed,callback);<br>$(selector).show(speed,callback);<br>可选的 speed 参数规定隐藏/显示的速度，可以取以下值：”slow”、”fast”、”linear”或毫秒。<br>可选的callback参数是方法完成后所执行的函数名称。<br>$(document).ready(function(){<br>  $(“.hidebtn”).click(function(){</p>
-<pre><code>$(&quot;div&quot;).hide(1000,&quot;linear&quot;,function(){
-  alert(&quot;Hide() 方法已完成!&quot;);
-});</code></pre><p>  });<br>});</p>
-<p>使用toggle()方法来切换hide()和show()方法。<br>$(“button”).click(function(){<br>  $(“p”).toggle();<br>});</p>
-</li>
-<li><p>jquery的淡入淡出</p>
-<ol>
-<li>fadeIn</li>
-</ol>
-<p>淡淡地浮现出已隐藏的元素。<br>$(selector).fadeIn(speed,callback);<br>可选的speed参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。<br>可选的callback参数是方法完成后所执行的函数名称。<br>$(“button”).click(function(){<br>  $(“#div1”).fadeIn();<br>  $(“#div2”).fadeIn(“slow”);<br>  $(“#div3”).fadeIn(3000);<br>});</p>
-<ol start="2">
-<li>fadeOut()</li>
-</ol>
-<p>淡淡地隐藏显示的元素。<br>$(selector).fadeOut(speed,callback);<br>可选的speed参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。<br>可选的callback参数是方法完成后所执行的函数名称。</p>
-<ol start="3">
-<li>fadeToggle()</li>
-</ol>
-<p>可以在fadeIn()与fadeOut()方法之间进行切换。<br>如果元素已淡出，则fadeToggle()会向元素添加淡入效果。如果元素已淡入，则fadeToggle()会向元素添加淡出效果。<br>$(selector).fadeToggle(speed,callback);<br>可选的speed参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。<br>可选的callback参数是方法完成后所执行的函数名称。<br>$(“button”).click(function(){<br>  $(“#div1”).fadeToggle();<br>  $(“#div2”).fadeToggle(“slow”);<br>  $(“#div3”).fadeToggle(3000);<br>});</p>
-</li>
-</ul>
-<ol start="4">
-<li><p>fadeTo()</p>
-<p>$(selector).fadeTo(speed,opacity,callback);<br>必需的speed参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。<br>fadeTo()方法中必需的opacity参数将淡入淡出效果设置为给定的不透明度（值介于0与1之间）。<br>可选的callback参数是该函数完成后所执行的函数名称。<br>$(“button”).click(function(){<br> $(“#div1”).fadeTo(“slow”,0.15);<br> $(“#div2”).fadeTo(“slow”,0.4);<br> $(“#div3”).fadeTo(“slow”,0.7);<br>});</p>
-</li>
-</ol>
-<ul>
-<li><p>jquery的滑动</p>
-<ol>
-<li>slideDown()</li>
-</ol>
-<p>用于向下滑动元素。<br>$(selector).slideDown(speed,callback);<br>可选的speed参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。<br>可选的callback参数是滑动完成后所执行的函数名称。<br>$(“#flip”).click(function(){<br>  $(“#panel”).slideDown();<br>});</p>
-<ol start="2">
-<li>slideUp()</li>
-</ol>
-<p>用于向上滑动元素。<br>$(selector).slideUp(speed,callback);<br>可选的speed参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。<br>可选的callback参数是滑动完成后所执行的函数名称。</p>
-<ol start="3">
-<li>slideToggle()</li>
-</ol>
-<p>可以在slideDown()与slideUp()方法之间进行切换。<br>如果元素向下滑动，则slideToggle()可向上滑动它们。如果元素向上滑动，则slideToggle()可向下滑动它们。<br>$(selector).slideToggle(speed,callback);<br>可选的speed参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。<br>可选的callback参数是滑动完成后所执行的函数名称。<br>$(“#flip”).click(function(){<br>  $(“#panel”).slideToggle();<br>});</p>
-</li>
-</ul>
 
+<h1 id="今天安装nodejs时安装cnpm，但是在命令行测试cnpm-v时-遇到文件不能被找到情况，配置环境变量到我的电脑的属性里-不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path变量，即可执行。"><a href="#今天安装nodejs时安装cnpm，但是在命令行测试cnpm-v时-遇到文件不能被找到情况，配置环境变量到我的电脑的属性里-不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path变量，即可执行。" class="headerlink" title="今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情况，配置环境变量到我的电脑的属性里 不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path变量，即可执行。"></a>今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情况，配置环境变量到我的电脑的属性里 不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path变量，即可执行。</h1><hr>
+<h2 id="安装nodejs到配置下载路径详解"><a href="#安装nodejs到配置下载路径详解" class="headerlink" title="安装nodejs到配置下载路径详解"></a><a href="https://blog.csdn.net/wjnf012/article/details/80422313" target="_blank" rel="noopener">安装nodejs到配置下载路径详解</a></h2><h2 id="配置cnpm的path详解"><a href="#配置cnpm的path详解" class="headerlink" title="配置cnpm的path详解"></a><a href="https://blog.csdn.net/u011095110/article/details/85296607" target="_blank" rel="noopener">配置cnpm的path详解</a></h2>
             </div>
             <hr/>
 
@@ -666,8 +578,8 @@ $(document).ready(functio">
                 </a>
             </div>
             <br/>
-            <a  href="/2019/09/30/2019-9-03-twenty/">
-                    《第21天,jquery事件，选择器，滑动，淡入淡出》
+            <a  href="/2019/09/30/2019-9-28-cpmn/">
+                    《安装nodejs后改成cnpm时配置环境变量问题》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -708,17 +620,18 @@ $(document).ready(functio">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/09/30/2019-9-03-jdkinstall/">
+                <a href="/2019/09/30/2019-9-28-cpmn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="linux下安装ｊｄｋ">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="安装nodejs后改成cnpm时配置环境变量问题">
                         
-                        <span class="card-title">linux下安装ｊｄｋ</span>
+                        <span class="card-title">安装nodejs后改成cnpm时配置环境变量问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -726,16 +639,14 @@ $(document).ready(functio">
                         
                             
 
-linux下安装jdk官网下载对应的.gz包 点击下载
 
-创建一个目录用于存放解压后的文件，并解压缩到该目录下
-12sudo mkdir  /opt/java8sudo tar -zxvf jdk-8u221-linux-x64.tar
+今天安装nodejs时安装cnpm，但是在命令行测试cnpm -v时 遇到文件不能被找到情况，配置环境变量到我的电脑的属性里 不是将cnpm中bin目录配置到path变量中，那样没用，我们需将bin目录的上两层目录的地址配置到path
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-09-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -744,6 +655,7 @@ linux下安装jdk官网下载对应的.gz包 点击下载
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -762,13 +674,13 @@ linux下安装jdk官网下载对应的.gz包 点击下载
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/30/2019-8-28-zfiften/">
+                <a href="/2019/09/30/2019-9-26-lookingafter/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第15天,定时器，选择对象，改css，创建对象，弹出框，流程控制">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="观后感">
                         
-                        <span class="card-title">第15天,定时器，选择对象，改css，创建对象，弹出框，流程控制</span>
+                        <span class="card-title">观后感</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -776,13 +688,9 @@ linux下安装jdk官网下载对应的.gz包 点击下载
                         
                             
 
-日报：学习js的操作中；1.定时器包含两种：
 
-setInterval –间隔指定的毫秒数不停地执行指定的代码。
-setTimeout() –在指定的毫秒数后执行指定代码.
-
-
-每三秒弹窗一个Hello:setInterval(func
+观后感
+   二十世纪初期的中国，正处于命运的危难时刻  帝国主义列强虎视眈眈，妄图灭我中华，瓜分我领土。一些有识之士纷纷行动，寻求救国之路。其中伟大的革命先行者孙中山先生领导了辛亥革命，推翻了中国二千多年的封建帝制。然而这一革命的果
                         
                     </div>
                     <div class="publish-info">
@@ -800,8 +708,8 @@ setTimeout() –在指定的毫秒数后执行指定代码.
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/代码/">
-                        <span class="chip bg-color">代码</span>
+                    <a href="/tags/感悟/">
+                        <span class="chip bg-color">感悟</span>
                     </a>
                     
                 </div>
