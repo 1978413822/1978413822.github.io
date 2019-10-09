@@ -5,9 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="第27天，表单验证，闭包, 岳阳-丁&#39;s blog">
-    <meta name="description" content="
-
-表单验证：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061">
+    <meta name="description" content="表单验证：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -382,8 +380,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/目录/">
-                                <span class="chip bg-color">目录</span>
+                            <a href="/tags/代码/">
+                                <span class="chip bg-color">代码</span>
                             </a>
                         
                     </div>
@@ -391,13 +389,22 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/19年9月/" class="post-category">
+                                19年9月
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-30
+                    2019-09-26
                 </div>
 
                 
@@ -413,9 +420,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <br>
-
-<h3 id="表单验证："><a href="#表单验证：" class="headerlink" title="表单验证："></a>表单验证：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;JS&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        input &#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 38px;</span><br><span class="line">            line-height: 38px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;JS实例 表单验证&lt;/h1&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;form acotin=&quot;1.php&quot; method=&quot;post&quot; name=&quot;regForm&quot; onsubmit=&quot;return checkForm()&quot;&gt;</span><br><span class="line">        &lt;table&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;邮箱:&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;email&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;用户名:&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;密码:&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;pass&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;确认密码:&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;repass&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;注 册&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/table&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        //验证表单的函数</span><br><span class="line">        function checkForm() &#123;</span><br><span class="line">            //验证邮箱   12-3@qq.com  .com  .con.cn</span><br><span class="line">            var email = document.regForm.email.value;</span><br><span class="line">            if (email.search(/^[\w-]+@[\w-]+(\.\w+)&#123;1,3&#125;$/) === -1) &#123;</span><br><span class="line">                alert(&apos;邮箱格式有误!&apos;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //验证用户名  6-12为的数字字母下划线</span><br><span class="line">            var username = document.regForm.username.value;</span><br><span class="line">            if (username.match(/^&#123;6,12&#125;$/) === null) &#123;</span><br><span class="line">                alert(&apos;用户名必须是6-12位的数字,字母,下划线&apos;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //验证密码  长度必须是6-18为</span><br><span class="line">            var password = document.regForm.pass.value;</span><br><span class="line">            if (password.length &lt; 6 || password.length &gt; 18) &#123;</span><br><span class="line">                alert(&apos;密码长度必须是6-18位&apos;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //验证 确认密码</span><br><span class="line">            var repass = document.regForm.repass.value;</span><br><span class="line">            if (repass !== password) &#123;</span><br><span class="line">                alert(&apos;两次密码不一致&apos;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+                <h3 id="表单验证："><a href="#表单验证：" class="headerlink" title="表单验证："></a>表单验证：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;JS&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        input &#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 38px;</span><br><span class="line">            line-height: 38px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;JS实例 表单验证&lt;/h1&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;form acotin=&quot;1.php&quot; method=&quot;post&quot; name=&quot;regForm&quot; onsubmit=&quot;return checkForm()&quot;&gt;</span><br><span class="line">        &lt;table&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;邮箱:&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;email&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;用户名:&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;密码:&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;pass&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;确认密码:&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;repass&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;注 册&quot;&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/table&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        //验证表单的函数</span><br><span class="line">        function checkForm() &#123;</span><br><span class="line">            //验证邮箱   12-3@qq.com  .com  .con.cn</span><br><span class="line">            var email = document.regForm.email.value;</span><br><span class="line">            if (email.search(/^[\w-]+@[\w-]+(\.\w+)&#123;1,3&#125;$/) === -1) &#123;</span><br><span class="line">                alert(&apos;邮箱格式有误!&apos;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //验证用户名  6-12为的数字字母下划线</span><br><span class="line">            var username = document.regForm.username.value;</span><br><span class="line">            if (username.match(/^&#123;6,12&#125;$/) === null) &#123;</span><br><span class="line">                alert(&apos;用户名必须是6-12位的数字,字母,下划线&apos;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //验证密码  长度必须是6-18为</span><br><span class="line">            var password = document.regForm.pass.value;</span><br><span class="line">            if (password.length &lt; 6 || password.length &gt; 18) &#123;</span><br><span class="line">                alert(&apos;密码长度必须是6-18位&apos;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //验证 确认密码</span><br><span class="line">            var repass = document.regForm.repass.value;</span><br><span class="line">            if (repass !== password) &#123;</span><br><span class="line">                alert(&apos;两次密码不一致&apos;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <p>###　闭包</p>
 <p>```<br><!DOCTYPE html></p>
@@ -667,7 +672,7 @@ function show(i, str) {
                 </a>
             </div>
             <br/>
-            <a  href="/2019/09/30/2019-9-10-twenty-seven/">
+            <a  href="/2019/09/26/2019-9-10-twenty-seven/">
                     《第27天，表单验证，闭包》
             </a> 由
             <a href="http://yoursite.com">
@@ -713,53 +718,6 @@ function show(i, str) {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/30/2019-9-09-twenty-six/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第26天，字符跳动，弹出层效果">
-                        
-                        <span class="card-title">第26天，字符跳动，弹出层效果</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-
-字符跳动:123456789101112131415161718192021222324252627282930313233&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-09-30
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            岳阳
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/目录/">
-                        <span class="chip bg-color">目录</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2019/09/28/2019-9-28-cpmn/">
                     <div class="card-image">
                         
@@ -779,8 +737,66 @@ function show(i, str) {
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-09-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/19年9月/" class="post-category">
+                                    19年9月
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/技术文档/">
+                        <span class="chip bg-color">技术文档</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/26/2019-9-26-fourty-two/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="MySQL与oracle安装">
+                        
+                        <span class="card-title">MySQL与oracle安装</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+
+
+MySQL和Oracle的安装
+1.mysql首先下载安装包之后按教程链接安装并测试。其中配置path环境很重要得注意。
+
+mysql安装详解
+
+
+2.oracle安装使用的安装包比较简洁自动配置的环境直接可用，顺带安装个sqldev
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-26
                             </span>
                         <span class="publish-author">
                             
