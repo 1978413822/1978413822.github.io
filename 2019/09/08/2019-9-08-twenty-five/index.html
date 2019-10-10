@@ -7,7 +7,11 @@
     <meta name="keywords" content="第26天，地址联动，div转圈, 岳阳-丁&#39;s blog">
     <meta name="description" content="
 
-地址联动选择：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&amp;lt;!doctype">
+地址联动选择：&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -424,10 +428,133 @@
             <div id="articleContent">
                 <br>
 
-<h4 id="地址联动选择："><a href="#地址联动选择：" class="headerlink" title="地址联动选择："></a>地址联动选择：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;JS&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;表单事件--onchange 地址联动效果&lt;/h1&gt;</span><br><span class="line">    &lt;hr&gt; 请选择您的地址：</span><br><span class="line">    &lt;select id=&quot;pro&quot;&gt;&lt;/select&gt;</span><br><span class="line">    &lt;select id=&quot;city&quot;&gt;&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        //声明数组， 省的信息</span><br><span class="line">        var proList = [&apos;江苏&apos;, &apos;浙江&apos;, &apos;安徽&apos;, &apos;江西&apos;, &apos;福建&apos;];</span><br><span class="line">        //城市的信息</span><br><span class="line">        var cityList = new Array();</span><br><span class="line">        cityList[0] = [&apos;南京&apos;, &apos;苏州&apos;, &apos;常州&apos;, &apos;扬州&apos;, &apos;徐州&apos;];</span><br><span class="line">        cityList[1] = [&apos;杭州&apos;, &apos;嘉兴&apos;, &apos;绍兴&apos;, &apos;衢州&apos;, &apos;宁波&apos;];</span><br><span class="line">        cityList[2] = [&apos;合肥&apos;, &apos;安庆&apos;, &apos;马鞍山&apos;, &apos;黄山&apos;, &apos;芜湖&apos;];</span><br><span class="line">        cityList[3] = [&apos;南昌&apos;, &apos;赣州&apos;, &apos;九江&apos;, &apos;景德镇&apos;, &apos;上饶&apos;];</span><br><span class="line">        cityList[4] = [&apos;福州&apos;, &apos;泉州&apos;, &apos;漳州&apos;, &apos;厦门&apos;, &apos;晋江&apos;];</span><br><span class="line">        //获取select</span><br><span class="line">        var pro = document.getElementById(&apos;pro&apos;);</span><br><span class="line">        var city = document.getElementById(&apos;city&apos;);</span><br><span class="line">        //第一个 select 框 中输出 省的信息</span><br><span class="line">        for (var i = 0; i &lt; proList.length; i++) &#123;</span><br><span class="line">            pro.add(new Option(proList[i], i));</span><br><span class="line">        &#125;</span><br><span class="line">        //绑定 change事件</span><br><span class="line">        pro.onchange = function() &#123;</span><br><span class="line">                //情况以前的选型</span><br><span class="line">                city.options.length = 0;</span><br><span class="line">                //获取 选择的option</span><br><span class="line">                var index = pro.value;</span><br><span class="line">                //根据索引值取出 对应的城市 信息</span><br><span class="line">                var citys = cityList[index];</span><br><span class="line">                //遍历</span><br><span class="line">                for (var i = 0; i &lt; citys.length; i++) &#123;</span><br><span class="line">                    city.add(new Option(citys[i], i));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            //手工出发 change事件</span><br><span class="line">        pro.onchange();</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="地址联动选择："><a href="#地址联动选择：" class="headerlink" title="地址联动选择："></a>地址联动选择：</h4><pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
-<hr>
-<h4 id="div转圈圈："><a href="#div转圈圈：" class="headerlink" title="div转圈圈："></a>div转圈圈：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;正方形&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        #box &#123;</span><br><span class="line">            width: 400px;</span><br><span class="line">            height: 400px;</span><br><span class="line">            background: #eee;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">            position: relative;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        #point &#123;</span><br><span class="line">            width: 10px;</span><br><span class="line">            height: 10px;</span><br><span class="line">            background: red;</span><br><span class="line">            position: relative;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;box&quot;&gt;</span><br><span class="line">        &lt;div id=&quot;point&quot; style=&quot;top:0;left:0&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    setInterval(run, 1);</span><br><span class="line">    //run()</span><br><span class="line">    var x = 0; //top</span><br><span class="line">    var y = 0; //left</span><br><span class="line">    function run() &#123;</span><br><span class="line">        if (x &lt; 390 &amp;&amp; y == 0) &#123;</span><br><span class="line">            down()</span><br><span class="line">        &#125;</span><br><span class="line">        if (x == 390 &amp;&amp; y &lt; 390) &#123;</span><br><span class="line">            right()</span><br><span class="line">        &#125;</span><br><span class="line">        if (y == 390 &amp;&amp; x &gt; 0) &#123;</span><br><span class="line">            up()</span><br><span class="line">        &#125;</span><br><span class="line">        if (x == 0 &amp;&amp; y &gt; 0) &#123;</span><br><span class="line">            left()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function down() &#123;</span><br><span class="line">        point.style.top = x + &apos;px&apos;;</span><br><span class="line">        x++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function right() &#123;</span><br><span class="line">        point.style.left = y + &apos;px&apos;;</span><br><span class="line">        y++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function up() &#123;</span><br><span class="line">        point.style.top = x + &apos;px&apos;;</span><br><span class="line">        x--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function left() &#123;</span><br><span class="line">        point.style.left = y + &apos;px&apos;;</span><br><span class="line">        y--;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;JS&lt;/title&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;表单事件--onchange 地址联动效果&lt;/h1&gt;
+    &lt;hr&gt; 请选择您的地址：
+    &lt;select id=&quot;pro&quot;&gt;&lt;/select&gt;
+    &lt;select id=&quot;city&quot;&gt;&lt;/select&gt;
+
+    &lt;script&gt;
+        //声明数组， 省的信息
+        var proList = [&#39;江苏&#39;, &#39;浙江&#39;, &#39;安徽&#39;, &#39;江西&#39;, &#39;福建&#39;];
+        //城市的信息
+        var cityList = new Array();
+        cityList[0] = [&#39;南京&#39;, &#39;苏州&#39;, &#39;常州&#39;, &#39;扬州&#39;, &#39;徐州&#39;];
+        cityList[1] = [&#39;杭州&#39;, &#39;嘉兴&#39;, &#39;绍兴&#39;, &#39;衢州&#39;, &#39;宁波&#39;];
+        cityList[2] = [&#39;合肥&#39;, &#39;安庆&#39;, &#39;马鞍山&#39;, &#39;黄山&#39;, &#39;芜湖&#39;];
+        cityList[3] = [&#39;南昌&#39;, &#39;赣州&#39;, &#39;九江&#39;, &#39;景德镇&#39;, &#39;上饶&#39;];
+        cityList[4] = [&#39;福州&#39;, &#39;泉州&#39;, &#39;漳州&#39;, &#39;厦门&#39;, &#39;晋江&#39;];
+        //获取select
+        var pro = document.getElementById(&#39;pro&#39;);
+        var city = document.getElementById(&#39;city&#39;);
+        //第一个 select 框 中输出 省的信息
+        for (var i = 0; i &lt; proList.length; i++) {
+            pro.add(new Option(proList[i], i));
+        }
+        //绑定 change事件
+        pro.onchange = function() {
+                //情况以前的选型
+                city.options.length = 0;
+                //获取 选择的option
+                var index = pro.value;
+                //根据索引值取出 对应的城市 信息
+                var citys = cityList[index];
+                //遍历
+                for (var i = 0; i &lt; citys.length; i++) {
+                    city.add(new Option(citys[i], i));
+                }
+            }
+            //手工出发 change事件
+        pro.onchange();
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre><hr>
+<h4 id="div转圈圈："><a href="#div转圈圈：" class="headerlink" title="div转圈圈："></a>div转圈圈：</h4><pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;正方形&lt;/title&gt;
+    &lt;style&gt;
+        #box {
+            width: 400px;
+            height: 400px;
+            background: #eee;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #point {
+            width: 10px;
+            height: 10px;
+            background: red;
+            position: relative;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;div id=&quot;point&quot; style=&quot;top:0;left:0&quot;&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    setInterval(run, 1);
+    //run()
+    var x = 0; //top
+    var y = 0; //left
+    function run() {
+        if (x &lt; 390 &amp;&amp; y == 0) {
+            down()
+        }
+        if (x == 390 &amp;&amp; y &lt; 390) {
+            right()
+        }
+        if (y == 390 &amp;&amp; x &gt; 0) {
+            up()
+        }
+        if (x == 0 &amp;&amp; y &gt; 0) {
+            left()
+        }
+    }
+
+    function down() {
+        point.style.top = x + &#39;px&#39;;
+        x++;
+    }
+
+    function right() {
+        point.style.left = y + &#39;px&#39;;
+        y++;
+    }
+
+    function up() {
+        point.style.top = x + &#39;px&#39;;
+        x--;
+    }
+
+    function left() {
+        point.style.left = y + &#39;px&#39;;
+        y--;
+    }
+&lt;/script&gt;
+
+&lt;/html&gt;</code></pre>
             </div>
             <hr/>
 
@@ -645,7 +772,12 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            字符跳动:123456789101112131415161718192021222324252627282930313233&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;h
+                            字符跳动:&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+   
                         
                     </div>
                     <div class="publish-info">

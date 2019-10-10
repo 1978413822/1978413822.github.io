@@ -8,7 +8,8 @@
     <meta name="description" content="
 
 日报：写了两个计时器的简单代码和轮播图片的简单代码,还是比较急躁,看东西慌乱,不仔细了解其原理,导致今天学习效率较差.1.计时器代码setinterval:
-12345678910111213141516&amp;lt;body&amp;gt;    ">
+&amp;lt;body&amp;gt;
+    &amp;lt;input type=&amp;quot;t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -426,15 +427,63 @@
                 <br>
 
 <h3 id="日报：写了两个计时器的简单代码和轮播图片的简单代码-还是比较急躁-看东西慌乱-不仔细了解其原理-导致今天学习效率较差"><a href="#日报：写了两个计时器的简单代码和轮播图片的简单代码-还是比较急躁-看东西慌乱-不仔细了解其原理-导致今天学习效率较差" class="headerlink" title="日报：写了两个计时器的简单代码和轮播图片的简单代码,还是比较急躁,看东西慌乱,不仔细了解其原理,导致今天学习效率较差."></a>日报：写了两个计时器的简单代码和轮播图片的简单代码,还是比较急躁,看东西慌乱,不仔细了解其原理,导致今天学习效率较差.</h3><p>1.计时器代码setinterval:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; id=&quot;aa&quot;&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var vv = setInterval(&quot;cc()&quot;, 1000);</span><br><span class="line"></span><br><span class="line">        function cc() &#123;</span><br><span class="line">            var t = new Date();</span><br><span class="line">            var f = t.toLocaleTimeString();</span><br><span class="line">            document.getElementById(&quot;aa&quot;).value = f;</span><br><span class="line">        &#125;</span><br><span class="line">        function ss() &#123;</span><br><span class="line">            clearInterval(vv);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;button onclick=&quot;ss()&quot;&gt;点我停止&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;body&gt;
+    &lt;input type=&quot;text&quot; id=&quot;aa&quot;&gt;
+    &lt;script&gt;
+        var vv = setInterval(&quot;cc()&quot;, 1000);
 
-<p>2.计时器代码setTimeout:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;如果你想弹窗请点击&lt;/p&gt;</span><br><span class="line">    &lt;button onclick=&quot;cc()&quot;&gt;点击开始&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function cc() &#123;</span><br><span class="line">            setTimeout(function() &#123;</span><br><span class="line">                alert(&quot;弹出啊皮卡丘&quot;)</span><br><span class="line">            &#125;, 3000);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+        function cc() {
+            var t = new Date();
+            var f = t.toLocaleTimeString();
+            document.getElementById(&quot;aa&quot;).value = f;
+        }
+        function ss() {
+            clearInterval(vv);
+        }
+    &lt;/script&gt;
+    &lt;button onclick=&quot;ss()&quot;&gt;点我停止&lt;/button&gt;
+&lt;/body&gt;</code></pre><p>2.计时器代码setTimeout:</p>
+<pre><code>&lt;body&gt;
+    &lt;p&gt;如果你想弹窗请点击&lt;/p&gt;
+    &lt;button onclick=&quot;cc()&quot;&gt;点击开始&lt;/button&gt;
 
-<p>3.轮播图片的一个简单代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;img src=&quot;/home/yueyang/图片/1.jpg&quot; id=&quot;pi&quot;&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        window.onload = function() &#123;</span><br><span class="line">            setInterval(cho, 2000);</span><br><span class="line">        &#125;</span><br><span class="line">        var ii = 1;</span><br><span class="line"></span><br><span class="line">        function cho() &#123;</span><br><span class="line">            ii++;</span><br><span class="line">            document.getElementById(&quot;pi&quot;).src = &quot;/home/yueyang/图片/&quot; + ii + &quot;.jpg&quot;;</span><br><span class="line">            if (ii == 4) &#123;</span><br><span class="line">                ii = 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+    &lt;script&gt;
+        function cc() {
+            setTimeout(function() {
+                alert(&quot;弹出啊皮卡丘&quot;)
+            }, 3000);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>3.轮播图片的一个简单代码:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
 
+&lt;body&gt;
+    &lt;img src=&quot;/home/yueyang/图片/1.jpg&quot; id=&quot;pi&quot;&gt;
+    &lt;script&gt;
+        window.onload = function() {
+            setInterval(cho, 2000);
+        }
+        var ii = 1;
+
+        function cho() {
+            ii++;
+            document.getElementById(&quot;pi&quot;).src = &quot;/home/yueyang/图片/&quot; + ii + &quot;.jpg&quot;;
+            if (ii == 4) {
+                ii = 1;
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
             </div>
             <hr/>
 
@@ -655,9 +704,7 @@
                             
 
 日报：看哔哩哔哩视频模仿了一个ｓｏｃｋｅｔ简易本地聊天室,解决个小问题.解决了一个错误：
-1Errot:Cannot find module &apos;socket.io&apos;
-
-需要安装： npm install socket
+Errot:Cannot find module &#39;socket.io&#39;需要安装： npm install socket.io支持
                         
                     </div>
                     <div class="publish-info">
