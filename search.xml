@@ -4,16 +4,16 @@
   
     
     <entry>
-      <title>oracle，mysql，redis，mondodb的特点及优缺</title>
-      <link href="/2019/10/10/2019-10-10-three/"/>
-      <url>/2019/10/10/2019-10-10-three/</url>
+      <title>windows下MongBD从官网下载速度很慢解决办法</title>
+      <link href="/2019/10/10/2019-10-09-two/"/>
+      <url>/2019/10/10/2019-10-09-two/</url>
       
-        <content type="html"><![CDATA[<blockquote><h1 id="关系型数据库oracle–mysql"><a href="#关系型数据库oracle–mysql" class="headerlink" title="关系型数据库oracle–mysql"></a>关系型数据库oracle–mysql</h1></blockquote><h3 id="一、mysql与Oracle的相同点："><a href="#一、mysql与Oracle的相同点：" class="headerlink" title="一、mysql与Oracle的相同点："></a>一、mysql与Oracle的相同点：</h3><p>1、都是关系型数据库管理系统(MySQL开放源码)</p><p>2、都是目前很流行的数据库（Oracle以分布式为核心）；</p><h3 id="二、MySQL、Oracle各自特点："><a href="#二、MySQL、Oracle各自特点：" class="headerlink" title="二、MySQL、Oracle各自特点："></a>二、MySQL、Oracle各自特点：</h3><p>1、Oracle自身特点：</p><p>（1）、完整的数据管理功能：</p><p>1）、数据的大量性；</p><p>2）、数据的保存的持久性；</p><p>3）、数据的共享性；</p><p>4）、数据的可靠性；</p><p>2.MySQL自身特点：<br>       MySQL因为其速度、可靠性和适应性而备受关注。大多数人<br>       都认为在不需要事务化处理的情况下，MySQL是管理内容最好的选择。</p><blockquote><h2 id="三、两者数据库不同点："><a href="#三、两者数据库不同点：" class="headerlink" title="三、两者数据库不同点："></a>三、两者数据库不同点：</h2></blockquote><p>1.单引号的处理 Mysql里可以用双引号包起字符串，Oracle里只可以用单引号包起字符串。在插入和修改字符串前必须做单引号的替换：把所有出现的一个单引号替换成两个单引号。</p><p>2.自动增长的数据类型处理 Mysql是一个自动增长的数据类型，插入数据的时候，不需要管理，它自己会自动增长，Oracle不支持自动增长的数据类型，通过建立一个自动增长的序列号来完成自动增长。</p><p>3.sql语句的扩展和灵活性 Mysql对sql语句有很多非常实用而方便的扩展，比如limit功能，insert可以一次插入多行数据，select某些管理数据可以不加from。 Oracle在这方面感觉更加稳重传统一些。</p><p>4.事物提交方式 oracle默认不自动提交，需要用户手动提交。 Mysql默认是自动提交。不支持事物。 Mysql默认自动提交，也就是你提交一个query，它就直接执行，我们可以通过</p><p>set autocommit=0 禁止自动提交<br>set autocommit=1 开启自动提交</p><p>5.Oracle是大型数据库而Mysql是中小型数据库，Oracle市场占有率达40%，Mysql只有20%左右，同时Mysql是开源的而Oracle价格非常高。</p><p>6.Oracle支持大并发，大访问量，是OLTP(On-Line Transaction Processing联机事务处理系统)最好的工具。</p><p>7.安装所用的空间差别也是很大的，Mysql安装完后才152M而Oracle有3G左右，且使用的时候Oracle占用特别大的内存空间和其他机器性能。</p><p>8.长字符串的处理 长字符串的处理ORACLE也有它特殊的地方。INSERT和UPDATE时最大可操作的字符串长度小于等于4000个单字节, 如果要插入更长的字符串, 请考虑字段用CLOB类型，方法借用ORACLE里自带的DBMS_LOB程序包。插入修改记录前一定要做进行非空和长度判断，不能为空的字段值和超出长度字段值都应该提出警告,返回上次操作。</p><p>9.空字符的处理 Mysql的非空字段也有空的内容，ORACLE里定义了非空字段就不容许有空的内容。按Mysql的NOT NULL来定义Oracle表结构, 导数据的时候会产生错误。因此导数据时要对空字符进行判断，如果为NULL或空字符，需要把它改成一个空格的字符串。</p><p>10.字符串的模糊比较 Mysql里用 字段名 like ‘%字符串%’;<br>Oracle里也可以用 字段名 like ‘%字符串%’ 但这种方法不能使用索引, 速度不快。</p><p>11.翻页的SQL语句的处理<br>MySQL处理翻页的SQL语句比较简单，用LIMIT开始位置，记录个数；PHP里还可以用 SEEK定位到结果集的位置。Oracle处理翻页的SQL语句就比较繁琐了。每个结果集只有一个ROWNUM字段标明它的位置，并且只能用ROWNUM&lt;100，不能用ROWNUM&gt;80。</p><blockquote><h1 id="菲关系型数据库redis–mongo"><a href="#菲关系型数据库redis–mongo" class="headerlink" title="菲关系型数据库redis–mongo"></a>菲关系型数据库redis–mongo</h1></blockquote><h2 id="1-Redis-是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。分布式文件存储数据库，多用于集群介于关系型与非关系型之间，用c-编写，为web提供可扩展的高性能存储方案。多作为缓存使用"><a href="#1-Redis-是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。分布式文件存储数据库，多用于集群介于关系型与非关系型之间，用c-编写，为web提供可扩展的高性能存储方案。多作为缓存使用" class="headerlink" title="1.Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。分布式文件存储数据库，多用于集群介于关系型与非关系型之间，用c++编写，为web提供可扩展的高性能存储方案。多作为缓存使用"></a>1.Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。分布式文件存储数据库，多用于集群介于关系型与非关系型之间，用c++编写，为web提供可扩展的高性能存储方案。多作为缓存使用</h2><p>Redis 与其他 key - value 缓存产品有以下三个特点：</p><p>1.Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。</p><p>2.Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，string，zset，hash等数据结构的存储。</p><p>3.Redis支持数据的备份，即master-slave模式的数据备份。</p><h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><p>1.如果内存增长过快，需要定期删除数据。<br>2.如果进行完整重同步，由于需要生成rdb文件，并进行传输，会占用主机的CPU，并会消耗现网的带宽。不过redis2.8版本，已经有部分重同步的功能，但是还是有可能有完整重同步的。比如，新上线的备机。<br>3.修改配置文件，进行重启，将硬盘中的数据加载进内存，时间比较久。在这个过程中，redis不能提供服务。</p><h2 id="2-mongodb"><a href="#2-mongodb" class="headerlink" title="2.mongodb"></a>2.mongodb</h2><p>MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。查询与索引方式灵活，是最像SQL的Nosql。支持复制集、主备、互为主备、自动分片等特性</p><p>在高负载的情况下，添加更多的节点，可以保证服务器性能。</p><p>MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。</p><p>MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。</p><h3 id="与关系型比较"><a href="#与关系型比较" class="headerlink" title="与关系型比较"></a>与关系型比较</h3><p>1.mongodb不支持事务操作。<br>2.mongodb占用空间过大。<br>3.MongoDB没有如MySQL那样成熟的维护工具，这对于开发和IT运营都是个值得注意的地方。</p><blockquote><h2 id="Mongodb与redis相比较："><a href="#Mongodb与redis相比较：" class="headerlink" title="Mongodb与redis相比较："></a>Mongodb与redis相比较：</h2><p>mongoDB 源码语言是C++,redis也是C或C++,</p></blockquote><p>mongodb 文件存储是BSON格式类似JSON，或自定义的二进制格式。</p><p>mongodb与redis性能都很依赖内存的大小，mongodb 有丰富的数据表达、索引；最类似于关系数据库，支持丰富的查询语言，redis数据丰富，较少的IO ，这方面mongodb优势明显。</p><p>mongodb不支持事物，靠客户端自身保证，redis支持事物，比较弱，仅能保证事物中的操作按顺序执行，这方面 redis优于mongodb。</p><p>mongodb对海量数据的访问效率提升，redis 较小数据量的性能及运算,这方面 mongodb性能优于redis .monbgodb 有mapredurce功能，提供数据分析，redis 没有 ，这方面 mongodb优于redis 。</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><h2 id="Mongodb下载地址："><a href="#Mongodb下载地址：" class="headerlink" title="Mongodb下载地址："></a><a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">Mongodb下载地址：</a></h2><p><img src="https://img-blog.csdnimg.cn/20190422155040994.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNDMwMDgz,size_16,color_FFFFFF,t_70" alt="tu"></p></blockquote><blockquote><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>1.使用cmd命令ping dl.mongodb.org得到ip地址。<br><img src="https://img-blog.csdnimg.cn/20190422155122433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNDMwMDgz,size_16,color_FFFFFF,t_70" alt="tu1"></p></blockquote><blockquote><h2 id="2-修改C-Windows-System32-drivers-etc-下hosts文件在末尾加上-52-206-222-245-dl-mongodb-org。重新打开浏览器下载。"><a href="#2-修改C-Windows-System32-drivers-etc-下hosts文件在末尾加上-52-206-222-245-dl-mongodb-org。重新打开浏览器下载。" class="headerlink" title="2.修改C:\Windows\System32\drivers\etc\ 下hosts文件在末尾加上 52.206.222.245 dl.mongodb.org。重新打开浏览器下载。"></a>2.修改C:\Windows\System32\drivers\etc\ 下hosts文件在末尾加上 52.206.222.245 dl.mongodb.org。重新打开浏览器下载。</h2></blockquote><p>这里必须将浏览器关闭重新才会生效<br>配置中的ip要根据自己ping到的是什么就填什么<br><img src="https://img-blog.csdnimg.cn/20190422155401376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNDMwMDgz,size_16,color_FFFFFF,t_70" alt="tu2"></p><blockquote><h2 id="3-再进行下载查看速度会有明显变化"><a href="#3-再进行下载查看速度会有明显变化" class="headerlink" title="3.再进行下载查看速度会有明显变化"></a>3.再进行下载查看速度会有明显变化</h2><p><img src="https://img-blog.csdnimg.cn/20190422155505874.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNDMwMDgz,size_16,color_FFFFFF,t_70" alt="tu4"></p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> 10月 </category>
+          <category> 19年10月 </category>
           
       </categories>
       
@@ -29,11 +29,11 @@
     
     
     <entry>
-      <title>windows下MongBD从官网下载速度很慢解决办法</title>
-      <link href="/2019/10/10/2019-10-09-two/"/>
-      <url>/2019/10/10/2019-10-09-two/</url>
+      <title>oracle，mysql，redis，mondodb的特点及优缺</title>
+      <link href="/2019/10/10/2019-10-10-three/"/>
+      <url>/2019/10/10/2019-10-10-three/</url>
       
-        <content type="html"><![CDATA[<blockquote><h2 id="Mongodb下载地址："><a href="#Mongodb下载地址：" class="headerlink" title="Mongodb下载地址："></a><a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">Mongodb下载地址：</a></h2><p><img src="https://img-blog.csdnimg.cn/20190422155040994.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNDMwMDgz,size_16,color_FFFFFF,t_70" alt="tu"></p></blockquote><blockquote><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>1.使用cmd命令ping dl.mongodb.org得到ip地址。<br><img src="https://img-blog.csdnimg.cn/20190422155122433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNDMwMDgz,size_16,color_FFFFFF,t_70" alt="tu1"></p></blockquote><blockquote><h2 id="2-修改C-Windows-System32-drivers-etc-下hosts文件在末尾加上-52-206-222-245-dl-mongodb-org。重新打开浏览器下载。"><a href="#2-修改C-Windows-System32-drivers-etc-下hosts文件在末尾加上-52-206-222-245-dl-mongodb-org。重新打开浏览器下载。" class="headerlink" title="2.修改C:\Windows\System32\drivers\etc\ 下hosts文件在末尾加上 52.206.222.245 dl.mongodb.org。重新打开浏览器下载。"></a>2.修改C:\Windows\System32\drivers\etc\ 下hosts文件在末尾加上 52.206.222.245 dl.mongodb.org。重新打开浏览器下载。</h2></blockquote><p>这里必须将浏览器关闭重新才会生效<br>配置中的ip要根据自己ping到的是什么就填什么<br><img src="https://img-blog.csdnimg.cn/20190422155401376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNDMwMDgz,size_16,color_FFFFFF,t_70" alt="tu2"></p><blockquote><h2 id="3-再进行下载查看速度会有明显变化"><a href="#3-再进行下载查看速度会有明显变化" class="headerlink" title="3.再进行下载查看速度会有明显变化"></a>3.再进行下载查看速度会有明显变化</h2><p><img src="https://img-blog.csdnimg.cn/20190422155505874.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNDMwMDgz,size_16,color_FFFFFF,t_70" alt="tu4"></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<blockquote><h1 id="关系型数据库oracle–mysql"><a href="#关系型数据库oracle–mysql" class="headerlink" title="关系型数据库oracle–mysql"></a>关系型数据库oracle–mysql</h1></blockquote><h3 id="一、mysql与Oracle的相同点："><a href="#一、mysql与Oracle的相同点：" class="headerlink" title="一、mysql与Oracle的相同点："></a>一、mysql与Oracle的相同点：</h3><p>1、都是关系型数据库管理系统(MySQL开放源码)</p><p>2、都是目前很流行的数据库（Oracle以分布式为核心）；</p><h3 id="二、MySQL、Oracle各自特点："><a href="#二、MySQL、Oracle各自特点：" class="headerlink" title="二、MySQL、Oracle各自特点："></a>二、MySQL、Oracle各自特点：</h3><p>1、Oracle自身特点：</p><p>（1）、完整的数据管理功能：</p><p>1）、数据的大量性；</p><p>2）、数据的保存的持久性；</p><p>3）、数据的共享性；</p><p>4）、数据的可靠性；</p><p>2.MySQL自身特点：<br>       MySQL因为其速度、可靠性和适应性而备受关注。大多数人<br>       都认为在不需要事务化处理的情况下，MySQL是管理内容最好的选择。</p><blockquote><h2 id="三、两者数据库不同点："><a href="#三、两者数据库不同点：" class="headerlink" title="三、两者数据库不同点："></a>三、两者数据库不同点：</h2></blockquote><p>1.单引号的处理 Mysql里可以用双引号包起字符串，Oracle里只可以用单引号包起字符串。在插入和修改字符串前必须做单引号的替换：把所有出现的一个单引号替换成两个单引号。</p><p>2.自动增长的数据类型处理 Mysql是一个自动增长的数据类型，插入数据的时候，不需要管理，它自己会自动增长，Oracle不支持自动增长的数据类型，通过建立一个自动增长的序列号来完成自动增长。</p><p>3.sql语句的扩展和灵活性 Mysql对sql语句有很多非常实用而方便的扩展，比如limit功能，insert可以一次插入多行数据，select某些管理数据可以不加from。 Oracle在这方面感觉更加稳重传统一些。</p><p>4.事物提交方式 oracle默认不自动提交，需要用户手动提交。 Mysql默认是自动提交。不支持事物。 Mysql默认自动提交，也就是你提交一个query，它就直接执行，我们可以通过</p><p>set autocommit=0 禁止自动提交<br>set autocommit=1 开启自动提交</p><p>5.Oracle是大型数据库而Mysql是中小型数据库，Oracle市场占有率达40%，Mysql只有20%左右，同时Mysql是开源的而Oracle价格非常高。</p><p>6.Oracle支持大并发，大访问量，是OLTP(On-Line Transaction Processing联机事务处理系统)最好的工具。</p><p>7.安装所用的空间差别也是很大的，Mysql安装完后才152M而Oracle有3G左右，且使用的时候Oracle占用特别大的内存空间和其他机器性能。</p><p>8.长字符串的处理 长字符串的处理ORACLE也有它特殊的地方。INSERT和UPDATE时最大可操作的字符串长度小于等于4000个单字节, 如果要插入更长的字符串, 请考虑字段用CLOB类型，方法借用ORACLE里自带的DBMS_LOB程序包。插入修改记录前一定要做进行非空和长度判断，不能为空的字段值和超出长度字段值都应该提出警告,返回上次操作。</p><p>9.空字符的处理 Mysql的非空字段也有空的内容，ORACLE里定义了非空字段就不容许有空的内容。按Mysql的NOT NULL来定义Oracle表结构, 导数据的时候会产生错误。因此导数据时要对空字符进行判断，如果为NULL或空字符，需要把它改成一个空格的字符串。</p><p>10.字符串的模糊比较 Mysql里用 字段名 like ‘%字符串%’;<br>Oracle里也可以用 字段名 like ‘%字符串%’ 但这种方法不能使用索引, 速度不快。</p><p>11.翻页的SQL语句的处理<br>MySQL处理翻页的SQL语句比较简单，用LIMIT开始位置，记录个数；PHP里还可以用 SEEK定位到结果集的位置。Oracle处理翻页的SQL语句就比较繁琐了。每个结果集只有一个ROWNUM字段标明它的位置，并且只能用ROWNUM&lt;100，不能用ROWNUM&gt;80。</p><blockquote><h1 id="菲关系型数据库redis–mongo"><a href="#菲关系型数据库redis–mongo" class="headerlink" title="菲关系型数据库redis–mongo"></a>菲关系型数据库redis–mongo</h1></blockquote><h2 id="1-Redis-是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。分布式文件存储数据库，多用于集群介于关系型与非关系型之间，用c-编写，为web提供可扩展的高性能存储方案。多作为缓存使用"><a href="#1-Redis-是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。分布式文件存储数据库，多用于集群介于关系型与非关系型之间，用c-编写，为web提供可扩展的高性能存储方案。多作为缓存使用" class="headerlink" title="1.Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。分布式文件存储数据库，多用于集群介于关系型与非关系型之间，用c++编写，为web提供可扩展的高性能存储方案。多作为缓存使用"></a>1.Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。分布式文件存储数据库，多用于集群介于关系型与非关系型之间，用c++编写，为web提供可扩展的高性能存储方案。多作为缓存使用</h2><p>Redis 与其他 key - value 缓存产品有以下三个特点：</p><p>1.Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。</p><p>2.Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，string，zset，hash等数据结构的存储。</p><p>3.Redis支持数据的备份，即master-slave模式的数据备份。</p><h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><p>1.如果内存增长过快，需要定期删除数据。<br>2.如果进行完整重同步，由于需要生成rdb文件，并进行传输，会占用主机的CPU，并会消耗现网的带宽。不过redis2.8版本，已经有部分重同步的功能，但是还是有可能有完整重同步的。比如，新上线的备机。<br>3.修改配置文件，进行重启，将硬盘中的数据加载进内存，时间比较久。在这个过程中，redis不能提供服务。</p><h2 id="2-mongodb"><a href="#2-mongodb" class="headerlink" title="2.mongodb"></a>2.mongodb</h2><p>MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。查询与索引方式灵活，是最像SQL的Nosql。支持复制集、主备、互为主备、自动分片等特性</p><p>在高负载的情况下，添加更多的节点，可以保证服务器性能。</p><p>MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。</p><p>MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。</p><h3 id="与关系型比较"><a href="#与关系型比较" class="headerlink" title="与关系型比较"></a>与关系型比较</h3><p>1.mongodb不支持事务操作。<br>2.mongodb占用空间过大。<br>3.MongoDB没有如MySQL那样成熟的维护工具，这对于开发和IT运营都是个值得注意的地方。</p><blockquote><h2 id="Mongodb与redis相比较："><a href="#Mongodb与redis相比较：" class="headerlink" title="Mongodb与redis相比较："></a>Mongodb与redis相比较：</h2><p>mongoDB 源码语言是C++,redis也是C或C++,</p></blockquote><p>mongodb 文件存储是BSON格式类似JSON，或自定义的二进制格式。</p><p>mongodb与redis性能都很依赖内存的大小，mongodb 有丰富的数据表达、索引；最类似于关系数据库，支持丰富的查询语言，redis数据丰富，较少的IO ，这方面mongodb优势明显。</p><p>mongodb不支持事物，靠客户端自身保证，redis支持事物，比较弱，仅能保证事物中的操作按顺序执行，这方面 redis优于mongodb。</p><p>mongodb对海量数据的访问效率提升，redis 较小数据量的性能及运算,这方面 mongodb性能优于redis .monbgodb 有mapredurce功能，提供数据分析，redis 没有 ，这方面 mongodb优于redis 。</p>]]></content>
       
       
       <categories>
@@ -923,31 +923,6 @@
     
     
     <entry>
-      <title>vim和linux操作命令(链接一个简洁博客)</title>
-      <link href="/2019/08/22/2019-8-22-eight/"/>
-      <url>/2019/08/22/2019-8-22-eight/</url>
-      
-        <content type="html"><![CDATA[<h3 id="第八天日报"><a href="#第八天日报" class="headerlink" title="第八天日报"></a>第八天日报</h3><ul><li>了解vim和linux操作基础</li></ul><h2 id="看着简洁明了并且常见的多的命令～"><a href="#看着简洁明了并且常见的多的命令～" class="headerlink" title="看着简洁明了并且常见的多的命令～"></a><a href="https://blog.csdn.net/tianzongnihao/article/details/80539264" target="_blank" rel="noopener">看着简洁明了并且常见的多的命令～</a></h2><h3 id="vim操作命令详解"><a href="#vim操作命令详解" class="headerlink" title="vim操作命令详解"></a><a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">vim操作命令详解</a></h3><h3 id="linux常见的20条命令"><a href="#linux常见的20条命令" class="headerlink" title="linux常见的20条命令"></a><a href="https://blog.csdn.net/q357010621/article/details/80248611" target="_blank" rel="noopener">linux常见的20条命令</a></h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 19年8月 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 日报 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>QQ安装步骤</title>
       <link href="/2019/08/22/2019-8-22-QQinstall/"/>
       <url>/2019/08/22/2019-8-22-QQinstall/</url>
@@ -965,6 +940,31 @@
         <tags>
             
             <tag> 技术文档 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vim和linux操作命令(链接一个简洁博客)</title>
+      <link href="/2019/08/22/2019-8-22-eight/"/>
+      <url>/2019/08/22/2019-8-22-eight/</url>
+      
+        <content type="html"><![CDATA[<h3 id="第八天日报"><a href="#第八天日报" class="headerlink" title="第八天日报"></a>第八天日报</h3><ul><li>了解vim和linux操作基础</li></ul><h2 id="看着简洁明了并且常见的多的命令～"><a href="#看着简洁明了并且常见的多的命令～" class="headerlink" title="看着简洁明了并且常见的多的命令～"></a><a href="https://blog.csdn.net/tianzongnihao/article/details/80539264" target="_blank" rel="noopener">看着简洁明了并且常见的多的命令～</a></h2><h3 id="vim操作命令详解"><a href="#vim操作命令详解" class="headerlink" title="vim操作命令详解"></a><a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">vim操作命令详解</a></h3><h3 id="linux常见的20条命令"><a href="#linux常见的20条命令" class="headerlink" title="linux常见的20条命令"></a><a href="https://blog.csdn.net/q357010621/article/details/80248611" target="_blank" rel="noopener">linux常见的20条命令</a></h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年8月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日报 </tag>
             
         </tags>
       
@@ -1023,11 +1023,11 @@
     
     
     <entry>
-      <title>第6天 gitbisect</title>
-      <link href="/2019/08/20/2019-8-20-six/"/>
-      <url>/2019/08/20/2019-8-20-six/</url>
+      <title>markdown语句</title>
+      <link href="/2019/08/20/2019-8-20-markdown/"/>
+      <url>/2019/08/20/2019-8-20-markdown/</url>
       
-        <content type="html"><![CDATA[<blockquote><h3 id="git-bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。"><a href="#git-bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。" class="headerlink" title="git bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。"></a>git bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。</h3></blockquote><ul><li>它的原理很简单，就是将代码提交的历史，按照两分法不断缩小定位。所谓”两分法”，就是将代码历史一分为二，确定问题出在前半部分，还是后半部分，不断执行这个过程，直到范围缩小到某一次代码提交。<ol><li>首先，进入错误了的目录检查一下代码提交历史<code>git log --pretty=oneline</code><br><code>git bisect start</code>命令启动查错，它的格式如下:<code>git bisect start [终点] [起点]</code>起点终点是哈西马值，它会定位到中间位置，不断测试，没错标记<code>git bisect good</code>之后继续二分查找，直到找到错误加<code>git bisect bad</code><br>这时，Git 会给出如下的提示:<code>错误处的哈希马值 is the first bad commit</code>，既然找到了错误，那我们就可以使用<code>git bisect reset</code>退出查错，去修改错误就ok。</li></ol></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>![markdown](/home/yueyang/图片/2019-08-23 09-15-43 的屏幕截图.png)</p>]]></content>
       
       
       <categories>
@@ -1048,11 +1048,11 @@
     
     
     <entry>
-      <title>markdown语句</title>
-      <link href="/2019/08/20/2019-8-20-markdown/"/>
-      <url>/2019/08/20/2019-8-20-markdown/</url>
+      <title>第6天 gitbisect</title>
+      <link href="/2019/08/20/2019-8-20-six/"/>
+      <url>/2019/08/20/2019-8-20-six/</url>
       
-        <content type="html"><![CDATA[<p>![markdown](/home/yueyang/图片/2019-08-23 09-15-43 的屏幕截图.png)</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><h3 id="git-bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。"><a href="#git-bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。" class="headerlink" title="git bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。"></a>git bisect是一个很有用的命令，用来查找哪一次代码提交引入了错误。</h3></blockquote><ul><li>它的原理很简单，就是将代码提交的历史，按照两分法不断缩小定位。所谓”两分法”，就是将代码历史一分为二，确定问题出在前半部分，还是后半部分，不断执行这个过程，直到范围缩小到某一次代码提交。<ol><li>首先，进入错误了的目录检查一下代码提交历史<code>git log --pretty=oneline</code><br><code>git bisect start</code>命令启动查错，它的格式如下:<code>git bisect start [终点] [起点]</code>起点终点是哈西马值，它会定位到中间位置，不断测试，没错标记<code>git bisect good</code>之后继续二分查找，直到找到错误加<code>git bisect bad</code><br>这时，Git 会给出如下的提示:<code>错误处的哈希马值 is the first bad commit</code>，既然找到了错误，那我们就可以使用<code>git bisect reset</code>退出查错，去修改错误就ok。</li></ol></li></ul>]]></content>
       
       
       <categories>
