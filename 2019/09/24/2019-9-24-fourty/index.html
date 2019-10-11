@@ -9,10 +9,7 @@
 
 
 MySQL和Oracle的区别
-(1) 对事务的提交
-    MySQL默认是自动提交，而Oracle默认不自动提交，需要用户手动提交，需要在写commit;指令或者点击commit按钮
-(2) 分页查询
-    MySQL是直接在S">
+123456789101112131415161718192021222324252627282930313233343536373839(1) 对事务的提交    MySQL默认是自动提交，而Orac">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -431,45 +428,7 @@ MySQL和Oracle的区别
 
 <blockquote>
 <h1 id="MySQL和Oracle的区别"><a href="#MySQL和Oracle的区别" class="headerlink" title="MySQL和Oracle的区别"></a>MySQL和Oracle的区别</h1></blockquote>
-<pre><code>(1) 对事务的提交
-    MySQL默认是自动提交，而Oracle默认不自动提交，需要用户手动提交，需要在写commit;指令或者点击commit按钮
-(2) 分页查询
-    MySQL是直接在SQL语句中写&quot;select... from ...where...limit  x, y&quot;,有limit就可以实现分页;而Oracle则是需要用到伪列ROWNUM和嵌套查询
-(3) 事务隔离级别
-      MySQL是read commited的隔离级别，而Oracle是repeatable read的隔离级别，同时二者都支持serializable串行化事务隔离级别，可以实现最高级别的
-    读一致性。每个session提交后其他session才能看到提交的更改。Oracle通过在undo表空间中构造多版本数据块来实现读一致性，每个session
-    查询时，如果对应的数据块发生变化，Oracle会在undo表空间中为这个session构造它查询时的旧的数据块
-    MySQL没有类似Oracle的构造多版本数据块的机制，只支持read commited的隔离级别。一个session读取数据时，其他session不能更改数据，但
-    可以在表最后插入数据。session更新数据时，要加上排它锁，其他session无法访问数据
-(4) 对事务的支持
-    MySQL在innodb存储引擎的行级锁的情况下才可支持事务，而Oracle则完全支持事务
-(5) 保存数据的持久性
-    MySQL是在数据库更新或者重启，则会丢失数据，Oracle把提交的sql操作线写入了在线联机日志文件中，保持到了磁盘上，可以随时恢复
-(6) 并发性
-    MySQL以表级锁为主，对资源锁定的粒度很大，如果一个session对一个表加锁时间过长，会让其他session无法更新此表中的数据。
-  虽然InnoDB引擎的表可以用行级锁，但这个行级锁的机制依赖于表的索引，如果表没有索引，或者sql语句没有使用索引，那么仍然使用表级锁。
-  Oracle使用行级锁，对资源锁定的粒度要小很多，只是锁定sql需要的资源，并且加锁是在数据库中的数据行上，不依赖与索引。所以Oracle对并
-  发性的支持要好很多。
-(7) 逻辑备份
-    MySQL逻辑备份时要锁定数据，才能保证备份的数据是一致的，影响业务正常的dml使用,Oracle逻辑备份时不锁定数据，且备份的数据是一致
-(8) 复制
-    MySQL:复制服务器配置简单，但主库出问题时，丛库有可能丢失一定的数据。且需要手工切换丛库到主库。
-    Oracle:既有推或拉式的传统数据复制，也有dataguard的双机或多机容灾机制，主库出现问题是，可以自动切换备库到主库，但配置管理较复杂。
-(9) 性能诊断
-    MySQL的诊断调优方法较少，主要有慢查询日志。
-    Oracle有各种成熟的性能诊断调优工具，能实现很多自动分析、诊断功能。比如awr、addm、sqltrace、tkproof等    
-(10)权限与安全
-    MySQL的用户与主机有关，感觉没有什么意义，另外更容易被仿冒主机及ip有可乘之机。
-    Oracle的权限与安全概念比较传统，中规中矩。
-(11)分区表和分区索引
-    MySQL的分区表还不太成熟稳定。
-    Oracle的分区表和分区索引功能很成熟，可以提高用户访问db的体验。
-(12)管理工具
-    MySQL管理工具较少，在linux下的管理工具的安装有时要安装额外的包（phpmyadmin， etc)，有一定复杂性。
-    Oracle有多种成熟的命令行、图形界面、web管理工具，还有很多第三方的管理工具，管理极其方便高效。
-(13)最重要的区别
-    MySQL是轻量型数据库，并且免费，没有服务恢复数据。
-    Oracle是重量型数据库，收费，Oracle公司对Oracle数据库有任何服务</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">(1) 对事务的提交</span><br><span class="line">    MySQL默认是自动提交，而Oracle默认不自动提交，需要用户手动提交，需要在写commit;指令或者点击commit按钮</span><br><span class="line">(2) 分页查询</span><br><span class="line">    MySQL是直接在SQL语句中写&quot;select... from ...where...limit  x, y&quot;,有limit就可以实现分页;而Oracle则是需要用到伪列ROWNUM和嵌套查询</span><br><span class="line">(3) 事务隔离级别</span><br><span class="line">      MySQL是read commited的隔离级别，而Oracle是repeatable read的隔离级别，同时二者都支持serializable串行化事务隔离级别，可以实现最高级别的</span><br><span class="line">    读一致性。每个session提交后其他session才能看到提交的更改。Oracle通过在undo表空间中构造多版本数据块来实现读一致性，每个session</span><br><span class="line">    查询时，如果对应的数据块发生变化，Oracle会在undo表空间中为这个session构造它查询时的旧的数据块</span><br><span class="line">    MySQL没有类似Oracle的构造多版本数据块的机制，只支持read commited的隔离级别。一个session读取数据时，其他session不能更改数据，但</span><br><span class="line">    可以在表最后插入数据。session更新数据时，要加上排它锁，其他session无法访问数据</span><br><span class="line">(4) 对事务的支持</span><br><span class="line">    MySQL在innodb存储引擎的行级锁的情况下才可支持事务，而Oracle则完全支持事务</span><br><span class="line">(5) 保存数据的持久性</span><br><span class="line">    MySQL是在数据库更新或者重启，则会丢失数据，Oracle把提交的sql操作线写入了在线联机日志文件中，保持到了磁盘上，可以随时恢复</span><br><span class="line">(6) 并发性</span><br><span class="line">    MySQL以表级锁为主，对资源锁定的粒度很大，如果一个session对一个表加锁时间过长，会让其他session无法更新此表中的数据。</span><br><span class="line">  虽然InnoDB引擎的表可以用行级锁，但这个行级锁的机制依赖于表的索引，如果表没有索引，或者sql语句没有使用索引，那么仍然使用表级锁。</span><br><span class="line">  Oracle使用行级锁，对资源锁定的粒度要小很多，只是锁定sql需要的资源，并且加锁是在数据库中的数据行上，不依赖与索引。所以Oracle对并</span><br><span class="line">  发性的支持要好很多。</span><br><span class="line">(7) 逻辑备份</span><br><span class="line">    MySQL逻辑备份时要锁定数据，才能保证备份的数据是一致的，影响业务正常的dml使用,Oracle逻辑备份时不锁定数据，且备份的数据是一致</span><br><span class="line">(8) 复制</span><br><span class="line">    MySQL:复制服务器配置简单，但主库出问题时，丛库有可能丢失一定的数据。且需要手工切换丛库到主库。</span><br><span class="line">    Oracle:既有推或拉式的传统数据复制，也有dataguard的双机或多机容灾机制，主库出现问题是，可以自动切换备库到主库，但配置管理较复杂。</span><br><span class="line">(9) 性能诊断</span><br><span class="line">    MySQL的诊断调优方法较少，主要有慢查询日志。</span><br><span class="line">    Oracle有各种成熟的性能诊断调优工具，能实现很多自动分析、诊断功能。比如awr、addm、sqltrace、tkproof等    </span><br><span class="line">(10)权限与安全</span><br><span class="line">    MySQL的用户与主机有关，感觉没有什么意义，另外更容易被仿冒主机及ip有可乘之机。</span><br><span class="line">    Oracle的权限与安全概念比较传统，中规中矩。</span><br><span class="line">(11)分区表和分区索引</span><br><span class="line">    MySQL的分区表还不太成熟稳定。</span><br><span class="line">    Oracle的分区表和分区索引功能很成熟，可以提高用户访问db的体验。</span><br><span class="line">(12)管理工具</span><br><span class="line">    MySQL管理工具较少，在linux下的管理工具的安装有时要安装额外的包（phpmyadmin， etc)，有一定复杂性。</span><br><span class="line">    Oracle有多种成熟的命令行、图形界面、web管理工具，还有很多第三方的管理工具，管理极其方便高效。</span><br><span class="line">(13)最重要的区别</span><br><span class="line">    MySQL是轻量型数据库，并且免费，没有服务恢复数据。</span><br><span class="line">    Oracle是重量型数据库，收费，Oracle公司对Oracle数据库有任何服务</span><br></pre></td></tr></table></figure>
             </div>
             <hr/>
 
@@ -746,7 +705,7 @@ MySQL和Oracle的区别
 
 content属性值 :
 
- width
+width:
                         
                     </div>
                     <div class="publish-info">

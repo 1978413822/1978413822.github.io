@@ -10,8 +10,7 @@
 linux下安装jdk官网下载对应的.gz包 点击下载
 
 创建一个目录用于存放解压后的文件，并解压缩到该目录下
-sudo mkdir  /opt/java8
-sudo tar -zxvf jdk-8u221-linux-x64.tar.">
+12sudo mkdir  /opt/java8sudo tar -zxvf jdk-8u221-linux-x64.tar">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -431,31 +430,22 @@ sudo tar -zxvf jdk-8u221-linux-x64.tar.">
 <p>linux下安装jdk<br>官网下载对应的.gz包 点击<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">下载</a></p>
 <ul>
 <li><p>创建一个目录用于存放解压后的文件，并解压缩到该目录下</p>
-<pre><code>sudo mkdir  /opt/java8
-sudo tar -zxvf jdk-8u221-linux-x64.tar.gz -C  /opt/java8</code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir  /opt/java8</span><br><span class="line">sudo tar -zxvf jdk-8u221-linux-x64.tar.gz -C  /opt/java8</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>修改环境变量<br><code>sudo vim ~/.bashrc</code></p>
 <ul>
 <li><p>进入文件，末尾追加如下内容：<br><code>export JAVA_HOME=/opt/java8/jdk1.8.0_221</code>     //这里要注意目录要换成自己- 解压的jdk目录</p>
-<pre><code>export JRE_HOME=${JAVA_HOME}/jre  
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
-export PATH=${JAVA_HOME}/bin:$PATH
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    export JRE_HOME=$&#123;JAVA_HOME&#125;/jre  </span><br><span class="line">    export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib  </span><br><span class="line">    export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 使环境变量生效</span><br><span class="line">` source ~/.bashrc`</span><br><span class="line">- 设置系统默认jdk</span><br></pre></td></tr></table></figure>
 
-
-</code></pre></li>
-</ul>
 </li>
 </ul>
+<p>sudo update-alternatives –install /usr/bin/java java /opt/java8/jdk1.8.0_221/bin/java 300<br>sudo update-alternatives –install /usr/bin/javac javac /opt/java8/jdk1.8.0_221/bin/javac 300<br>sudo update-alternatives –install /usr/bin/jar jar /opt/java8/jdk1.8.0_221/bin/jar 300<br>sudo update-alternatives –install /usr/bin/javah javah /opt/java8/jdk1.8.0_221/bin/javah 300<br>sudo update-alternatives –install /usr/bin/javap javap /opt/java8/jdk1.8.0_221/bin/javap 300<br>```</p>
 <ul>
-<li>使环境变量生效<br><code>source ~/.bashrc</code></li>
-<li>设置系统默认jdk<pre><code>sudo update-alternatives --install /usr/bin/java java /opt/java8/jdk1.8.0_221/bin/java 300  
-sudo update-alternatives --install /usr/bin/javac javac /opt/java8/jdk1.8.0_221/bin/javac 300  
-sudo update-alternatives --install /usr/bin/jar jar /opt/java8/jdk1.8.0_221/bin/jar 300   
-sudo update-alternatives --install /usr/bin/javah javah /opt/java8/jdk1.8.0_221/bin/javah 300   
-sudo update-alternatives --install /usr/bin/javap javap /opt/java8/jdk1.8.0_221/bin/javap 300</code></pre><ul>
 <li>然后执行：<br><code>sudo update-alternatives --config java</code></li>
 </ul>
 </li>
-<li>测试是否安装成功<br><code>java -version</code><br>突发情况</li>
+<li><p>测试是否安装成功<br><code>java -version</code><br>突发情况</p>
+</li>
 </ul>
 
             </div>
@@ -677,11 +667,7 @@ sudo update-alternatives --install /usr/bin/javap javap /opt/java8/jdk1.8.0_221/
                         
                             
 
-准备之前学过的ｇｉｔ命令，ｖｉｍ命令，ｊｓ，ｎｏｄｅ　ｊｓ，练习ｓｏｃｋｅｔ聊天室，轮播图准备考试。git篇git clone
-
-git init        创建一个空的Git仓库或者初始化一个已存在的仓库
-
-git add    
+准备之前学过的ｇｉｔ命令，ｖｉｍ命令，ｊｓ，ｎｏｄｅ　ｊｓ，练习ｓｏｃｋｅｔ聊天室，轮播图准备考试。git篇1234567891011121314151617181920212223242526272829303132333435363
                         
                     </div>
                     <div class="publish-info">
