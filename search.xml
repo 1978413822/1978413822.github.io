@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Python实现一行代码推本地git到远程仓库</title>
+      <link href="/2019/10/11/2019-10-11-pythongit/"/>
+      <url>/2019/10/11/2019-10-11-pythongit/</url>
+      
+        <content type="html"><![CDATA[<h1 id="普通的方式"><a href="#普通的方式" class="headerlink" title="普通的方式"></a>普通的方式</h1><p>刚刚学会git的你想要将你修改的code的文件push到远程仓库中的时候</p><pre><code>git add .git commit -m&quot;本次修改就是啥也没动&quot;git push origin master</code></pre><p>首先我们需要一个操作系统的OS模块</p><pre><code>import os 调用os的system方法os.system(&#39;git add .&#39;) 这里的参数就相当于在终端中输入的命令os.system(&#39;git commit -m\&quot;python auto push\&quot;&#39;) 你可以自己定义自己的 commit 说明内容os.system(&#39;git push origin master&#39;)</code></pre><p> 最后push到对应的远程库中的某个分之中,就成了<br>编辑文件后,将文件保存为.py格式,everydaypush.py<br>存到你的git库的根目录中<br>在终端中执行:</p><p>python3 everydaypush.py<br><img src="https://victorfengming.github.io/images/posts/python/python-auto-git-push.png" alt="w"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 代码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>this关键字 java传参方式 费氏数列递归/推</title>
+      <link href="/2019/10/11/2019-10-11-four/"/>
+      <url>/2019/10/11/2019-10-11-four/</url>
+      
+        <content type="html"><![CDATA[<h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><p>-在构造中表示当前正在构造的对象</p><p>-在成员方法中表示调用的对象</p><h1 id="java传参方式"><a href="#java传参方式" class="headerlink" title="java传参方式"></a>java传参方式</h1><p>1.当传的是基本数据类型时，形参改变实参不会跟着改变；</p><p>2.传引用数据类型时，形参改变会影响到实参一起变，因为他们的栈区指向同一块堆区；</p><hr><h1 id="递归自己调自己"><a href="#递归自己调自己" class="headerlink" title="递归自己调自己"></a>递归自己调自己</h1><pre><code>//费氏数列递归 //1 1 2 3 5 8 13 21 34.....     //递归     public class FeiShiDiGui {             int show(int n){                    if(n==1||n==2){                           return 1;                    }                    return show(n-1)+show(n-2);       //递推    int show1(int n) {       int a=1;       int b=1;         for(int i=3;i&lt;=n;i++) {              int c=a+b;              a=b;              b=c;           }               return b;         }                    public static void main(String[] args) {        FeiShiDiGui fsdg=new FeiShiDiGui();        int i=fsdg.show(6);              int ii=fsdg.show(6);        System.out.println(i);              System.out.println(ii);    }             }</code></pre><pre><code>public class DiGui {    //递推实现5的阶乘//      int show(int n) {//          int res=1;//          for(int i=1;i&lt;=n;i++) {//              res*=i;//          }//          return res;         //      }            //递归实现5的阶乘    int show(int m) {        if(1==m) {            return 1;        }        return m*show(m-1);    }    public static void main(String[] args) {            DiGui dg=new DiGui();            int ii=dg.show(5);            System.out.println(ii);          }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 代码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>windows下MongBD从官网下载速度很慢解决办法</title>
       <link href="/2019/10/10/2019-10-09-two/"/>
       <url>/2019/10/10/2019-10-09-two/</url>
