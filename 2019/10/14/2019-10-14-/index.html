@@ -4,11 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python实现一行代码推本地git到远程仓库, 岳阳-丁&#39;s blog">
-    <meta name="description" content="普通的方式刚刚学会git的你想要将你修改的code的文件push到远程仓库中的时候
-123git add .git commit -m&amp;quot;本次修改就是啥也没动&amp;quot;git push origin master
-
-首先我们需要一">
+    <meta name="keywords" content="代码块执行顺序, 岳阳-丁&#39;s blog">
+    <meta name="description" content="代码块执行顺序:12345678910111213141516171819202122public class DaiMaKuaiTest &amp;#123;    static &amp;#123;        System.out.println(">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python实现一行代码推本地git到远程仓库 | 岳阳-丁&#39;s blog</title>
+    <title>代码块执行顺序 | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -265,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Python实现一行代码推本地git到远程仓库
+                        代码块执行顺序
                     </div>
                 </div>
             </div>
@@ -383,8 +380,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/技术文档/">
-                                <span class="chip bg-color">技术文档</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -407,7 +404,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-11
+                    2019-10-14
                 </div>
 
                 
@@ -423,14 +420,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="普通的方式"><a href="#普通的方式" class="headerlink" title="普通的方式"></a>普通的方式</h1><p>刚刚学会git的你想要将你修改的code的文件push到远程仓库中的时候</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m&quot;本次修改就是啥也没动&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+                <h1 id="代码块执行顺序"><a href="#代码块执行顺序" class="headerlink" title="代码块执行顺序:"></a>代码块执行顺序:</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class DaiMaKuaiTest &#123;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        System.out.println(&quot;静态代码块&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;构造代码块&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public DaiMaKuaiTest()&#123;</span><br><span class="line">        System.out.println(&quot;构造函数&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.println(&quot;普通代码块&quot;);</span><br><span class="line"></span><br><span class="line">        DaiMaKuaiTest daiMaKuaiTest = new DaiMaKuaiTest();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>首先我们需要一个操作系统的OS模块</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"> 调用os的system方法</span><br><span class="line">os.system(&apos;git add .&apos;)</span><br><span class="line"> 这里的参数就相当于在终端中输入的命令</span><br><span class="line">os.system(&apos;git commit -m\&quot;python auto push\&quot;&apos;)</span><br><span class="line"> 你可以自己定义自己的 commit 说明内容</span><br><span class="line">os.system(&apos;git push origin master&apos;)</span><br></pre></td></tr></table></figure>
-
-<p> 最后push到对应的远程库中的某个分之中,就成了<br>编辑文件后,将文件保存为.py格式,everydaypush.py<br>存到你的git库的根目录中<br>在终端中执行:</p>
-<p>python3 everydaypush.py<br><img src="https://victorfengming.github.io/images/posts/python/python-auto-git-push.png" alt="w"></p>
+<p>输出：<br>静态代码块-<br>普通代码块-<br>构造代码块-<br>构造函数；</p>
 
             </div>
             <hr/>
@@ -591,8 +583,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/11/2019-10-11-pythongit/">
-                    《Python实现一行代码推本地git到远程仓库》
+            <a  href="/2019/10/14/2019-10-14-/">
+                    《代码块执行顺序》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -637,24 +629,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/14/2019-10-14-/">
+                <a href="/2019/10/15/2019-10-15-java3继承接口/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="代码块执行顺序">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="java三大特性（封装，继承，多态）final">
                         
-                        <span class="card-title">代码块执行顺序</span>
+                        <span class="card-title">java三大特性（封装，继承，多态）final</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            代码块执行顺序:12345678910111213141516171819202122public class DaiMaKuaiTest &#123;    static &#123;        System.out.println(
+                            
+1.封装： 1.就是将一些逻辑代码和实现的细节封到一个类里，隐藏细节，外部不能随便修改或调用，需要声明对象的引用来调用，可以提高代码的复用性.比如在测试类里
+
+2.实现流程： 1231.私有化成员变量用private修饰2.公有set与g
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-15
                         </span>
                         <span class="publish-author">
                             
@@ -686,24 +681,22 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/11/2019-10-11-four/">
+                <a href="/2019/10/11/2019-10-11-pythongit/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="this关键字 java传参方式 费氏数列递归/推">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Python实现一行代码推本地git到远程仓库">
                         
-                        <span class="card-title">this关键字 java传参方式 费氏数列递归/推</span>
+                        <span class="card-title">Python实现一行代码推本地git到远程仓库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            this关键字-在构造中表示当前正在构造的对象
--在成员方法中表示调用的对象
-java传参方式1.当传的是基本数据类型时，形参改变实参不会跟着改变；
-2.传引用数据类型时，形参改变会影响到实参一起变，因为他们的栈区指向同一块堆区；
+                            普通的方式刚刚学会git的你想要将你修改的code的文件push到远程仓库中的时候
+123git add .git commit -m&quot;本次修改就是啥也没动&quot;git push origin master
 
-递归自
+首先我们需要一
                         
                     </div>
                     <div class="publish-info">
@@ -725,8 +718,8 @@ java传参方式1.当传的是基本数据类型时，形参改变实参不会�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/代码/">
-                        <span class="chip bg-color">代码</span>
+                    <a href="/tags/技术文档/">
+                        <span class="chip bg-color">技术文档</span>
                     </a>
                     
                 </div>
