@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>Object类 equals和&#39;==&#39;包装类8种</title>
+      <link href="/2019/10/17/2019-10-17-string%EF%BC%8Cobject-/"/>
+      <url>/2019/10/17/2019-10-17-string%EF%BC%8Cobject-/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-常用的包"><a href="#1-常用的包" class="headerlink" title="1.常用的包"></a>1.常用的包</h3><p>  java.lang包 - 该包是Java语言的核心包，该包中的内容由Java虚拟机自动导入。<br>              - 如：String类、System类等</p><p>  java.util包 - 该包是Java语言的工具包，该包中提供大量工具类和集合类。<br>              - 如：Scanner类、Random类等</p><p>  java.io包   - 该包是Java语言的输入输出包，该包中提供读取文件的类。<br>              - 如：FileInputStream类、FileOutputStream类等</p><p>  java.net包  - 该包是Java语言的网络包，该包中提供大量网络编程类。<br>              - 如：ServerSocket类、Socket类等<br>  java.sql包  - 操作数据库所有类和接口；  </p><h3 id="2-Object类-重点"><a href="#2-Object类-重点" class="headerlink" title="2 Object类(重点)"></a>2 Object类(重点)</h3><p>(1)基本概念</p><blockquote><p>java.lang.Object类是类层次结构的根类，任何类都是该类的直接或间接子类。</p></blockquote><p>(2)常用的方法：</p><blockquote><p>Object() - 使用无参的方式构造对象。</p></blockquote><blockquote><p>boolean equals(Object obj) - 用于判断调用对象是否与参数对象相等。<br>       - 该方法默认比较两个对象的地址，与 == 运算符的结果一致。<br>       - 若希望该方法比较两个对象的内容，则需要重写该方法。</p></blockquote><blockquote><p>int hashCode() - 用于获取调用对象的哈希码值(内存地址的编号)。<br>       - 若两个对象调用equals方法的结果相等，则各自调用hashCode方法的结果相同<br>       - 若两个对象调用equals方法的结果不相等，则各自调用该方法的结果不相同。<br>       - 因此上述两个方法中只要有一个重写，则另外一个也要重写。<br>       - 为了使得该方法的结果与equals方法保持一致，因此重写该方法。</p></blockquote><blockquote><p>String toString() - 用于获取调用对象的字符串形式。<br>       - 该方法默认返回的字符串为：包名.类名@哈希码的十六进制形式。<br>       - 为了使得该方法返回更有意义的字符串内容，需要重写该方法。<br>       - 使用print()/println()打印引用或字符串连接引用时，会自动调用该方法 </p></blockquote><h3 id="equals-与-‘-’-的比较："><a href="#equals-与-‘-’-的比较：" class="headerlink" title="equals 与 ‘==’ 的比较："></a>equals 与 ‘==’ 的比较：</h3><pre><code>&gt;equals 和 ‘==’一样是默认比较地址位；&gt;如果想比较两对象内容的话，需要重写equals方法   </code></pre><blockquote><h3 id="ctrl-shift-t看源码的类型名称"><a href="#ctrl-shift-t看源码的类型名称" class="headerlink" title="ctrl+shift+t看源码的类型名称"></a>ctrl+shift+t看源码的类型名称</h3><h3 id="ctrl-o查看源码的方法名"><a href="#ctrl-o查看源码的方法名" class="headerlink" title="ctrl+o查看源码的方法名"></a>ctrl+o查看源码的方法名</h3></blockquote><h3 id="包装类："><a href="#包装类：" class="headerlink" title="包装类："></a>包装类：</h3><p> 因为集合中只可用对象类型，我们将基本数据类型包装成对象，该种机制叫包装类。</p><blockquote><p>int_–&gt;integer</p></blockquote><blockquote><p>char–&gt;character    </p></blockquote><p>别的都是首字母变大写;</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>抽象与接口</title>
       <link href="/2019/10/16/2019-10-16-%E6%8A%BD%E8%B1%A1%EF%BC%8C%E6%8E%A5%E5%8F%A3/"/>
       <url>/2019/10/16/2019-10-16-%E6%8A%BD%E8%B1%A1%EF%BC%8C%E6%8E%A5%E5%8F%A3/</url>
       
-        <content type="html"><![CDATA[<h3 id="抽象（abstract）"><a href="#抽象（abstract）" class="headerlink" title="抽象（abstract）:"></a>抽象（abstract）:</h3><blockquote><p>不能具体实现的类，无方法体，用abstract修饰；</p></blockquote><p><br>抽象类在于继承，类继承了抽象类后需重写它的抽象方法，因为抽象类不能创建对象，所以我们测试它就可以直接调用继承它的类中重写的方法</p><h3 id="接口（interface）："><a href="#接口（interface）：" class="headerlink" title="接口（interface）："></a>接口（interface）：</h3><p> 1.接口比抽象更抽象，只能有抽象类，实现用<code>implments</code>;<br><br>  2.接口中只允许有常量，例：<code>public static final int a=1;</code> </p><h4 id="当接口类型的引用作为方法的形参传递时，实参的传递有两种："><a href="#当接口类型的引用作为方法的形参传递时，实参的传递有两种：" class="headerlink" title="当接口类型的引用作为方法的形参传递时，实参的传递有两种："></a>当接口类型的引用作为方法的形参传递时，实参的传递有两种：</h4><p> 1.自定义类实现接口并重写抽象方法，后构造自定义类的对象作为实参传递；<br> 2.使用匿名内部类的语法格式得到接口的引用作为实参传递；</p><h3 id="抽象与接口区别："><a href="#抽象与接口区别：" class="headerlink" title="抽象与接口区别："></a>抽象与接口区别：</h3><p> 1.定义：abstract（抽象）， interface（接口）；<br><br><br>2.继承抽象用<code>extends</code>,实现接口<code>implements</code><br><br><br>3.继承支持单继承，接口支持多实现；<br><br><br>4.抽象类可有成员方法，构造方法，但接口只有常量及抽象方法<br><br><br>5.抽象类加子类方法不用重写，接口加方法，子类要重写<br><br><br>6.在<code>jdk1.8</code>开始允许接口有非抽象类，但要用<code>dafault</code>修饰</p><h3 id="匿名内部类语法："><a href="#匿名内部类语法：" class="headerlink" title="匿名内部类语法："></a>匿名内部类语法：</h3><blockquote><p>接口/父类类型  引用变量名 = new 接口/父类类型（）{方法的重写}；</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h3 id="抽象（abstract）"><a href="#抽象（abstract）" class="headerlink" title="抽象（abstract）:"></a>抽象（abstract）:</h3><blockquote><p>不能具体实现的类，无方法体，用abstract修饰；</p></blockquote><p><br>抽象类在于继承，类继承了抽象类后需重写它的抽象方法，因为抽象类不能创建对象，所以我们测试它就可以直接调用继承它的类中重写的方法</p><h3 id="1-接口（interface）："><a href="#1-接口（interface）：" class="headerlink" title="1.接口（interface）："></a>1.接口（interface）：</h3><p> 1.接口比抽象更抽象，只能有抽象类，实现用<code>implments</code>;<br><br>  2.接口中只允许有常量，例：<code>public static final int a=1;</code> </p><h4 id="当接口类型的引用作为方法的形参传递时，实参的传递有两种："><a href="#当接口类型的引用作为方法的形参传递时，实参的传递有两种：" class="headerlink" title="当接口类型的引用作为方法的形参传递时，实参的传递有两种："></a>当接口类型的引用作为方法的形参传递时，实参的传递有两种：</h4><p> 1.自定义类实现接口并重写抽象方法，后构造自定义类的对象作为实参传递；<br> 2.使用匿名内部类的语法格式得到接口的引用作为实参传递；</p><h3 id="抽象与接口区别："><a href="#抽象与接口区别：" class="headerlink" title="抽象与接口区别："></a>抽象与接口区别：</h3><p> 1.定义：abstract（抽象）， interface（接口）；<br><br><br>2.继承抽象用<code>extends</code>,实现接口<code>implements</code><br><br><br>3.继承支持单继承，接口支持多实现；<br><br><br>4.抽象类可有成员方法，构造方法，但接口只有常量及抽象方法<br><br><br>5.抽象类加子类方法不用重写，接口加方法，子类要重写<br><br><br>6.在<code>jdk1.8</code>开始允许接口有非抽象类，但要用<code>dafault</code>修饰</p><h3 id="匿名内部类语法："><a href="#匿名内部类语法：" class="headerlink" title="匿名内部类语法："></a>匿名内部类语法：</h3><blockquote><p>接口/父类类型  引用变量名 = new 接口/父类类型（）{方法的重写}；</p></blockquote>]]></content>
       
       
       <categories>
