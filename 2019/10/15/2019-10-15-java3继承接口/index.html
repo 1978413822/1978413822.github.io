@@ -453,7 +453,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class R&#123;</span><br><span class="line">    public static void father(Person p)&#123;</span><br><span class="line">        //调用子类的show方法</span><br><span class="line">       p.show();</span><br><span class="line">    &#125;</span><br><span class="line">  main。。。。&#123;</span><br><span class="line">      R.father(new Worker(20,&quot;kk&quot;,1234));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>3.接口的实现方法：</p>
+<p>3.接口的实现方法：<br>因为接口比抽象类更抽象，不能new对象，因此不能用2方法中那样的形式new个对象，那么我们就需要定义一个类来实现这个接口，<br>用类名.调用的时候<code>TestA.test(new shixianA());</code></p>
 <p>比如两个接口类叫metal和gold，然后写monet类实现它两个，会重写他两，之后在测试类里，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//有点像定义一个父类实现多个子类的形式；</span><br><span class="line">Money  m = new Metal();</span><br><span class="line">Money  m = new Gold();</span><br></pre></td></tr></table></figure>
 
