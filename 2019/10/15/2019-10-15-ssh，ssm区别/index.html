@@ -4,11 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="java三大特性（封装，继承，多态）final, 岳阳-丁&#39;s blog">
-    <meta name="description" content="
-1.封装： 1.就是将一些逻辑代码和实现的细节封到一个类里，隐藏细节，外部不能随便修改或调用，需要声明对象的引用来调用，可以提高代码的复用性.比如在测试类里
-
-2.实现流程： 1231.私有化成员变量用private修饰2.公有set与g">
+    <meta name="keywords" content="SSH与SSM的区别, 岳阳-丁&#39;s blog">
+    <meta name="description" content="1234567891011121314151617181920SSH ： Struts2+Spring+HibernateSSM： Spring+SpringMVC+mybatisspring 底层的类库是一样的（组件）Struts2和 S">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>java三大特性（封装，继承，多态）final | 岳阳-丁&#39;s blog</title>
+    <title>SSH与SSM的区别 | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -265,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        java三大特性（封装，继承，多态）final
+                        SSH与SSM的区别
                     </div>
                 </div>
             </div>
@@ -423,43 +420,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<h1 id="1-封装："><a href="#1-封装：" class="headerlink" title="1.封装："></a>1.封装：</h1><p> 1.就是将一些逻辑代码和实现的细节封到一个类里，隐藏细节，外部不能随便修改或调用，需要声明对象的引用来调用，可以提高代码的复用性.比如在测试类里<br></p>
-</blockquote>
-<h3 id="2-实现流程："><a href="#2-实现流程：" class="headerlink" title="2.实现流程："></a>2.实现流程：</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.私有化成员变量用private修饰</span><br><span class="line">2.公有set与get方法，在set里进行合理值判断</span><br><span class="line">3.创建无参和有参构造，在有参里进行set的判断</span><br></pre></td></tr></table></figure>
-
-<h3 id="static修饰时变成类层级，用类名-调用"><a href="#static修饰时变成类层级，用类名-调用" class="headerlink" title="static修饰时变成类层级，用类名.调用"></a>static修饰时变成类层级，用类名.调用</h3><blockquote>
-<h1 id="2-继承（extends）："><a href="#2-继承（extends）：" class="headerlink" title="2.继承（extends）："></a>2.继承（extends）：</h1><p>1.多个类有相同的部分，将同样的部分放到父类，子类都包含自己独有的方法，然后继承父类的相同的方法，实现代码通用编程。子类需要重写父类的方法@override注释然后super.show()调用。<br><br>重写原则：1.方法名一样，参数列表及返回值相同2.访问权限不能变小可同级或变大3.子类重写方法不可抛出更大异常</p>
-</blockquote>
-<hr>
-<p>继承注意：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 子类可以继承私有成员变量，不可继承父类构造方法与私有成员方法</span><br><span class="line">2.支持单继承</span><br><span class="line">3.继承满足：子类is a父类</span><br><span class="line">4.构造子类对象都会调用父类构造来将方法初始化</span><br></pre></td></tr></table></figure>
-
-<h3 id="访问控制符："><a href="#访问控制符：" class="headerlink" title="访问控制符："></a>访问控制符：</h3><p>public:可在任意处使用，无论自己包或别的包<br><br>protected：只可以在本类中使用，其他的包不可以<br><br>默认： 只在本类的内部和本包中的类<br>private：仅在本类的内部使用</p>
-<blockquote>
-<h1 id="多态："><a href="#多态：" class="headerlink" title="多态："></a>多态：</h1><p>有继承，重写，父类引用指向子类对象<br>意义：屏蔽不同子类的差异实现通用的编程</p>
-</blockquote>
-<hr>
-<p>当父类的引用指向子类的对象时，可直接调用父类方法，若想调用子类对象需强转。例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person p = new Worker();</span><br><span class="line">//调worker内的独有方法salary,强转。</span><br><span class="line">((worker)p).salary();</span><br></pre></td></tr></table></figure>
-
-<p>强转判断：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//此处person不转，worker需强转；</span><br><span class="line">if(p instanceof person)&#123;</span><br><span class="line">     syso..(&quot;不用转&quot;)</span><br><span class="line">&#125;syso..(&quot;需要强转&quot;)</span><br></pre></td></tr></table></figure>
-
-<h1 id="多态的三种实现："><a href="#多态的三种实现：" class="headerlink" title="多态的三种实现："></a>多态的三种实现：</h1><p>//父类指向子类</p>
-<p>1.Person p = new Worker（）;</p>
-<hr>
-<p>2.//写个静态方法将父类当形参放入，用类名.此静态方法名（new 子类对象来调用）<br><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class R&#123;</span><br><span class="line">    public static void father(Person p)&#123;</span><br><span class="line">        //调用子类的show方法</span><br><span class="line">       p.show();</span><br><span class="line">    &#125;</span><br><span class="line">  main。。。。&#123;</span><br><span class="line">      R.father(new Worker(20,&quot;kk&quot;,1234));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>3.接口的实现方法：<br>因为接口比抽象类更抽象，不能new对象，因此不能用2方法中那样的形式new个对象，那么我们就需要定义一个类来实现这个接口，<br>用类名.调用的时候<code>TestA.test(new shixianA());</code></p>
-<p>比如两个接口类叫metal和gold，然后写monet类实现它两个，会重写他两，之后在测试类里，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//有点像定义一个父类实现多个子类的形式；</span><br><span class="line">Money  m = new Metal();</span><br><span class="line">Money  m = new Gold();</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h1 id="final："><a href="#final：" class="headerlink" title="final："></a>final：</h1></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修饰类：不能被继承，防止滥用string，stystem</span><br><span class="line">修饰成员方法：不可被重写</span><br><span class="line">修饰成员变量：必须赋初值变常量</span><br><span class="line">开发很少用static或final单用</span><br><span class="line">一般public static final double=3.11；</span><br></pre></td></tr></table></figure>
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SSH ： Struts2+Spring+Hibernate</span><br><span class="line"></span><br><span class="line">SSM： Spring+SpringMVC+mybatis</span><br><span class="line"></span><br><span class="line">spring 底层的类库是一样的（组件）</span><br><span class="line"></span><br><span class="line">Struts2和 Spring MVC的相同点：spring用来初涉依赖注入（通过管理注释来控制各层的组件（方法）），2 事物 权限 日志 ‍这些都是aop（切面编程）</span><br><span class="line"></span><br><span class="line">不同： Struts2和spring mvc 控制器 试图 模型 机制不一样。Struts2是action级别的，spring mvc 既然有mvc 就是把 界面层（三层架构）分的更细，实现web api 更方便。Struts漏洞一个接一个，这点就不好了(如果有大佬吧struts2封装改写一部分也不错 )，spring 不清楚 哈哈。但是spring mvc 配置简单一些， 理解起来很容易，结构清晰</span><br><span class="line"></span><br><span class="line">拦截器：Struts是类控制，一个功能下来就是一个类。。， spring mvc 是方法，你可以理解为每个方法都是url，都可以控制.</span><br><span class="line"></span><br><span class="line">不同点其实还有很多...慢慢体会吧。</span><br><span class="line"></span><br><span class="line">Hibernate和mybatis的区别：</span><br><span class="line">这个的话自己去百度找csdn ，多看看一样的文章然后找答案。你给 移植，维护，性能，缓存 等等各方面去比较。</span><br><span class="line"></span><br><span class="line">hibernate 没玩过， mybatis 比较简单，直接上手。 可以用工具生成映射文件（主要维护这个），数据库表变了直接在mapper 改sql 就行，不同的数据库 要写不同的sql，这个就有点麻烦。主要的问题还是 配置，开始可能要折腾一段时间，习惯了就666了。</span><br><span class="line">我是给net转过来的，拿起ssm 就开搞，配置遇到不少坑，慢慢来。反正我上手挺快。orm框架用起来 主要时间花在配置上，代码量少了很多。</span><br><span class="line">是不是大项目看需求，看公司，和团队技术。目前是用ssm的比较多 ，其实2个框架都可以看看和学习，先学会使用，然后再看底层是怎么实现的。如果真要上手搞项目还是跟主流吧。</span><br></pre></td></tr></table></figure>
             </div>
             <hr/>
 
@@ -619,8 +580,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/15/2019-10-15-java3继承接口/">
-                    《java三大特性（封装，继承，多态）final》
+            <a  href="/2019/10/15/2019-10-15-ssh，ssm区别/">
+                    《SSH与SSM的区别》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -661,10 +622,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2019/10/15/2019-10-15-java3继承接口/">
                     <div class="card-image">
@@ -685,9 +645,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -700,7 +660,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -719,19 +678,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/15/2019-10-15-ssh，ssm区别/">
+                <a href="/2019/10/15/2019-10-16-抽象，接口/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SSH与SSM的区别">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="抽象与接口">
                         
-                        <span class="card-title">SSH与SSM的区别</span>
+                        <span class="card-title">抽象与接口</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1234567891011121314151617181920SSH ： Struts2+Spring+HibernateSSM： Spring+SpringMVC+mybatisspring 底层的类库是一样的（组件）Struts2和 S
+                            抽象（abstract）:
+不能具体实现的类，无方法体，用abstract修饰；
+
+抽象类在于继承，类继承了抽象类后需重写它的抽象方法，因为抽象类不能创建对象，所以我们测试它就可以直接调用继承它的类中重写的方法
+接口（interface）：
                         
                     </div>
                     <div class="publish-info">

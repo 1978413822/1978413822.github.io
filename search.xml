@@ -29,6 +29,56 @@
     
     
     <entry>
+      <title>SSH与SSM的区别</title>
+      <link href="/2019/10/15/2019-10-15-ssh%EF%BC%8Cssm%E5%8C%BA%E5%88%AB/"/>
+      <url>/2019/10/15/2019-10-15-ssh%EF%BC%8Cssm%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SSH ： Struts2+Spring+Hibernate</span><br><span class="line"></span><br><span class="line">SSM： Spring+SpringMVC+mybatis</span><br><span class="line"></span><br><span class="line">spring 底层的类库是一样的（组件）</span><br><span class="line"></span><br><span class="line">Struts2和 Spring MVC的相同点：spring用来初涉依赖注入（通过管理注释来控制各层的组件（方法）），2 事物 权限 日志 ‍这些都是aop（切面编程）</span><br><span class="line"></span><br><span class="line">不同： Struts2和spring mvc 控制器 试图 模型 机制不一样。Struts2是action级别的，spring mvc 既然有mvc 就是把 界面层（三层架构）分的更细，实现web api 更方便。Struts漏洞一个接一个，这点就不好了(如果有大佬吧struts2封装改写一部分也不错 )，spring 不清楚 哈哈。但是spring mvc 配置简单一些， 理解起来很容易，结构清晰</span><br><span class="line"></span><br><span class="line">拦截器：Struts是类控制，一个功能下来就是一个类。。， spring mvc 是方法，你可以理解为每个方法都是url，都可以控制.</span><br><span class="line"></span><br><span class="line">不同点其实还有很多...慢慢体会吧。</span><br><span class="line"></span><br><span class="line">Hibernate和mybatis的区别：</span><br><span class="line">这个的话自己去百度找csdn ，多看看一样的文章然后找答案。你给 移植，维护，性能，缓存 等等各方面去比较。</span><br><span class="line"></span><br><span class="line">hibernate 没玩过， mybatis 比较简单，直接上手。 可以用工具生成映射文件（主要维护这个），数据库表变了直接在mapper 改sql 就行，不同的数据库 要写不同的sql，这个就有点麻烦。主要的问题还是 配置，开始可能要折腾一段时间，习惯了就666了。</span><br><span class="line">我是给net转过来的，拿起ssm 就开搞，配置遇到不少坑，慢慢来。反正我上手挺快。orm框架用起来 主要时间花在配置上，代码量少了很多。</span><br><span class="line">是不是大项目看需求，看公司，和团队技术。目前是用ssm的比较多 ，其实2个框架都可以看看和学习，先学会使用，然后再看底层是怎么实现的。如果真要上手搞项目还是跟主流吧。</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>抽象与接口</title>
+      <link href="/2019/10/15/2019-10-16-%E6%8A%BD%E8%B1%A1%EF%BC%8C%E6%8E%A5%E5%8F%A3/"/>
+      <url>/2019/10/15/2019-10-16-%E6%8A%BD%E8%B1%A1%EF%BC%8C%E6%8E%A5%E5%8F%A3/</url>
+      
+        <content type="html"><![CDATA[<h3 id="抽象（abstract）"><a href="#抽象（abstract）" class="headerlink" title="抽象（abstract）:"></a>抽象（abstract）:</h3><blockquote><p>不能具体实现的类，无方法体，用abstract修饰；</p></blockquote><p><br>抽象类在于继承，类继承了抽象类后需重写它的抽象方法，因为抽象类不能创建对象，所以我们测试它就可以直接调用继承它的类中重写的方法</p><h3 id="接口（interface）："><a href="#接口（interface）：" class="headerlink" title="接口（interface）："></a>接口（interface）：</h3><p> 1.接口比抽象更抽象，只能有抽象类，实现用<code>implments</code>;<br><br>  2.接口中只允许有常量，例：<code>public static final int a=1;</code> </p><h4 id="当接口类型的引用作为方法的形参传递时，实参的传递有两种："><a href="#当接口类型的引用作为方法的形参传递时，实参的传递有两种：" class="headerlink" title="当接口类型的引用作为方法的形参传递时，实参的传递有两种："></a>当接口类型的引用作为方法的形参传递时，实参的传递有两种：</h4><p> 1.自定义类实现接口并重写抽象方法，后构造自定义类的对象作为实参传递；<br> 2.使用匿名内部类的语法格式得到接口的引用作为实参传递；</p><h3 id="抽象与接口区别："><a href="#抽象与接口区别：" class="headerlink" title="抽象与接口区别："></a>抽象与接口区别：</h3><p> 1.定义：abstract（抽象）， interface（接口）；<br><br><br>2.继承抽象用<code>extends</code>,实现接口<code>implements</code><br><br><br>3.继承支持单继承，接口支持多实现；<br><br><br>4.抽象类可有成员方法，构造方法，但接口只有常量及抽象方法<br><br><br>5.抽象类加子类方法不用重写，接口加方法，子类要重写<br><br><br>6.在<code>jdk1.8</code>开始允许接口有非抽象类，但要用<code>dafault</code>修饰</p><h3 id="匿名内部类语法："><a href="#匿名内部类语法：" class="headerlink" title="匿名内部类语法："></a>匿名内部类语法：</h3><blockquote><p>接口/父类类型  引用变量名 = new 接口/父类类型（）{方法的重写}；</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>代码块的执行顺序</title>
       <link href="/2019/10/14/2019-10-14-/"/>
       <url>/2019/10/14/2019-10-14-/</url>
