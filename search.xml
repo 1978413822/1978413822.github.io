@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</title>
+      <link href="/2019/10/18/2019-10-18-String%EF%BC%8Cstringbuffer%EF%BC%8Cstringbulider/"/>
+      <url>/2019/10/18/2019-10-18-String%EF%BC%8Cstringbuffer%EF%BC%8Cstringbulider/</url>
+      
+        <content type="html"><![CDATA[<h3 id="三者区别："><a href="#三者区别：" class="headerlink" title="三者区别："></a>三者区别：</h3><blockquote><p><code>String</code>描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用<code>StringBulider</code>来描述，该类描述是可改变的，线程的不安全的，但效率低。<code>StringBuffer</code>是线程的安全的，但效率高。</p></blockquote><h3 id="string："><a href="#string：" class="headerlink" title="string："></a>string：</h3><blockquote><p>一些string重要方法（常用的一些）：</p></blockquote><p>String（）</p><p>String(byte[]byte ,int of,int length) —用byte数组，下标从of开始到length个字节构造对象;</p><p>String(byte[]byte)—用数组构造对象; </p><blockquote><p>一些基本方法：</p></blockquote><blockquote><p>char charAt(int index) —返回字符串指定位置的字符；<br><br><br>int length()==得长度</p></blockquote><blockquote><p>boolean contains()     -是否含参数指定内容<br>String toLowerCase(),<br>String toUpperCase(),<br>String trim()          -去掉前后导的空白<br>boolean stratsWith()   -判断字符是否以括号内的开头<br>boolean endsWith()     -判断字符是否以括号内的结尾<br>boolean equals（）      -判断是否相同<br>boolean equalsIgnore（） -忽略大小写判断是否相同</p></blockquote><blockquote><p>int index of(String str) –在字符串中检索str第一次出现的位置（打印出现位置的数字），没有返回-1;<br><br>int index of(String str,int num)  —从num位置开始找：</p></blockquote><blockquote><p>String subString(int start,intend) —打印出开始到结尾的字符串<br><br>String subString(int start) —打印开始到最后所有字符串</p></blockquote><h3 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder:"></a>StringBuilder:</h3><blockquote><p>初始容量为16,再加上字符串的长度； </p></blockquote><blockquote><p>一些常用方法：</p></blockquote><blockquote><p>int cpacity()–返回当前容量<br><br>int length()–返回长度</p></blockquote><blockquote><p>StringBuilser中常用方法：</p></blockquote><p><br>返回值都是StringBuilder的：</p><p>insert (int of,String str)–将str插入of位置处；</p><p>append (string str)—在字符串最后加上str</p><p>delete （int start，int end）—删除从start开始到end结束的字符串</p><p>replace (int start,int end,string str)—start到end的字符串用str替换</p><p>reverse （）—字符串翻转 </p><p>int indexOf（str）—查找字符串位置  </p><h3 id="String和StringBuilder互换；"><a href="#String和StringBuilder互换；" class="headerlink" title="String和StringBuilder互换；"></a>String和StringBuilder互换；</h3><blockquote><p>从String—&gt;StringBuilder：<br>StringBuilder sb = new StringBuilder(str); </p></blockquote><blockquote><p>调用toString从StringBuilder—&gt;String：<br>String s = sb1.toString();</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>统计字符串中大小写，数字，符号个数</title>
+      <link href="/2019/10/18/2019-10-18-%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0/"/>
+      <url>/2019/10/18/2019-10-18-%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class ChouQuZiFu &#123;</span><br><span class="line"></span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        String ss=new String(&quot;ABCD123!@#$%ab&quot;);</span><br><span class="line"> //定义数组，此数组默认给0，然后就是4个0;所以下面的arr[0]++,就是0++;</span><br><span class="line">        int [] arr=new int[4];</span><br><span class="line"></span><br><span class="line">    for(int i=0;i&lt;ss.length();i++) &#123;</span><br><span class="line">              char a=ss.charAt(i);                </span><br><span class="line">     if(a&gt;=&apos;A&apos;&amp;&amp;a&lt;=&apos;Z&apos;) &#123;</span><br><span class="line">     arr[0]++;</span><br><span class="line">     &#125;</span><br><span class="line">     else if(a&gt;=&apos;a&apos;&amp;&amp;a&lt;=&apos;z&apos;) &#123;</span><br><span class="line">     arr[1]++; </span><br><span class="line">     &#125;</span><br><span class="line">     else if(a&gt;=&apos;0&apos;&amp;&amp;a&lt;=&apos;9&apos;) &#123;</span><br><span class="line">     arr[2]++;</span><br><span class="line">     &#125;</span><br><span class="line">     else &#123;</span><br><span class="line">     arr[3]++;</span><br><span class="line">     &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.println(&quot;大写字母：&quot;+arr[0]+&quot;;小写子母：&quot;+arr[1]+&quot;;数字&quot;+arr[2]+&quot;;符号：&quot;+arr[3]);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Object类 equals和&#39;==&#39;包装类8种</title>
       <link href="/2019/10/17/2019-10-17-string%EF%BC%8Cobject-/"/>
       <url>/2019/10/17/2019-10-17-string%EF%BC%8Cobject-/</url>

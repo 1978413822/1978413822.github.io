@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Object类 equals和&#39;==&#39;包装类8种, 岳阳-丁&#39;s blog">
-    <meta name="description" content="1.常用的包  java.lang包 - 该包是Java语言的核心包，该包中的内容由Java虚拟机自动导入。              - 如：String类、System类等
-  java.util包 - 该包是Java语言的工具包，该包">
+    <meta name="keywords" content="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）, 岳阳-丁&#39;s blog">
+    <meta name="description" content="三者区别：
+String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Object类 equals和&#39;==&#39;包装类8种 | 岳阳-丁&#39;s blog</title>
+    <title>String，Stringbulider，Stringbuffer （String和StringBuilder可互换） | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -263,13 +263,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Object类 equals和&#39;==&#39;包装类8种
+                        String，Stringbulider，Stringbuffer （String和StringBuilder可互换）
                     </div>
                 </div>
             </div>
@@ -405,7 +405,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-17
+                    2019-10-18
                 </div>
 
                 
@@ -421,39 +421,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-常用的包"><a href="#1-常用的包" class="headerlink" title="1.常用的包"></a>1.常用的包</h3><p>  java.lang包 - 该包是Java语言的核心包，该包中的内容由Java虚拟机自动导入。<br>              - 如：String类、System类等</p>
-<p>  java.util包 - 该包是Java语言的工具包，该包中提供大量工具类和集合类。<br>              - 如：Scanner类、Random类等</p>
-<p>  java.io包   - 该包是Java语言的输入输出包，该包中提供读取文件的类。<br>              - 如：FileInputStream类、FileOutputStream类等</p>
-<p>  java.net包  - 该包是Java语言的网络包，该包中提供大量网络编程类。<br>              - 如：ServerSocket类、Socket类等<br>  java.sql包  - 操作数据库所有类和接口；  </p>
-<h3 id="2-Object类-重点"><a href="#2-Object类-重点" class="headerlink" title="2 Object类(重点)"></a>2 Object类(重点)</h3><p>(1)基本概念</p>
-<blockquote>
-<p>java.lang.Object类是类层次结构的根类，任何类都是该类的直接或间接子类。</p>
+                <h3 id="三者区别："><a href="#三者区别：" class="headerlink" title="三者区别："></a>三者区别：</h3><blockquote>
+<p><code>String</code>描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用<code>StringBulider</code>来描述，该类描述是可改变的，线程的不安全的，但效率低。<code>StringBuffer</code>是线程的安全的，但效率高。</p>
 </blockquote>
-<p>(2)常用的方法：</p>
-<blockquote>
-<p>Object() - 使用无参的方式构造对象。</p>
+<h3 id="string："><a href="#string：" class="headerlink" title="string："></a>string：</h3><blockquote>
+<p>一些string重要方法（常用的一些）：</p>
 </blockquote>
+<p>String（）</p>
+<p>String(byte[]byte ,int of,int length) —用byte数组，下标从of开始到length个字节构造对象;</p>
+<p>String(byte[]byte)—用数组构造对象; </p>
 <blockquote>
-<p>boolean equals(Object obj) - 用于判断调用对象是否与参数对象相等。<br>       - 该方法默认比较两个对象的地址，与 == 运算符的结果一致。<br>       - 若希望该方法比较两个对象的内容，则需要重写该方法。</p>
+<p>一些基本方法：</p>
 </blockquote>
 <blockquote>
-<p>int hashCode() - 用于获取调用对象的哈希码值(内存地址的编号)。<br>       - 若两个对象调用equals方法的结果相等，则各自调用hashCode方法的结果相同<br>       - 若两个对象调用equals方法的结果不相等，则各自调用该方法的结果不相同。<br>       - 因此上述两个方法中只要有一个重写，则另外一个也要重写。<br>       - 为了使得该方法的结果与equals方法保持一致，因此重写该方法。</p>
+<p>char charAt(int index) —返回字符串指定位置的字符；<br><br><br>int length()==得长度</p>
 </blockquote>
 <blockquote>
-<p>String toString() - 用于获取调用对象的字符串形式。<br>       - 该方法默认返回的字符串为：包名.类名@哈希码的十六进制形式。<br>       - 为了使得该方法返回更有意义的字符串内容，需要重写该方法。<br>       - 使用print()/println()打印引用或字符串连接引用时，会自动调用该方法 </p>
-</blockquote>
-<h3 id="equals-与-‘-’-的比较："><a href="#equals-与-‘-’-的比较：" class="headerlink" title="equals 与 ‘==’ 的比较："></a>equals 与 ‘==’ 的比较：</h3><pre><code>&gt;equals 和 ‘==’一样是默认比较地址位；
-
-&gt;如果想比较两对象内容的话，需要重写equals方法   </code></pre><blockquote>
-<h3 id="ctrl-shift-t看源码的类型名称"><a href="#ctrl-shift-t看源码的类型名称" class="headerlink" title="ctrl+shift+t看源码的类型名称"></a>ctrl+shift+t看源码的类型名称</h3><h3 id="ctrl-o查看源码的方法名"><a href="#ctrl-o查看源码的方法名" class="headerlink" title="ctrl+o查看源码的方法名"></a>ctrl+o查看源码的方法名</h3></blockquote>
-<h3 id="包装类："><a href="#包装类：" class="headerlink" title="包装类："></a>包装类：</h3><p> 因为集合中只可用对象类型，我们将基本数据类型包装成对象，该种机制叫包装类。</p>
-<blockquote>
-<p>int_–&gt;integer</p>
+<p>boolean contains()     -是否含参数指定内容<br>String toLowerCase(),<br>String toUpperCase(),<br>String trim()          -去掉前后导的空白<br>boolean stratsWith()   -判断字符是否以括号内的开头<br>boolean endsWith()     -判断字符是否以括号内的结尾<br>boolean equals（）      -判断是否相同<br>boolean equalsIgnore（） -忽略大小写判断是否相同</p>
 </blockquote>
 <blockquote>
-<p>char–&gt;character    </p>
+<p>int index of(String str) –在字符串中检索str第一次出现的位置（打印出现位置的数字），没有返回-1;<br><br>int index of(String str,int num)  —从num位置开始找：</p>
 </blockquote>
-<p>别的都是首字母变大写;</p>
+<blockquote>
+<p>String subString(int start,intend) —打印出开始到结尾的字符串<br><br>String subString(int start) —打印开始到最后所有字符串</p>
+</blockquote>
+<h3 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder:"></a>StringBuilder:</h3><blockquote>
+<p>初始容量为16,再加上字符串的长度； </p>
+</blockquote>
+<blockquote>
+<p>一些常用方法：</p>
+</blockquote>
+<blockquote>
+<p>int cpacity()–返回当前容量<br><br>int length()–返回长度</p>
+</blockquote>
+<blockquote>
+<p>StringBuilser中常用方法：</p>
+</blockquote>
+<p><br>返回值都是StringBuilder的：</p>
+<p>insert (int of,String str)–将str插入of位置处；</p>
+<p>append (string str)—在字符串最后加上str</p>
+<p>delete （int start，int end）—删除从start开始到end结束的字符串</p>
+<p>replace (int start,int end,string str)—start到end的字符串用str替换</p>
+<p>reverse （）—字符串翻转 </p>
+<p>int indexOf（str）—查找字符串位置  </p>
+<h3 id="String和StringBuilder互换；"><a href="#String和StringBuilder互换；" class="headerlink" title="String和StringBuilder互换；"></a>String和StringBuilder互换；</h3><blockquote>
+<p>从String—&gt;StringBuilder：<br>StringBuilder sb = new StringBuilder(str); </p>
+</blockquote>
+<blockquote>
+<p>调用toString从StringBuilder—&gt;String：<br>String s = sb1.toString();</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -614,8 +630,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/17/2019-10-17-string，object-/">
-                    《Object类 equals和&#39;==&#39;包装类8种》
+            <a  href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
+                    《String，Stringbulider，Stringbuffer （String和StringBuilder可互换）》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -656,29 +672,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-18-取字符串个数/">
+                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="统计字符串中大小写，数字，符号个数">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
                         
-                        <span class="card-title">统计字符串中大小写，数字，符号个数</span>
+                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &#123;	public static void main(String[] args) &#
+                            三者区别：
+String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -691,6 +709,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -709,28 +728,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/16/2019-10-16-抽象，接口/">
+                <a href="/2019/10/18/2019-10-18-取字符串个数/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="抽象与接口">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="统计字符串中大小写，数字，符号个数">
                         
-                        <span class="card-title">抽象与接口</span>
+                        <span class="card-title">统计字符串中大小写，数字，符号个数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            抽象（abstract）:
-不能具体实现的类，无方法体，用abstract修饰；
-
-抽象类在于继承，类继承了抽象类后需重写它的抽象方法，因为抽象类不能创建对象，所以我们测试它就可以直接调用继承它的类中重写的方法
-1.接口（interface
+                            代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &#123;	public static void main(String[] args) &#
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-18
                             </span>
                         <span class="publish-author">
                             

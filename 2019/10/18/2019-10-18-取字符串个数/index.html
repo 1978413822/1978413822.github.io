@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Object类 equals和&#39;==&#39;包装类8种, 岳阳-丁&#39;s blog">
-    <meta name="description" content="1.常用的包  java.lang包 - 该包是Java语言的核心包，该包中的内容由Java虚拟机自动导入。              - 如：String类、System类等
-  java.util包 - 该包是Java语言的工具包，该包">
+    <meta name="keywords" content="统计字符串中大小写，数字，符号个数, 岳阳-丁&#39;s blog">
+    <meta name="description" content="代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &amp;#123;	public static void main(String[] args) &amp;#">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Object类 equals和&#39;==&#39;包装类8种 | 岳阳-丁&#39;s blog</title>
+    <title>统计字符串中大小写，数字，符号个数 | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -263,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Object类 equals和&#39;==&#39;包装类8种
+                        统计字符串中大小写，数字，符号个数
                     </div>
                 </div>
             </div>
@@ -405,7 +404,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-17
+                    2019-10-18
                 </div>
 
                 
@@ -421,40 +420,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-常用的包"><a href="#1-常用的包" class="headerlink" title="1.常用的包"></a>1.常用的包</h3><p>  java.lang包 - 该包是Java语言的核心包，该包中的内容由Java虚拟机自动导入。<br>              - 如：String类、System类等</p>
-<p>  java.util包 - 该包是Java语言的工具包，该包中提供大量工具类和集合类。<br>              - 如：Scanner类、Random类等</p>
-<p>  java.io包   - 该包是Java语言的输入输出包，该包中提供读取文件的类。<br>              - 如：FileInputStream类、FileOutputStream类等</p>
-<p>  java.net包  - 该包是Java语言的网络包，该包中提供大量网络编程类。<br>              - 如：ServerSocket类、Socket类等<br>  java.sql包  - 操作数据库所有类和接口；  </p>
-<h3 id="2-Object类-重点"><a href="#2-Object类-重点" class="headerlink" title="2 Object类(重点)"></a>2 Object类(重点)</h3><p>(1)基本概念</p>
-<blockquote>
-<p>java.lang.Object类是类层次结构的根类，任何类都是该类的直接或间接子类。</p>
-</blockquote>
-<p>(2)常用的方法：</p>
-<blockquote>
-<p>Object() - 使用无参的方式构造对象。</p>
-</blockquote>
-<blockquote>
-<p>boolean equals(Object obj) - 用于判断调用对象是否与参数对象相等。<br>       - 该方法默认比较两个对象的地址，与 == 运算符的结果一致。<br>       - 若希望该方法比较两个对象的内容，则需要重写该方法。</p>
-</blockquote>
-<blockquote>
-<p>int hashCode() - 用于获取调用对象的哈希码值(内存地址的编号)。<br>       - 若两个对象调用equals方法的结果相等，则各自调用hashCode方法的结果相同<br>       - 若两个对象调用equals方法的结果不相等，则各自调用该方法的结果不相同。<br>       - 因此上述两个方法中只要有一个重写，则另外一个也要重写。<br>       - 为了使得该方法的结果与equals方法保持一致，因此重写该方法。</p>
-</blockquote>
-<blockquote>
-<p>String toString() - 用于获取调用对象的字符串形式。<br>       - 该方法默认返回的字符串为：包名.类名@哈希码的十六进制形式。<br>       - 为了使得该方法返回更有意义的字符串内容，需要重写该方法。<br>       - 使用print()/println()打印引用或字符串连接引用时，会自动调用该方法 </p>
-</blockquote>
-<h3 id="equals-与-‘-’-的比较："><a href="#equals-与-‘-’-的比较：" class="headerlink" title="equals 与 ‘==’ 的比较："></a>equals 与 ‘==’ 的比较：</h3><pre><code>&gt;equals 和 ‘==’一样是默认比较地址位；
-
-&gt;如果想比较两对象内容的话，需要重写equals方法   </code></pre><blockquote>
-<h3 id="ctrl-shift-t看源码的类型名称"><a href="#ctrl-shift-t看源码的类型名称" class="headerlink" title="ctrl+shift+t看源码的类型名称"></a>ctrl+shift+t看源码的类型名称</h3><h3 id="ctrl-o查看源码的方法名"><a href="#ctrl-o查看源码的方法名" class="headerlink" title="ctrl+o查看源码的方法名"></a>ctrl+o查看源码的方法名</h3></blockquote>
-<h3 id="包装类："><a href="#包装类：" class="headerlink" title="包装类："></a>包装类：</h3><p> 因为集合中只可用对象类型，我们将基本数据类型包装成对象，该种机制叫包装类。</p>
-<blockquote>
-<p>int_–&gt;integer</p>
-</blockquote>
-<blockquote>
-<p>char–&gt;character    </p>
-</blockquote>
-<p>别的都是首字母变大写;</p>
-
+                <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class ChouQuZiFu &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        String ss=new String(&quot;ABCD123!@#$%ab&quot;);</span><br><span class="line"> //定义数组，此数组默认给0，然后就是4个0;所以下面的arr[0]++,就是0++;</span><br><span class="line">        int [] arr=new int[4];</span><br><span class="line"></span><br><span class="line">    for(int i=0;i&lt;ss.length();i++) &#123;</span><br><span class="line">              char a=ss.charAt(i);                </span><br><span class="line">	     if(a&gt;=&apos;A&apos;&amp;&amp;a&lt;=&apos;Z&apos;) &#123;</span><br><span class="line">	    	 arr[0]++;</span><br><span class="line">	     &#125;</span><br><span class="line">	     else if(a&gt;=&apos;a&apos;&amp;&amp;a&lt;=&apos;z&apos;) &#123;</span><br><span class="line">	    	 arr[1]++; </span><br><span class="line">	     &#125;</span><br><span class="line">	     else if(a&gt;=&apos;0&apos;&amp;&amp;a&lt;=&apos;9&apos;) &#123;</span><br><span class="line">	    	 arr[2]++;</span><br><span class="line">	     &#125;</span><br><span class="line">	     else &#123;</span><br><span class="line">	    	 arr[3]++;</span><br><span class="line">	     &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.println(&quot;大写字母：&quot;+arr[0]+&quot;;小写子母：&quot;+arr[1]+&quot;;数字&quot;+arr[2]+&quot;;符号：&quot;+arr[3]);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             </div>
             <hr/>
 
@@ -614,8 +580,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/17/2019-10-17-string，object-/">
-                    《Object类 equals和&#39;==&#39;包装类8种》
+            <a  href="/2019/10/18/2019-10-18-取字符串个数/">
+                    《统计字符串中大小写，数字，符号个数》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -660,19 +626,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-18-取字符串个数/">
+                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="统计字符串中大小写，数字，符号个数">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
                         
-                        <span class="card-title">统计字符串中大小写，数字，符号个数</span>
+                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &#123;	public static void main(String[] args) &#
+                            三者区别：
+String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
                         
                     </div>
                     <div class="publish-info">
@@ -709,28 +676,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/16/2019-10-16-抽象，接口/">
+                <a href="/2019/10/17/2019-10-17-string，object-/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="抽象与接口">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Object类 equals和'=='包装类8种">
                         
-                        <span class="card-title">抽象与接口</span>
+                        <span class="card-title">Object类 equals和'=='包装类8种</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            抽象（abstract）:
-不能具体实现的类，无方法体，用abstract修饰；
-
-抽象类在于继承，类继承了抽象类后需重写它的抽象方法，因为抽象类不能创建对象，所以我们测试它就可以直接调用继承它的类中重写的方法
-1.接口（interface
+                            1.常用的包  java.lang包 - 该包是Java语言的核心包，该包中的内容由Java虚拟机自动导入。              - 如：String类、System类等
+  java.util包 - 该包是Java语言的工具包，该包
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-17
                             </span>
                         <span class="publish-author">
                             
