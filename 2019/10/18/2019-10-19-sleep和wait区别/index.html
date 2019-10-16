@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="统计字符串中大小写，数字，符号个数, 岳阳-丁&#39;s blog">
-    <meta name="description" content="代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &amp;#123;	public static void main(String[] args) &amp;#">
+    <meta name="keywords" content="sleep和wait区别！, 岳阳-丁&#39;s blog">
+    <meta name="description" content="
+它们最大本质的区别是:sleep()不释放同步锁,wait()释放同步锁.   
+
+
+还有用法的上的不同是:sleep(milliseconds)可以用时间指定来使他自动醒过来,如果时间不到你只能调用interreput()来强行打断;w">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>统计字符串中大小写，数字，符号个数 | 岳阳-丁&#39;s blog</title>
+    <title>sleep和wait区别！ | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -262,13 +266,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        统计字符串中大小写，数字，符号个数
+                        sleep和wait区别！
                     </div>
                 </div>
             </div>
@@ -420,7 +424,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class ChouQuZiFu &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        String ss=new String(&quot;ABCD123!@#$%ab&quot;);</span><br><span class="line"> //定义数组，此数组默认给0，然后就是4个0;所以下面的arr[0]++,就是0++;</span><br><span class="line">        int [] arr=new int[4];</span><br><span class="line"></span><br><span class="line">    for(int i=0;i&lt;ss.length();i++) &#123;</span><br><span class="line">              char a=ss.charAt(i);                </span><br><span class="line">	     if(a&gt;=&apos;A&apos;&amp;&amp;a&lt;=&apos;Z&apos;) &#123;</span><br><span class="line">	    	 arr[0]++;</span><br><span class="line">	     &#125;</span><br><span class="line">	     else if(a&gt;=&apos;a&apos;&amp;&amp;a&lt;=&apos;z&apos;) &#123;</span><br><span class="line">	    	 arr[1]++; </span><br><span class="line">	     &#125;</span><br><span class="line">	     else if(a&gt;=&apos;0&apos;&amp;&amp;a&lt;=&apos;9&apos;) &#123;</span><br><span class="line">	    	 arr[2]++;</span><br><span class="line">	     &#125;</span><br><span class="line">	     else &#123;</span><br><span class="line">	    	 arr[3]++;</span><br><span class="line">	     &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.println(&quot;大写字母：&quot;+arr[0]+&quot;;小写子母：&quot;+arr[1]+&quot;;数字&quot;+arr[2]+&quot;;符号：&quot;+arr[3]);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <blockquote>
+<p>它们最大本质的区别是:sleep()不释放同步锁,wait()释放同步锁.   </p>
+</blockquote>
+<blockquote>
+<p>还有用法的上的不同是:sleep(milliseconds)可以用时间指定来使他自动醒过来,如果时间不到你只能调用interreput()来强行打断;wait()可以用notify()直接唤起.</p>
+</blockquote>
+<blockquote>
+<p>sleep和wait的区别还有：</p>
+</blockquote>
+<p>  1。这两个方法来自不同的类分别是Thread和Object</p>
+<p>  2。最主要是sleep方法没有释放锁，而wait方法释放了锁，使得其他线程可以使用同步控制块或者方法。</p>
+<p>  3。wait，notify和notifyAll只能在同步控制方法或者同步控制块里面使用，而sleep可以在<br>    任何地方使用<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">synchronized(x)&#123;</span><br><span class="line">   x.notify()</span><br><span class="line">  //或者wait()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>   4。sleep必须捕获异常，而wait，notify和notifyAll不需要捕获异常</p>
+
             </div>
             <hr/>
 
@@ -580,8 +597,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/18/2019-10-18-取字符串个数/">
-                    《统计字符串中大小写，数字，符号个数》
+            <a  href="/2019/10/18/2019-10-19-sleep和wait区别/">
+                    《sleep和wait区别！》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -626,20 +643,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
+                <a href="/2019/10/18/2019-10-18-取字符串个数/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="统计字符串中大小写，数字，符号个数">
                         
-                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
+                        <span class="card-title">统计字符串中大小写，数字，符号个数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三者区别：
-String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
+                            代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &#123;	public static void main(String[] args) &#
                         
                     </div>
                     <div class="publish-info">
@@ -676,28 +692,25 @@ String描述的字符串是常量，一旦创建就不可更改，当程序出�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-19-sleep和wait区别/">
+                <a href="/2019/10/17/2019-10-17-string，object-/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="sleep和wait区别！">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Object类 equals和'=='包装类8种">
                         
-                        <span class="card-title">sleep和wait区别！</span>
+                        <span class="card-title">Object类 equals和'=='包装类8种</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-它们最大本质的区别是:sleep()不释放同步锁,wait()释放同步锁.   
-
-
-还有用法的上的不同是:sleep(milliseconds)可以用时间指定来使他自动醒过来,如果时间不到你只能调用interreput()来强行打断;w
+                            1.常用的包  java.lang包 - 该包是Java语言的核心包，该包中的内容由Java虚拟机自动导入。              - 如：String类、System类等
+  java.util包 - 该包是Java语言的工具包，该包
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-17
                             </span>
                         <span class="publish-author">
                             
