@@ -4,9 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）, 岳阳-丁&#39;s blog">
-    <meta name="description" content="三者区别：
-String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe">
+    <meta name="keywords" content="List集合！, 岳阳-丁&#39;s blog">
+    <meta name="description" content="
+list集合是我们collection集合的一个子集合；元素有先后放入顺序且可重复，主要实现类有ArraryList,LinkList,Static,Vector
+
+
+ArraryList底层是数组，访问元素方便，增删不便；LinkLis">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@ String描述的字符串是常量，一旦创建就不可更改，当程序出�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>String，Stringbulider，Stringbuffer （String和StringBuilder可互换） | 岳阳-丁&#39;s blog</title>
+    <title>List集合！ | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -263,13 +266,13 @@ String描述的字符串是常量，一旦创建就不可更改，当程序出�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        String，Stringbulider，Stringbuffer （String和StringBuilder可互换）
+                        List集合！
                     </div>
                 </div>
             </div>
@@ -405,7 +408,7 @@ String描述的字符串是常量，一旦创建就不可更改，当程序出�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-18
+                    2019-10-19
                 </div>
 
                 
@@ -421,56 +424,16 @@ String描述的字符串是常量，一旦创建就不可更改，当程序出�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="三者区别："><a href="#三者区别：" class="headerlink" title="三者区别："></a>三者区别：</h3><blockquote>
-<p><code>String</code>描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用<code>StringBulider</code>来描述，该类描述是可改变的，线程的不安全的，但效率低。<code>StringBuffer</code>是线程的安全的，但效率高。</p>
-</blockquote>
-<h3 id="string："><a href="#string：" class="headerlink" title="string："></a>string：</h3><blockquote>
-<p>一些string重要方法（常用的一些）：</p>
-</blockquote>
-<p>String（）</p>
-<p>String(byte[]byte ,int of,int length) —用byte数组，下标从of开始到length个字节构造对象;</p>
-<p>String(byte[]byte)—用数组构造对象; </p>
-<blockquote>
-<p>一些基本方法：</p>
+                <blockquote>
+<p>list集合是我们collection集合的一个子集合；元素有先后放入顺序且可重复，主要实现类有<code>ArraryList,LinkList,Static,Vector</code></p>
 </blockquote>
 <blockquote>
-<p>char charAt(int index) —返回字符串指定位置的字符；<br><br><br>int length()==得长度</p>
+<p>ArraryList底层是数组，访问元素方便，增删不便；<br>LinkList底层链表管理，访问不便，增删方便；<br>Strack底层数组管理，具有先进先出的特性，为栈；<br>Vectory底层数组管理，与ArraryList比属于线程安全类</p>
 </blockquote>
-<blockquote>
-<p>boolean contains()     -是否含参数指定内容<br>String toLowerCase(),<br>String toUpperCase(),<br>String trim()          -去掉前后导的空白<br>boolean stratsWith()   -判断字符是否以括号内的开头<br>boolean endsWith()     -判断字符是否以括号内的结尾<br>boolean equals（）      -判断是否相同<br>boolean equalsIgnore（） -忽略大小写判断是否相同</p>
+<h3 id="List常用方法："><a href="#List常用方法：" class="headerlink" title="List常用方法："></a>List常用方法：</h3><blockquote>
+<p>增加的方法： void add (int index，E str) –将str加入到index位置<br>删除：E remove(int index) —删除指定位置元素；<code>E</code>代表被删除的对象的类型，以此做返回值<br>修改：E set (int index ,E ele) –像index位置插入ele的str<br>查找：int indexOf() –查元素<br>E get (int index) –获取index位置的元素，返回类型时获取到的类型；</p>
 </blockquote>
-<blockquote>
-<p>int index of(String str) –在字符串中检索str第一次出现的位置（打印出现位置的数字），没有返回-1;<br><br>int index of(String str,int num)  —从num位置开始找：</p>
-</blockquote>
-<blockquote>
-<p>String subString(int start,intend) —打印出开始到结尾的字符串<br><br>String subString(int start) —打印开始到最后所有字符串</p>
-</blockquote>
-<h3 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder:"></a>StringBuilder:</h3><blockquote>
-<p>初始容量为16,再加上字符串的长度； </p>
-</blockquote>
-<blockquote>
-<p>一些常用方法：</p>
-</blockquote>
-<blockquote>
-<p>int cpacity()–返回当前容量<br><br>int length()–返回长度</p>
-</blockquote>
-<blockquote>
-<p>StringBuilser中常用方法：</p>
-</blockquote>
-<p><br>返回值都是StringBuilder的：</p>
-<p>insert (int of,String str)–将str插入of位置处；</p>
-<p>append (string str)—在字符串最后加上str</p>
-<p>delete （int start，int end）—删除从start开始到end结束的字符串</p>
-<p>replace (int start,int end,string str)—start到end的字符串用str替换</p>
-<p>reverse （）—字符串翻转 </p>
-<p>int indexOf（str）—查找字符串位置  </p>
-<h3 id="String和StringBuilder互换；"><a href="#String和StringBuilder互换；" class="headerlink" title="String和StringBuilder互换；"></a>String和StringBuilder互换；</h3><blockquote>
-<p>从String—&gt;StringBuilder：<br>StringBuilder sb = new StringBuilder(str); </p>
-</blockquote>
-<blockquote>
-<p>调用toString从StringBuilder—&gt;String：<br>String s = sb1.toString();</p>
-</blockquote>
-
+<h3 id="List集合的增，删，改代码："><a href="#List集合的增，删，改代码：" class="headerlink" title="List集合的增，删，改代码："></a>List集合的增，删，改代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">import java.util.LinkedList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class ListTest &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		// 1.声明List类型的引用指向实现类的对象</span><br><span class="line">		List lt1 = new LinkedList();</span><br><span class="line">		System.out.println(&quot;lt1 = &quot; + lt1); // [啥也没有]</span><br><span class="line">		// 2.向集合中添加元素并打印</span><br><span class="line">		// 向下标为0的位置插入元素one  向开头位置插入元素</span><br><span class="line">		lt1.add(0, &quot;one&quot;);</span><br><span class="line">		System.out.println(&quot;lt1 = &quot; + lt1); // [one]</span><br><span class="line">		// 向下标为1的位置插入元素3   向末尾位置插入元素</span><br><span class="line">		lt1.add(1, 3);</span><br><span class="line">		System.out.println(&quot;lt1 = &quot; + lt1); // [one, 3]</span><br><span class="line">		// 向下标为1的位置插入元素&quot;two&quot;，向中间位置插入元素</span><br><span class="line">		lt1.add(1, &quot;two&quot;);</span><br><span class="line">		System.out.println(&quot;lt1 = &quot; + lt1); // [one, two, 3]</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;--------------------------------------&quot;);</span><br><span class="line">		// 3.实现集合中元素的查找</span><br><span class="line">		// 集合中之所以可以放入不同类型的对象，是因为这些对象都被看做Object</span><br><span class="line">		// 类型放入的，那么取出来的元素类型也是Object类型</span><br><span class="line">		String str1 = (String) lt1.get(0);</span><br><span class="line">		System.out.println(&quot;获取到的元素是：&quot; + str1); // one</span><br><span class="line">		Integer it1 = (Integer) lt1.get(2);</span><br><span class="line">		System.out.println(&quot;获取到的元素是：&quot; + it1); // 3</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;--------------------------------------&quot;);</span><br><span class="line">		// 练习：使用get方法获取元素并拼接成toString方法的效果</span><br><span class="line">		StringBuilder sb2 = new StringBuilder();</span><br><span class="line">		sb2.append(&quot;[&quot;);</span><br><span class="line">		for(int i = 0; i &lt; lt1.size(); i++) &#123;</span><br><span class="line">			if(lt1.size()-1 == i) &#123;</span><br><span class="line">				sb2.append(lt1.get(i)).append(&quot;]&quot;);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				// 将第一个字符串中的每个字符取出放入第二个字符串并跟随逗号</span><br><span class="line">				sb2.append(lt1.get(i)).append(&quot;,&quot;).append(&quot; &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;lt1 = &quot; + sb2);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;--------------------------------------&quot;);</span><br><span class="line">		// 4.实现集合中元素的修改功能</span><br><span class="line">		// [one, two, 3]</span><br><span class="line">		Integer it2 = (Integer) lt1.set(2, &quot;three&quot;);</span><br><span class="line">		System.out.println(&quot;下标为2的旧元素是：&quot; + it2); // 3</span><br><span class="line">		System.out.println(&quot;lt1 = &quot; + lt1); // [one, two, three]</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;--------------------------------------&quot;);</span><br><span class="line">		// 5.实现集合中元素的删除功能</span><br><span class="line">		String str2 = (String) lt1.remove(1);</span><br><span class="line">		System.out.println(&quot;被删除的元素是：&quot; + str2); // two</span><br><span class="line">		System.out.println(&quot;删除后集合中的元素有：&quot; + lt1); // [one, three]</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;--------------------------------------&quot;);</span><br><span class="line">		// 练习：使用remove方法删除集合中的所有元素</span><br><span class="line">		//for (int i = 0; i &lt; lt1.size(); /* i++ */) &#123;</span><br><span class="line">		/*</span><br><span class="line">		for (int i = lt1.size()-1; i &gt;= 0; i--) &#123;</span><br><span class="line">			System.out.println(&quot;被删除的元素是：&quot; + lt1.remove(i));</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;集合中最终的元素有：&quot; + lt1);</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;--------------------------------------&quot;);</span><br><span class="line">		// 6.获取List集合中的一部分内容，从下标0开始一直到下标1，但取不到1</span><br><span class="line">		List lt2 = lt1.subList(0, 1);</span><br><span class="line">		System.out.println(&quot;lt2 = &quot; + lt2); // [one]</span><br><span class="line">		lt2.set(0, 2);</span><br><span class="line">		System.out.println(&quot;lt2 = &quot; + lt2); // [2]</span><br><span class="line">		System.out.println(&quot;lt1 = &quot; + lt1); // [2, three]</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             </div>
             <hr/>
 
@@ -630,8 +593,8 @@ String描述的字符串是常量，一旦创建就不可更改，当程序出�
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
-                    《String，Stringbulider，Stringbuffer （String和StringBuilder可互换）》
+            <a  href="/2019/10/19/2019-10-20-List集合/">
+                    《List集合！》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -672,9 +635,10 @@ String描述的字符串是常量，一旦创建就不可更改，当程序出�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/10/19/2019-10-20-List集合/">
                     <div class="card-image">
@@ -696,9 +660,9 @@ ArraryList底层是数组，访问元素方便，增删不便；LinkLis
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -711,6 +675,7 @@ ArraryList底层是数组，访问元素方便，增删不便；LinkLis
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -729,19 +694,20 @@ ArraryList底层是数组，访问元素方便，增删不便；LinkLis
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-18-取字符串个数/">
+                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="统计字符串中大小写，数字，符号个数">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
                         
-                        <span class="card-title">统计字符串中大小写，数字，符号个数</span>
+                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &#123;	public static void main(String[] args) &#
+                            三者区别：
+String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
                         
                     </div>
                     <div class="publish-info">
