@@ -4,6 +4,106 @@
   
     
     <entry>
+      <title>线程(Thread)的创建！</title>
+      <link href="/2019/10/26/2019-10-26-%E7%BA%BF%E7%A8%8B/"/>
+      <url>/2019/10/26/2019-10-26-%E7%BA%BF%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>多线程技术底层原理：采用时间片轮转法实现多线程的并发执行，所谓并发就是宏观并行，微观串行;</p></blockquote><h3 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建:"></a>线程的创建:</h3><blockquote><p>1.自定义类继承Thread类并重写<code>run</code>方法，创建该类的对象来调用<code>start</code>方法;</p></blockquote><blockquote><p>2.自定义类实现<code>Runnable</code>接口并重写<code>run</code>方法，创建该类的对象作为实参来构造<code>Thread</code>类的对象，使用Thread类型的对象调用<code>Strat</code>方法;</p></blockquote><h2 id="相关方法："><a href="#相关方法：" class="headerlink" title="相关方法："></a>相关方法：</h2><blockquote><p> Thread() - 使用无参的方式构造对象。</p></blockquote><blockquote><p>Thread(Runnable target) - 根据参数指定的接口引用来构造对象。</p></blockquote><blockquote><p> void run() - 若构造线程对象时使用Runnable对象，则调用该方法时最终调用                      Runnable对象指向的run方法；<br>              - 若构造该线程对象时没有使用Runnable对象，则调用该方法时啥也不做</p></blockquote><h2 id="gt-void-start-用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成"><a href="#gt-void-start-用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成" class="headerlink" title="&gt; void start() - 用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成:"></a>&gt; void start() - 用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和<code>main</code>方法的线程无关，都要执行完成:</h2><h3 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h3><p>   -a.执行main方法的线程叫做主线程，而执行run方法的线程叫做子线程。</p><p>   -b.程序启动时只有主线程来执行main方法中的代码，当start方法调用成功之后，线程的个数由1个瞬间变成了2个，而新启动的线程去执行run方法的代码，而执行main的线程继续向下执行，两个线程各自独立运行互不影响，当run方法执行完毕后子线程结束，而当main方法执行完毕后主线程结束。</p><p>   -c.主线程和子线程的先后执行次序没有明确的规定，取决于系统的调度算法。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PrintStream--ObjectOutPutStream--bufferReader</title>
+      <link href="/2019/10/25/2019-10-25-PrintStream-Object%E6%B5%81-buffer%E6%B5%81/"/>
+      <url>/2019/10/25/2019-10-25-PrintStream-Object%E6%B5%81-buffer%E6%B5%81/</url>
+      
+        <content type="html"><![CDATA[<h3 id="PrintStream流；"><a href="#PrintStream流；" class="headerlink" title="PrintStream流；"></a>PrintStream流；</h3><blockquote><p>java.io.PrintStream主要用于方便的打印各种数据并具有自动刷新的功能；</p></blockquote><h2 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h2><blockquote><p>PrintStream(OutPutStream out) –根据参数指定的引用来构造对象，但内部的的outputstream是抽象的，实参需传递子类的对象 </p></blockquote><blockquote><p>print和println都是讲其对象输出到文件中 </p></blockquote><h3 id="BufferReader"><a href="#BufferReader" class="headerlink" title="BufferReader:"></a>BufferReader:</h3><blockquote><p>主要用于从字符输入流中读取单个字符,字符数组及字符串；</p></blockquote><blockquote><p>print和println都是讲其对象输出到文件中 </p></blockquote><h3 id="ObjectOutPutStream"><a href="#ObjectOutPutStream" class="headerlink" title="ObjectOutPutStream:"></a>ObjectOutPutStream:</h3><blockquote><p>用于将java语言的对象整体写到输出流中，只能将支持Serializable 接口的对象写入流中;  所谓序列化 就是指将一个对象需要保存的所有相关信息有效组成字节序列的转化过程； </p></blockquote><p>Object writeObject() –</p><h3 id="ObjectInPutStream："><a href="#ObjectInPutStream：" class="headerlink" title="ObjectInPutStream："></a>ObjectInPutStream：</h3><blockquote><p>用于从输入流中将java的对象整体读取出来; 反序列化将有效组织的字节序列回复为相关文件;</p></blockquote><p> Object readObject() –用于从输入流中读取一个对象</p><h3 id="transient关键字修饰成员变量表示成员变量不参与序列化"><a href="#transient关键字修饰成员变量表示成员变量不参与序列化" class="headerlink" title="transient关键字修饰成员变量表示成员变量不参与序列化"></a>transient关键字修饰成员变量表示成员变量不参与序列化</h3><h3 id="经验分享："><a href="#经验分享：" class="headerlink" title="经验分享："></a>经验分享：</h3><blockquote><p>在开发时若希望写入多个对象，先将多个对象放到集合中，然后将集合看成一个对象整体调用一次writeObject方法写入;调用一次readObject方法可以将整个集合读取出来，避免根据返回值进行的文件莫问判断</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>File类和IO流及文件拷贝</title>
+      <link href="/2019/10/24/2019-10-24-File%E5%92%8CIO%E6%B5%81/"/>
+      <url>/2019/10/24/2019-10-24-File%E5%92%8CIO%E6%B5%81/</url>
+      
+        <content type="html"><![CDATA[<h3 id="File类的代码："><a href="#File类的代码：" class="headerlink" title="File类的代码："></a>File类的代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package day17;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">public class Fileceshi &#123;</span><br><span class="line"></span><br><span class="line">public static void main(String[] args) throws IOException &#123;</span><br><span class="line">           File f=new File(&quot;E:/java.txt&quot;);</span><br><span class="line">           if(f.exists()) &#123;</span><br><span class="line">           System.out.println(f.delete()?&quot;如果有文件就呗我删除&quot;:&quot;没有就见一个呗&quot;);</span><br><span class="line">           &#125;else &#123;</span><br><span class="line">           f.createNewFile();</span><br><span class="line">           System.out.println(&quot;创建成功一个&quot;);</span><br><span class="line">&#125;</span><br><span class="line">           </span><br><span class="line">           </span><br><span class="line">           System.out.println(&quot;-------------------&quot;);</span><br><span class="line">           File aa=new File(&quot;e:/shufffffffffffff/a/c/vb/b&quot;);</span><br><span class="line">           if(aa.exists()) &#123;</span><br><span class="line">           System.out.println(aa.delete()?&quot;已经删除&quot;:&quot;没目录&quot;);</span><br><span class="line">           &#125;else &#123;</span><br><span class="line">           System.out.println(aa.mkdirs()?&quot;创建成功&quot;:&quot;创建失败&quot;);</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">           </span><br><span class="line">           </span><br><span class="line">           </span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="IO流"><a href="#IO流" class="headerlink" title="IO流:"></a>IO流:</h3><blockquote><p>1.按读写基本单位分：字节流（以字节读写），字符流（以2 字节读写，止咳读取文本文件，只能有文字）</p></blockquote><blockquote><p>2.按数据流动方向：输入流(将文件内容输入到程序中，读)，输出流（将程序内容输出到文件，写）</p></blockquote><blockquote><p>3.节点流（直接与文件关联），包装流（需要依赖别的流）</p></blockquote><h3 id="FileOutPutStream"><a href="#FileOutPutStream" class="headerlink" title="FileOutPutStream():"></a>FileOutPutStream():</h3><p>方法：</p><p>void write（int b） –将 指定字节写入文件输出流</p><p>void write（byte[],int of,int len）–指定数组从偶读开始到len长个字节写入输出流</p><p>void write（byte[]）– 写一个数组</p><p>void close（）–关闭输出流释放资源</p><blockquote><p>要将字符串变成数组用getByte（），例：<code>ts.write(&quot;helloyou&quot;.getByte())</code>;</p></blockquote><h3 id="FileInPutStream"><a href="#FileInPutStream" class="headerlink" title="FileInPutStream():"></a>FileInPutStream():</h3><p>方法：</p><p>int read（） –读取单个字符，返回-1就读到了最后；</p><p>int read（byte[]） –读取数组，返回的是字符个数</p><p>int read（byte[],int of,len ）–读取数组里从of开始的len个字节</p><p>void close（）–关闭流</p><h3 id="文件拷贝的方法："><a href="#文件拷贝的方法：" class="headerlink" title="文件拷贝的方法："></a>文件拷贝的方法：</h3><pre><code>package day17;import java.io.FileInputStream;import java.io.FileOutputStream;public class WanSua {      public static void main(String[] args) {        try {            FileInputStream fis = new FileInputStream(&quot;e:/A.txt&quot;);            FileOutputStream fos = new FileOutputStream(&quot;d:/b.txt&quot;);         //第一种用法：            int re = 0;            while((re=fis.read())!=-1) {                fos.write(re);         //第二种用法：          int len = fis.available() ;//此关键字是将缓冲区内容一次性获取            byte [] arr =new byte[len];                 int re2=0;                while((re2=fis.read())!=-1){                    fos.write(arr);         //第三种用法:            byte [] brr =new byte[1024*8];            int re3=0;            while((re3=fis.read())!=-1) {                fos.write(brr, 0, re3);            }                }                 }                     } catch (Exception e) {            e.printStackTrace();        }      }}···</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Map集合和Exction异常</title>
+      <link href="/2019/10/23/2019-10-23-Map%E9%9B%86%E5%90%88%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+      <url>/2019/10/23/2019-10-23-Map%E9%9B%86%E5%90%88%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Map集合："><a href="#Map集合：" class="headerlink" title="Map集合："></a>Map集合：</h3><blockquote><p>java.util.Map&lt;K,V&gt;集合中存取元素的基本单位是：单对元素，具体类型参数如下：<br>       K - 此映射所维护的键(Key)的类型<br>       V - 映射值(Value)的类型<br>   该集合中不能包含重复的键；每个键最多只能映射到一个值。</p></blockquote><p>实现子类主要为HashMap（）和TreeMap（）两种 ;</p><h2 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h2><blockquote><p> V put (key,value) –将key和value组成一队放入map，若有key，再放入时会覆盖原有的value，返回值为该key之前value的类型，无则返回null。</p></blockquote><blockquote><p>V get (Object key) –返回key对应的value值；无返回null；</p></blockquote><blockquote><p>boolean containKey(Object key) –判断是否含指定key值；</p></blockquote><blockquote><p>boolean containValue(Object value) –判断是否含指定value；</p></blockquote><blockquote><p>V remove (Object key) – 前面大V代表返回的删除key内容的类型，对指定key进行删除；</p></blockquote><h2 id="map遍历的三种方式："><a href="#map遍历的三种方式：" class="headerlink" title="map遍历的三种方式："></a>map遍历的三种方式：</h2><blockquote><p>toString</p></blockquote><blockquote><p>调用keySet方法（返回值是<code>set&lt;K&gt;</code>）,将map集合的key拿出来组成set集合，再用加强for打印；</p></blockquote><blockquote><p>调用entrySet方法(返回值<code>set&lt;Map.entry&lt;Integer,String&gt;&gt;</code>,将Map集合所有键值对拿出来组成集合。</p></blockquote><h3 id="Exction异常："><a href="#Exction异常：" class="headerlink" title="Exction异常："></a>Exction异常：</h3><blockquote><p>子类重写的方法不能抛出更大的异常，也不能抛出平级但不一样的异常（就是可以抛出一样的异常），可以抛出比它小的异常。</p></blockquote><blockquote><p>自定义异常：<code>throw new suoyaoExction(&quot;年纪不合理！！！&quot;)</code>,就是写在例如：<code>setAge（int a）</code>判断<code>else</code>里的，它会产生自定义异常，我们选择抛到<code>setAge（int a）</code>后加<code>throws</code>,然后构造调用方法的时候又来个异常，再抛出会到<code>new</code>出来的对象那里，这里的异常就地处理。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>为何要同时重写equals（）和HashCode（）！</title>
       <link href="/2019/10/22/2019-10-22-%E9%87%8D%E5%86%99hashcode()%E5%92%8Cequals()/"/>
       <url>/2019/10/22/2019-10-22-%E9%87%8D%E5%86%99hashcode()%E5%92%8Cequals()/</url>
