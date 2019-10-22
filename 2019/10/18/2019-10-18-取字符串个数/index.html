@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="统计字符串中大小写，数字，符号个数, 岳阳-丁&#39;s blog">
-    <meta name="description" content="代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &amp;#123;	public static void main(String[] args) &amp;#">
+    <meta name="description" content="代码：public class ChouQuZiFu &amp;#123;	public static void main(String[] args) &amp;#123;        String ss=new String(&#34;ABCD123!@#$">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -420,7 +420,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class ChouQuZiFu &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        String ss=new String(&quot;ABCD123!@#$%ab&quot;);</span><br><span class="line"> //定义数组，此数组默认给0，然后就是4个0;所以下面的arr[0]++,就是0++;</span><br><span class="line">        int [] arr=new int[4];</span><br><span class="line"></span><br><span class="line">    for(int i=0;i&lt;ss.length();i++) &#123;</span><br><span class="line">              char a=ss.charAt(i);                </span><br><span class="line">	     if(a&gt;=&apos;A&apos;&amp;&amp;a&lt;=&apos;Z&apos;) &#123;</span><br><span class="line">	    	 arr[0]++;</span><br><span class="line">	     &#125;</span><br><span class="line">	     else if(a&gt;=&apos;a&apos;&amp;&amp;a&lt;=&apos;z&apos;) &#123;</span><br><span class="line">	    	 arr[1]++; </span><br><span class="line">	     &#125;</span><br><span class="line">	     else if(a&gt;=&apos;0&apos;&amp;&amp;a&lt;=&apos;9&apos;) &#123;</span><br><span class="line">	    	 arr[2]++;</span><br><span class="line">	     &#125;</span><br><span class="line">	     else &#123;</span><br><span class="line">	    	 arr[3]++;</span><br><span class="line">	     &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.println(&quot;大写字母：&quot;+arr[0]+&quot;;小写子母：&quot;+arr[1]+&quot;;数字&quot;+arr[2]+&quot;;符号：&quot;+arr[3]);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class ChouQuZiFu &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">String</span> ss=<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"ABCD123!@#$%ab"</span>);</span><br><span class="line"> <span class="comment">//定义数组，此数组默认给0，然后就是4个0;所以下面的arr[0]++,就是0++;</span></span><br><span class="line">        <span class="keyword">int</span> [] arr=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ss.length();i++) &#123;</span><br><span class="line">              <span class="keyword">char</span> a=ss.charAt(i);                </span><br><span class="line">	     <span class="built_in">if</span>(a&gt;=<span class="string">'A'</span>&amp;&amp;a&lt;=<span class="string">'Z'</span>) &#123;</span><br><span class="line">	    	 arr[<span class="number">0</span>]++;</span><br><span class="line">	     &#125;</span><br><span class="line">	     <span class="built_in">else</span> <span class="built_in">if</span>(a&gt;=<span class="string">'a'</span>&amp;&amp;a&lt;=<span class="string">'z'</span>) &#123;</span><br><span class="line">	    	 arr[<span class="number">1</span>]++; </span><br><span class="line">	     &#125;</span><br><span class="line">	     <span class="built_in">else</span> <span class="built_in">if</span>(a&gt;=<span class="string">'0'</span>&amp;&amp;a&lt;=<span class="string">'9'</span>) &#123;</span><br><span class="line">	    	 arr[<span class="number">2</span>]++;</span><br><span class="line">	     &#125;</span><br><span class="line">	     <span class="built_in">else</span> &#123;</span><br><span class="line">	    	 arr[<span class="number">3</span>]++;</span><br><span class="line">	     &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.<span class="built_in">println</span>(<span class="string">"大写字母："</span>+arr[<span class="number">0</span>]+<span class="string">";小写子母："</span>+arr[<span class="number">1</span>]+<span class="string">";数字"</span>+arr[<span class="number">2</span>]+<span class="string">";符号："</span>+arr[<span class="number">3</span>]);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             </div>
             <hr/>
 
@@ -626,25 +626,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
+                <a href="/2019/10/19/2019-10-20-List集合/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="List集合！">
                         
-                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
+                        <span class="card-title">List集合！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三者区别：
-String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
+                            
+list集合是我们collection集合的一个子集合；元素有先后放入顺序且可重复，主要实现类有ArraryList,LinkList,Static,Vector
+
+
+ArraryList底层是数组，访问元素方便，增删不便；LinkLis
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-19
                         </span>
                         <span class="publish-author">
                             
@@ -676,23 +679,20 @@ String描述的字符串是常量，一旦创建就不可更改，当程序出�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-19-sleep和wait区别/">
+                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="sleep和wait区别！">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
                         
-                        <span class="card-title">sleep和wait区别！</span>
+                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-它们最大本质的区别是:sleep()不释放同步锁,wait()释放同步锁.   
-
-
-还有用法的上的不同是:sleep(milliseconds)可以用时间指定来使他自动醒过来,如果时间不到你只能调用interreput()来强行打断;w
+                            三者区别：
+String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
                         
                     </div>
                     <div class="publish-info">

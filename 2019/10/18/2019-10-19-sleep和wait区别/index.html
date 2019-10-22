@@ -435,7 +435,7 @@
 </blockquote>
 <p>  1。这两个方法来自不同的类分别是Thread和Object</p>
 <p>  2。最主要是sleep方法没有释放锁，而wait方法释放了锁，使得其他线程可以使用同步控制块或者方法。</p>
-<p>  3。wait，notify和notifyAll只能在同步控制方法或者同步控制块里面使用，而sleep可以在<br>    任何地方使用<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">synchronized(x)&#123;</span><br><span class="line">   x.notify()</span><br><span class="line">  //或者wait()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  3。wait，notify和notifyAll只能在同步控制方法或者同步控制块里面使用，而sleep可以在<br>    任何地方使用<br>   <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">synchronized</span><span class="params">(x)</span></span>&#123;</span><br><span class="line">   x.notify()</span><br><span class="line">  <span class="comment">//或者wait()</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>   4。sleep必须捕获异常，而wait，notify和notifyAll不需要捕获异常</p>
 
             </div>
@@ -643,19 +643,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-18-取字符串个数/">
+                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="统计字符串中大小写，数字，符号个数">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
                         
-                        <span class="card-title">统计字符串中大小写，数字，符号个数</span>
+                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            代码：123456789101112131415161718192021222324252627public class ChouQuZiFu &#123;	public static void main(String[] args) &#
+                            三者区别：
+String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
                         
                     </div>
                     <div class="publish-info">

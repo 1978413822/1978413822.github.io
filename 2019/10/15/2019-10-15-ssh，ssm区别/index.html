@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="SSH与SSM的区别, 岳阳-丁&#39;s blog">
-    <meta name="description" content="1234567891011121314151617181920SSH ： Struts2+Spring+HibernateSSM： Spring+SpringMVC+mybatisspring 底层的类库是一样的（组件）Struts2和 S">
+    <meta name="description" content="SSH ： Struts2+Spring+HibernateSSM： Spring+SpringMVC+mybatisspring 底层的类库是一样的（组件）Struts2和 Spring MVC的相同点：spring用来初涉依赖注入（通过">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -420,7 +420,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SSH ： Struts2+Spring+Hibernate</span><br><span class="line"></span><br><span class="line">SSM： Spring+SpringMVC+mybatis</span><br><span class="line"></span><br><span class="line">spring 底层的类库是一样的（组件）</span><br><span class="line"></span><br><span class="line">Struts2和 Spring MVC的相同点：spring用来初涉依赖注入（通过管理注释来控制各层的组件（方法）），2 事物 权限 日志 ‍这些都是aop（切面编程）</span><br><span class="line"></span><br><span class="line">不同： Struts2和spring mvc 控制器 试图 模型 机制不一样。Struts2是action级别的，spring mvc 既然有mvc 就是把 界面层（三层架构）分的更细，实现web api 更方便。Struts漏洞一个接一个，这点就不好了(如果有大佬吧struts2封装改写一部分也不错 )，spring 不清楚 哈哈。但是spring mvc 配置简单一些， 理解起来很容易，结构清晰</span><br><span class="line"></span><br><span class="line">拦截器：Struts是类控制，一个功能下来就是一个类。。， spring mvc 是方法，你可以理解为每个方法都是url，都可以控制.</span><br><span class="line"></span><br><span class="line">不同点其实还有很多...慢慢体会吧。</span><br><span class="line"></span><br><span class="line">Hibernate和mybatis的区别：</span><br><span class="line">这个的话自己去百度找csdn ，多看看一样的文章然后找答案。你给 移植，维护，性能，缓存 等等各方面去比较。</span><br><span class="line"></span><br><span class="line">hibernate 没玩过， mybatis 比较简单，直接上手。 可以用工具生成映射文件（主要维护这个），数据库表变了直接在mapper 改sql 就行，不同的数据库 要写不同的sql，这个就有点麻烦。主要的问题还是 配置，开始可能要折腾一段时间，习惯了就666了。</span><br><span class="line">我是给net转过来的，拿起ssm 就开搞，配置遇到不少坑，慢慢来。反正我上手挺快。orm框架用起来 主要时间花在配置上，代码量少了很多。</span><br><span class="line">是不是大项目看需求，看公司，和团队技术。目前是用ssm的比较多 ，其实2个框架都可以看看和学习，先学会使用，然后再看底层是怎么实现的。如果真要上手搞项目还是跟主流吧。</span><br></pre></td></tr></table></figure>
+                <figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">SSH ： Struts2+Spring+Hibernate</span><br><span class="line"></span><br><span class="line">SSM： Spring+SpringMVC+mybatis</span><br><span class="line"></span><br><span class="line"><span class="keyword">spring</span> 底层的类库是一样的（组件）</span><br><span class="line"></span><br><span class="line">Struts2和 Spring MVC的相同点：<span class="keyword">spring</span>用来初涉依赖注入（通过管理注释来控制各层的组件（方法）），<span class="number">2</span> 事物 权限 日志 ‍这些都是aop（切面编程）</span><br><span class="line"></span><br><span class="line">不同： Struts2和<span class="keyword">spring</span> mvc 控制器 试图 模型 机制不一样。Struts2是action级别的，<span class="keyword">spring</span> mvc 既然有mvc 就是把 界面层（三层架构）分的更细，实现web api 更方便。Struts漏洞一个接一个，这点就不好了(如果有大佬吧struts2封装改写一部分也不错 )，<span class="keyword">spring</span> 不清楚 哈哈。但是<span class="keyword">spring</span> mvc 配置简单一些， 理解起来很容易，结构清晰</span><br><span class="line"></span><br><span class="line">拦截器：Struts是类控制，一个功能下来就是一个类。。， <span class="keyword">spring</span> mvc 是方法，你可以理解为每个方法都是url，都可以控制.</span><br><span class="line"></span><br><span class="line">不同点其实还有很多...慢慢体会吧。</span><br><span class="line"></span><br><span class="line">Hibernate和mybatis的区别：</span><br><span class="line">这个的话自己去百度找csdn ，多看看一样的文章然后找答案。你给 移植，维护，性能，缓存 等等各方面去比较。</span><br><span class="line"></span><br><span class="line">hibernate 没玩过， mybatis 比较简单，直接上手。 可以用工具生成映射文件（主要维护这个），数据库表变了直接在mapper 改sql 就行，不同的数据库 要写不同的sql，这个就有点麻烦。主要的问题还是 配置，开始可能要折腾一段时间，习惯了就<span class="number">666</span>了。</span><br><span class="line">我是给net转过来的，拿起ssm 就开搞，配置遇到不少坑，慢慢来。反正我上手挺快。orm框架用起来 主要时间花在配置上，代码量少了很多。</span><br><span class="line">是不是大项目看需求，看公司，和团队技术。目前是用ssm的比较多 ，其实<span class="number">2</span>个框架都可以看看和学习，先学会使用，然后再看底层是怎么实现的。如果真要上手搞项目还是跟主流吧。</span><br></pre></td></tr></table></figure>
             </div>
             <hr/>
 
@@ -641,7 +641,7 @@
                             
 1.封装： 1.就是将一些逻辑代码和实现的细节封到一个类里，隐藏细节，外部不能随便修改或调用，需要声明对象的引用来调用，可以提高代码的复用性.比如在测试类里
 
-2.实现流程： 1231.私有化成员变量用private修饰2.公有set与g
+2.实现流程： 1.私有化成员变量用private修饰2.公有set与get方
                         
                     </div>
                     <div class="publish-info">
@@ -690,7 +690,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            代码块执行顺序:12345678910111213141516171819202122public class DaiMaKuaiTest &#123;    static &#123;        System.out.println(
+                            代码块执行顺序:public class DaiMaKuaiTest &#123;    static &#123;        System.out.println("静态代码块");    &#125;    &#123;      
                         
                     </div>
                     <div class="publish-info">
