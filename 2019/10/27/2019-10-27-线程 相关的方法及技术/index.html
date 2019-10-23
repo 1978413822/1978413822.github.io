@@ -4,15 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="线程(Thread)的创建！, 岳阳-丁&#39;s blog">
+    <meta name="keywords" content="简单小聊天并记录到硬盘, 岳阳-丁&#39;s blog">
     <meta name="description" content="
-多线程技术底层原理：采用时间片轮转法实现多线程的并发执行，所谓并发就是宏观并行，微观串行;
-
-线程的创建:
-1.自定义类继承Thread类并重写run方法，创建该类的对象来调用start方法;
+其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值
+package day20;
 
 
-2.自定义类实现Runnable接口并重">
+import javafx.scene.input.DataFormat;
+
+import java.io.BufferedRea">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>线程(Thread)的创建！ | 岳阳-丁&#39;s blog</title>
+    <title>简单小聊天并记录到硬盘 | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,13 +269,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        线程(Thread)的创建！
+                        简单小聊天并记录到硬盘
                     </div>
                 </div>
             </div>
@@ -411,7 +411,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-26
+                    2019-10-27
                 </div>
 
                 
@@ -428,27 +428,51 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>多线程技术底层原理：采用时间片轮转法实现多线程的并发执行，所谓并发就是宏观并行，微观串行;</p>
-</blockquote>
-<h3 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建:"></a>线程的创建:</h3><blockquote>
-<p>1.自定义类继承Thread类并重写<code>run</code>方法，创建该类的对象来调用<code>start</code>方法;</p>
-</blockquote>
-<blockquote>
-<p>2.自定义类实现<code>Runnable</code>接口并重写<code>run</code>方法，创建该类的对象作为实参来构造<code>Thread</code>类的对象，使用Thread类型的对象调用<code>Strat</code>方法;</p>
-</blockquote>
-<h2 id="相关方法："><a href="#相关方法：" class="headerlink" title="相关方法："></a>相关方法：</h2><blockquote>
-<p> Thread() - 使用无参的方式构造对象。</p>
-</blockquote>
-<blockquote>
-<p>Thread(Runnable target) - 根据参数指定的接口引用来构造对象。</p>
-</blockquote>
-<blockquote>
-<p> void run() - 若构造线程对象时使用Runnable对象，则调用该方法时最终调用                      Runnable对象指向的run方法；<br>              - 若构造该线程对象时没有使用Runnable对象，则调用该方法时啥也不做</p>
-</blockquote>
-<h2 id="gt-void-start-用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成"><a href="#gt-void-start-用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成" class="headerlink" title="&gt; void start() - 用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成:"></a>&gt; void start() - 用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和<code>main</code>方法的线程无关，都要执行完成:</h2><h3 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h3><p>   -a.执行main方法的线程叫做主线程，而执行run方法的线程叫做子线程。</p>
-<p>   -b.程序启动时只有主线程来执行main方法中的代码，当start方法调用成功之后，线程的个数由1个瞬间变成了2个，而新启动的线程去执行run方法的代码，而执行main的线程继续向下执行，两个线程各自独立运行互不影响，当run方法执行完毕后子线程结束，而当main方法执行完毕后主线程结束。</p>
-<p>   -c.主线程和子线程的先后执行次序没有明确的规定，取决于系统的调度算法。</p>
+<h2 id="其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值"><a href="#其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值" class="headerlink" title="其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值"></a>其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值</h2></blockquote>
+<pre><code>package day20;
 
+
+import javafx.scene.input.DataFormat;
+
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class CharBye{
+
+    public static void main(String[] args) throws Exception{
+        PrintStream   ps = new PrintStream(new FileOutputStream(&quot;e:/a.txt&quot;));
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+ //其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值，以免错误，导致循环结束       
+
+      boolean flag=true;
+
+        while(true){
+            Date d = new Date();
+            SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+           // System.out.println(df.format(d));
+            System.out.println(df.format(d)+&quot;请&quot;+(flag?&quot;一号:&quot;:&quot;二号:&quot;)+&quot;输入发送内容：&quot;);
+            String ss = br.readLine();
+            if(&quot;bye&quot;.equalsIgnoreCase(ss)){
+                System.out.println(&quot;聊天结束&quot;);
+               break;
+            }
+           // else {
+            Date dd = new Date();
+            SimpleDateFormat ddf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+            ps.println(ddf.format(dd)+(flag?&quot;一号:&quot;:&quot;二号:&quot;)+ ss);
+                flag = !flag;
+            //}
+       }
+        ps.close();
+        br.close();
+
+    }
+}</code></pre>
             </div>
             <hr/>
 
@@ -608,8 +632,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/26/2019-10-26-线程/">
-                    《线程(Thread)的创建！》
+            <a  href="/2019/10/27/2019-10-27-线程 相关的方法及技术/">
+                    《简单小聊天并记录到硬盘》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -654,31 +678,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/27/2019-10-27-线程 相关的方法及技术/">
+                <a href="/2019/10/28/2019-10-28-线程同步机制加锁/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="简单小聊天并记录到硬盘">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="线程同步机制加锁">
                         
-                        <span class="card-title">简单小聊天并记录到硬盘</span>
+                        <span class="card-title">线程同步机制加锁</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值
-package day20;
+                            线程同步机制：
+多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）
 
-
-import javafx.scene.input.DataFormat;
-
-import java.io.BufferedRea
+主要上锁(synchronized)方式（3种）:
+1.在要执行的r
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-28
                         </span>
                         <span class="publish-author">
                             
@@ -710,28 +731,31 @@ import java.io.BufferedRea
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/25/2019-10-25-PrintStream-Object流-buffer流/">
+                <a href="/2019/10/26/2019-10-26-线程/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="PrintStream--ObjectOutPutStream--bufferReader">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="线程(Thread)的创建！">
                         
-                        <span class="card-title">PrintStream--ObjectOutPutStream--bufferReader</span>
+                        <span class="card-title">线程(Thread)的创建！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PrintStream流；
-java.io.PrintStream主要用于方便的打印各种数据并具有自动刷新的功能；
+                            
+多线程技术底层原理：采用时间片轮转法实现多线程的并发执行，所谓并发就是宏观并行，微观串行;
 
-常用方法：
-PrintStream(OutPutStream out) –根据参数指定的引用来构造对象，但内部的的outp
+线程的创建:
+1.自定义类继承Thread类并重写run方法，创建该类的对象来调用start方法;
+
+
+2.自定义类实现Runnable接口并重
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-26
                             </span>
                         <span class="publish-author">
                             

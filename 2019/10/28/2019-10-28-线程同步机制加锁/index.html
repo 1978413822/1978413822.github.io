@@ -4,15 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="线程(Thread)的创建！, 岳阳-丁&#39;s blog">
-    <meta name="description" content="
-多线程技术底层原理：采用时间片轮转法实现多线程的并发执行，所谓并发就是宏观并行，微观串行;
+    <meta name="keywords" content="线程同步机制加锁, 岳阳-丁&#39;s blog">
+    <meta name="description" content="线程同步机制：
+多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）
 
-线程的创建:
-1.自定义类继承Thread类并重写run方法，创建该类的对象来调用start方法;
-
-
-2.自定义类实现Runnable接口并重">
+主要上锁(synchronized)方式（3种）:
+1.在要执行的r">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>线程(Thread)的创建！ | 岳阳-丁&#39;s blog</title>
+    <title>线程同步机制加锁 | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,13 +266,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        线程(Thread)的创建！
+                        线程同步机制加锁
                     </div>
                 </div>
             </div>
@@ -411,7 +408,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-26
+                    2019-10-28
                 </div>
 
                 
@@ -427,28 +424,47 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>多线程技术底层原理：采用时间片轮转法实现多线程的并发执行，所谓并发就是宏观并行，微观串行;</p>
+                <h3 id="线程同步机制："><a href="#线程同步机制：" class="headerlink" title="线程同步机制："></a>线程同步机制：</h3><blockquote>
+<p>多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）</p>
 </blockquote>
-<h3 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建:"></a>线程的创建:</h3><blockquote>
-<p>1.自定义类继承Thread类并重写<code>run</code>方法，创建该类的对象来调用<code>start</code>方法;</p>
-</blockquote>
-<blockquote>
-<p>2.自定义类实现<code>Runnable</code>接口并重写<code>run</code>方法，创建该类的对象作为实参来构造<code>Thread</code>类的对象，使用Thread类型的对象调用<code>Strat</code>方法;</p>
-</blockquote>
-<h2 id="相关方法："><a href="#相关方法：" class="headerlink" title="相关方法："></a>相关方法：</h2><blockquote>
-<p> Thread() - 使用无参的方式构造对象。</p>
+<h3 id="主要上锁-synchronized-方式（3种）"><a href="#主要上锁-synchronized-方式（3种）" class="headerlink" title="主要上锁(synchronized)方式（3种）:"></a>主要上锁(synchronized)方式（3种）:</h3><blockquote>
+<p>1.在要执行的run方法下加一段<code>synchronizde（一个引用）{锁住的部分}</code>,这里面的引用需自定义一个类如下代码的<code>Demo</code>类，然后new它的对象，它的引用就是过好礼的引用;</p>
 </blockquote>
 <blockquote>
-<p>Thread(Runnable target) - 根据参数指定的接口引用来构造对象。</p>
+<p>第二种和第三种是相同的，只是写法不同，第二个就是直接在重写的run方法里加个<code>synchronized</code>关键字，第三种是写在run方法下的<code>synchronized（this）{锁住的代码块}</code>,里面的this从底层里可得知是线程创建的对象的直接调用run。</p>
 </blockquote>
-<blockquote>
-<p> void run() - 若构造线程对象时使用Runnable对象，则调用该方法时最终调用                      Runnable对象指向的run方法；<br>              - 若构造该线程对象时没有使用Runnable对象，则调用该方法时啥也不做</p>
-</blockquote>
-<h2 id="gt-void-start-用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成"><a href="#gt-void-start-用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成" class="headerlink" title="&gt; void start() - 用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和main方法的线程无关，都要执行完成:"></a>&gt; void start() - 用于启动一个线程，Java虚拟机会自动调用该线程的run方法。它和<code>main</code>方法的线程无关，都要执行完成:</h2><h3 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h3><p>   -a.执行main方法的线程叫做主线程，而执行run方法的线程叫做子线程。</p>
-<p>   -b.程序启动时只有主线程来执行main方法中的代码，当start方法调用成功之后，线程的个数由1个瞬间变成了2个，而新启动的线程去执行run方法的代码，而执行main的线程继续向下执行，两个线程各自独立运行互不影响，当run方法执行完毕后子线程结束，而当main方法执行完毕后主线程结束。</p>
-<p>   -c.主线程和子线程的先后执行次序没有明确的规定，取决于系统的调度算法。</p>
+<pre><code>  Demo dm = new Demo;
+    @Override
+第二种：    public synchronized void run() {
+        // 在成员方法中出现this表示当前正在调用的对象，也就是acc
+第三种：        //synchronized(this) {
+            System.out.println(&quot;线程&quot; + Thread.currentThread().getName() + &quot;启动...&quot;);
+第一种：//synchronized(dm) {  // ok
+            //synchronized(new Demo()) { // error
+            // 模拟从银行后台数据库查询账户余额的过程
+            int temp = getBalance();  // temp = 1000;  temp = 1000;
+            // 模拟取款的操作
+            if(temp &gt;= 200) {
+                System.out.println(&quot;正在出钞，请稍后...&quot;);
+                try {
+                    Thread.sleep(10000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                temp -= 200; // temp = 800; temp = 800;
+                System.out.println(&quot;请取走您的钞票！&quot;);
+            } else {
+                System.out.println(&quot;账户余额不足，请核对您的账户余额！&quot;);
+            }
+            // 模拟将最新的余额写入后台数据库
+            setBalance(temp); //balance = 800;  balance = 800;
+        //}
+    }
+}
 
+class Demo {
+}
+</code></pre>
             </div>
             <hr/>
 
@@ -608,8 +624,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/26/2019-10-26-线程/">
-                    《线程(Thread)的创建！》
+            <a  href="/2019/10/28/2019-10-28-线程同步机制加锁/">
+                    《线程同步机制加锁》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -650,9 +666,64 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/10/28/2019-10-28-线程同步机制加锁/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="线程同步机制加锁">
+                        
+                        <span class="card-title">线程同步机制加锁</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            线程同步机制：
+多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）
+
+主要上锁(synchronized)方式（3种）:
+1.在要执行的r
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/19年10月/" class="post-category">
+                                    19年10月
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/10/27/2019-10-27-线程 相关的方法及技术/">
                     <div class="card-image">
@@ -677,61 +748,8 @@ import java.io.BufferedRea
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/19年10月/" class="post-category">
-                                    19年10月
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/10/25/2019-10-25-PrintStream-Object流-buffer流/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="PrintStream--ObjectOutPutStream--bufferReader">
-                        
-                        <span class="card-title">PrintStream--ObjectOutPutStream--bufferReader</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            PrintStream流；
-java.io.PrintStream主要用于方便的打印各种数据并具有自动刷新的功能；
-
-常用方法：
-PrintStream(OutPutStream out) –根据参数指定的引用来构造对象，但内部的的outp
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-27
                             </span>
                         <span class="publish-author">
                             

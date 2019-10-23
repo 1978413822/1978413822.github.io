@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>线程同步机制加锁</title>
+      <link href="/2019/10/28/2019-10-28-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6%E5%8A%A0%E9%94%81/"/>
+      <url>/2019/10/28/2019-10-28-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6%E5%8A%A0%E9%94%81/</url>
+      
+        <content type="html"><![CDATA[<h3 id="线程同步机制："><a href="#线程同步机制：" class="headerlink" title="线程同步机制："></a>线程同步机制：</h3><blockquote><p>多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）</p></blockquote><h3 id="主要上锁-synchronized-方式（3种）"><a href="#主要上锁-synchronized-方式（3种）" class="headerlink" title="主要上锁(synchronized)方式（3种）:"></a>主要上锁(synchronized)方式（3种）:</h3><blockquote><p>1.在要执行的run方法下加一段<code>synchronizde（一个引用）{锁住的部分}</code>,这里面的引用需自定义一个类如下代码的<code>Demo</code>类，然后new它的对象，它的引用就是过好礼的引用;</p></blockquote><blockquote><p>第二种和第三种是相同的，只是写法不同，第二个就是直接在重写的run方法里加个<code>synchronized</code>关键字，第三种是写在run方法下的<code>synchronized（this）{锁住的代码块}</code>,里面的this从底层里可得知是线程创建的对象的直接调用run。</p></blockquote><pre><code>  Demo dm = new Demo;    @Override第二种：    public synchronized void run() {        // 在成员方法中出现this表示当前正在调用的对象，也就是acc第三种：        //synchronized(this) {            System.out.println(&quot;线程&quot; + Thread.currentThread().getName() + &quot;启动...&quot;);第一种：//synchronized(dm) {  // ok            //synchronized(new Demo()) { // error            // 模拟从银行后台数据库查询账户余额的过程            int temp = getBalance();  // temp = 1000;  temp = 1000;            // 模拟取款的操作            if(temp &gt;= 200) {                System.out.println(&quot;正在出钞，请稍后...&quot;);                try {                    Thread.sleep(10000);                } catch (InterruptedException e) {                    e.printStackTrace();                }                temp -= 200; // temp = 800; temp = 800;                System.out.println(&quot;请取走您的钞票！&quot;);            } else {                System.out.println(&quot;账户余额不足，请核对您的账户余额！&quot;);            }            // 模拟将最新的余额写入后台数据库            setBalance(temp); //balance = 800;  balance = 800;        //}    }}class Demo {}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>简单小聊天并记录到硬盘</title>
+      <link href="/2019/10/27/2019-10-27-%E7%BA%BF%E7%A8%8B%20%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8A%80%E6%9C%AF/"/>
+      <url>/2019/10/27/2019-10-27-%E7%BA%BF%E7%A8%8B%20%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E6%8A%80%E6%9C%AF/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h2 id="其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值"><a href="#其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值" class="headerlink" title="其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值"></a>其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值</h2></blockquote><pre><code>package day20;import javafx.scene.input.DataFormat;import java.io.BufferedReader;import java.io.FileOutputStream;import java.io.InputStreamReader;import java.io.PrintStream;import java.text.SimpleDateFormat;import java.util.Date;public class CharBye{    public static void main(String[] args) throws Exception{        PrintStream   ps = new PrintStream(new FileOutputStream(&quot;e:/a.txt&quot;));        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值，以免错误，导致循环结束             boolean flag=true;        while(true){            Date d = new Date();            SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);           // System.out.println(df.format(d));            System.out.println(df.format(d)+&quot;请&quot;+(flag?&quot;一号:&quot;:&quot;二号:&quot;)+&quot;输入发送内容：&quot;);            String ss = br.readLine();            if(&quot;bye&quot;.equalsIgnoreCase(ss)){                System.out.println(&quot;聊天结束&quot;);               break;            }           // else {            Date dd = new Date();            SimpleDateFormat ddf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);            ps.println(ddf.format(dd)+(flag?&quot;一号:&quot;:&quot;二号:&quot;)+ ss);                flag = !flag;            //}       }        ps.close();        br.close();    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>线程(Thread)的创建！</title>
       <link href="/2019/10/26/2019-10-26-%E7%BA%BF%E7%A8%8B/"/>
       <url>/2019/10/26/2019-10-26-%E7%BA%BF%E7%A8%8B/</url>
