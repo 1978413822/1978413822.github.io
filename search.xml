@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>IDEA加序列化</title>
+      <link href="/2019/10/29/2019-10-29-idea%E4%B8%AD%E5%8A%A0%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+      <url>/2019/10/29/2019-10-29-idea%E4%B8%AD%E5%8A%A0%E5%BA%8F%E5%88%97%E5%8C%96/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>首先找到settings&gt;&gt;Editor&gt;&gt;inspections&gt;&gt;</p></blockquote><blockquote><p>搜索Serialization issues&gt;&gt;找到序列化id，然后OK。</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20190512211137358.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDYxOTYxMw==,size_16,color_FFFFFF,t_70" alt="tu"></p><blockquote><p>点击对应的类，然后ALT+Enter回车。就可以设置序列化id</p></blockquote><p><img src="https://img-blog.csdnimg.cn/2019051221143626.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDYxOTYxMw==,size_16,color_FFFFFF,t_70" alt="tu1"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>冒泡排序!</title>
+      <link href="/2019/10/29/2019-10-29-%E6%8E%92%E5%BA%8F%E5%86%92%E6%B3%A1/"/>
+      <url>/2019/10/29/2019-10-29-%E6%8E%92%E5%BA%8F%E5%86%92%E6%B3%A1/</url>
+      
+        <content type="html"><![CDATA[<pre><code>package day24PaiXuSuanFa;//冒泡排序：public class PaiXu {      public static void show(int []arr){          //注意此处的i从1开始；          for(int i=1;i&lt;arr.length;i++){             //在此处加上boolean为了防止数已经有序，有序时下面j的循环不进入，              // 最后那个if那个判断flag为true则结束，否则继续循环；              boolean flag =true;              for(int j=0;j&lt;arr.length-i;j++){                  if(arr[j] &gt; arr[j + 1]){                      int temp=arr[j];                      arr[j]=arr[j+1];                      arr[j+1]=temp;                      //flag=false;                  }              }              if(flag){                  break;              }          }      }    public static void main(String[] args) {        int[] brr={11,32,44,55,123,535,1432};        PaiXu.show(brr);        System.out.println(&quot;结果：&quot;);        for(int i:brr){            System.out.println(i);        }      }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>设计原则———线性(顺序)——二分(折半)查找！</title>
+      <link href="/2019/10/29/2019-10-29-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B8%8E%E7%BA%BF%E6%80%A7%E4%B8%8E%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+      <url>/2019/10/29/2019-10-29-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B8%8E%E7%BA%BF%E6%80%A7%E4%B8%8E%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="设计原则："><a href="#设计原则：" class="headerlink" title="设计原则："></a>设计原则：</h3><blockquote><p>1.开闭原则：对扩展开放，对修改关闭，主要extends</p></blockquote><blockquote><p>2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念</p></blockquote><blockquote><p>3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，</p></blockquote><blockquote><p>4.接口隔离原则：尽量依赖小借口，而不是大接口</p></blockquote><blockquote><p>5.迪米特法则（最少知道原则）:一个实体应当少与其他类发生关联</p></blockquote><blockquote><p>6.合成复用原则：就是例如 A类中的a需要在B类中可用，申明a在B，并且用构造传入它的引用；</p></blockquote><h3 id="线性和折半查找："><a href="#线性和折半查找：" class="headerlink" title="线性和折半查找："></a>线性和折半查找：</h3><pre><code>package day24PaiXuSuanFa;//线性查找（顺序）//从指定数组中查找参数指定的元素并返回下标；public class ChaZaoSuanFa {   //1.顺序查找（线性查找）：    public static int find(int[]arr, int num){        for(int i=0;i&lt;arr.length;i++){           if(num==arr[i]){               return i;           }        }        return -1; //查找失败    }    // 2. 二分查找法：    public static int findtwo(int[]arr,int left,int right,int tt) {        if (left&lt;=right) {            int z = (left + right)/2;            if (arr[z] == tt) {               return z;            }            if (arr[z] &gt; tt) {                return findtwo(arr, left, z - 1, tt);            }else {                return findtwo(arr, z + 1, right, tt);        }        }                return -1;    }    public static void main(String[] args) {        int []brr ={10,23,44,22,341,12,3,2,0};        int []crr = {11,22,33,44,55,66,68,77};        int a=2;        int b=68;        //2.二分代码：        int two = findtwo(crr,0,7,b);        System.out.println(&quot;二分查找到的位置是：&quot;+two);       // 1.小马编写于main上        int t= ChaZaoSuanFa.find(brr,a);        System.out.println(&quot;线性查找的位置：&quot;+t);         /*  1. 自己编于main中        for(int i=0;i&lt;brr.length;i++){            if(a==brr[i]){                System.out.println(&quot;写在main方法里的获取位置：&quot;+i);                break;            }        }*/    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>线程同步机制加锁</title>
       <link href="/2019/10/28/2019-10-28-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6%E5%8A%A0%E9%94%81/"/>
       <url>/2019/10/28/2019-10-28-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6%E5%8A%A0%E9%94%81/</url>

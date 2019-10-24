@@ -4,12 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="线程同步机制加锁, 岳阳-丁&#39;s blog">
-    <meta name="description" content="线程同步机制：
-多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）
+    <meta name="keywords" content="冒泡排序!, 岳阳-丁&#39;s blog">
+    <meta name="description" content="package day24PaiXuSuanFa;
 
-主要上锁(synchronized)方式（3种）:
-1.在要执行的r">
+//冒泡排序：
+public class PaiXu {
+      public static void show(int []arr){
+          //注意此处的i从1开始">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>线程同步机制加锁 | 岳阳-丁&#39;s blog</title>
+    <title>冒泡排序! | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,13 +267,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        线程同步机制加锁
+                        冒泡排序!
                     </div>
                 </div>
             </div>
@@ -408,7 +409,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-28
+                    2019-10-29
                 </div>
 
                 
@@ -424,47 +425,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="线程同步机制："><a href="#线程同步机制：" class="headerlink" title="线程同步机制："></a>线程同步机制：</h3><blockquote>
-<p>多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）</p>
-</blockquote>
-<h3 id="主要上锁-synchronized-方式（3种）"><a href="#主要上锁-synchronized-方式（3种）" class="headerlink" title="主要上锁(synchronized)方式（3种）:"></a>主要上锁(synchronized)方式（3种）:</h3><blockquote>
-<p>1.在要执行的run方法下加一段<code>synchronizde（一个引用）{锁住的部分}</code>,这里面的引用需自定义一个类如下代码的<code>Demo</code>类，然后new它的对象，它的引用就是过好礼的引用;</p>
-</blockquote>
-<blockquote>
-<p>第二种和第三种是相同的，只是写法不同，第二个就是直接在重写的run方法里加个<code>synchronized</code>关键字，第三种是写在run方法下的<code>synchronized（this）{锁住的代码块}</code>,里面的this从底层里可得知是线程创建的对象的直接调用run。</p>
-</blockquote>
-<pre><code>  Demo dm = new Demo;
-    @Override
-第二种：    public synchronized void run() {
-        // 在成员方法中出现this表示当前正在调用的对象，也就是acc
-第三种：        //synchronized(this) {
-            System.out.println(&quot;线程&quot; + Thread.currentThread().getName() + &quot;启动...&quot;);
-第一种：//synchronized(dm) {  // ok
-            //synchronized(new Demo()) { // error
-            // 模拟从银行后台数据库查询账户余额的过程
-            int temp = getBalance();  // temp = 1000;  temp = 1000;
-            // 模拟取款的操作
-            if(temp &gt;= 200) {
-                System.out.println(&quot;正在出钞，请稍后...&quot;);
-                try {
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                temp -= 200; // temp = 800; temp = 800;
-                System.out.println(&quot;请取走您的钞票！&quot;);
-            } else {
-                System.out.println(&quot;账户余额不足，请核对您的账户余额！&quot;);
-            }
-            // 模拟将最新的余额写入后台数据库
-            setBalance(temp); //balance = 800;  balance = 800;
-        //}
-    }
-}
+                <pre><code>package day24PaiXuSuanFa;
 
-class Demo {
-}
-</code></pre>
+//冒泡排序：
+public class PaiXu {
+      public static void show(int []arr){
+          //注意此处的i从1开始；
+          for(int i=1;i&lt;arr.length;i++){
+             //在此处加上boolean为了防止数已经有序，有序时下面j的循环不进入，
+              // 最后那个if那个判断flag为true则结束，否则继续循环；
+              boolean flag =true;
+              for(int j=0;j&lt;arr.length-i;j++){
+                  if(arr[j] &gt; arr[j + 1]){
+                      int temp=arr[j];
+                      arr[j]=arr[j+1];
+                      arr[j+1]=temp;
+                      //flag=false;
+                  }
+              }
+              if(flag){
+                  break;
+              }
+          }
+      }
+
+    public static void main(String[] args) {
+        int[] brr={11,32,44,55,123,535,1432};
+        PaiXu.show(brr);
+        System.out.println(&quot;结果：&quot;);
+        for(int i:brr){
+            System.out.println(i);
+        }
+      }
+}</code></pre>
             </div>
             <hr/>
 
@@ -624,8 +617,8 @@ class Demo {
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/28/2019-10-28-线程同步机制加锁/">
-                    《线程同步机制加锁》
+            <a  href="/2019/10/29/2019-10-29-排序冒泡/">
+                    《冒泡排序!》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -670,29 +663,27 @@ class Demo {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/29/2019-10-29-设计原则与线性与二分查找/">
+                <a href="/2019/10/29/2019-10-29-idea中加序列化/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="设计原则———线性(顺序)——二分(折半)查找！">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="IDEA加序列化">
                         
-                        <span class="card-title">设计原则———线性(顺序)——二分(折半)查找！</span>
+                        <span class="card-title">IDEA加序列化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            设计原则：
-1.开闭原则：对扩展开放，对修改关闭，主要extends
+                            
+首先找到settings&gt;&gt;Editor&gt;&gt;inspections&gt;&gt;
 
 
-2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念
+搜索Serialization issues&gt;&gt;找到序列化id，然后OK。
 
 
-3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，
 
-
-4.接口隔离原则：尽量依赖
+点击对应的类，然后ALT+Ent
                         
                     </div>
                     <div class="publish-info">
@@ -729,31 +720,34 @@ class Demo {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/27/2019-10-27-线程 相关的方法及技术/">
+                <a href="/2019/10/29/2019-10-29-设计原则与线性与二分查找/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="简单小聊天并记录到硬盘">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="设计原则———线性(顺序)——二分(折半)查找！">
                         
-                        <span class="card-title">简单小聊天并记录到硬盘</span>
+                        <span class="card-title">设计原则———线性(顺序)——二分(折半)查找！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-其中这个boolean是给里面的三目运算符赋值，不是给while循环赋值
-package day20;
+                            设计原则：
+1.开闭原则：对扩展开放，对修改关闭，主要extends
 
 
-import javafx.scene.input.DataFormat;
+2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念
 
-import java.io.BufferedRea
+
+3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，
+
+
+4.接口隔离原则：尽量依赖
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-29
                             </span>
                         <span class="publish-author">
                             
