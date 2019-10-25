@@ -4,18 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="设计原则———线性(顺序)——二分(折半)查找！, 岳阳-丁&#39;s blog">
-    <meta name="description" content="设计原则：
-1.开闭原则：对扩展开放，对修改关闭，主要extends
+    <meta name="keywords" content="反射机制and快排算法, 岳阳-丁&#39;s blog">
+    <meta name="description" content="反射机制：
+通常代码都是固定的，但在某些场合编写的代码不确定创建什么类型的对象，也不确定调用和方法，希望运行传递的参数来决定，这种动态编程技术叫反射
 
 
-2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念
+通俗讲就是动态创建对象并动态调用方法的机制
 
-
-3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，
-
-
-4.接口隔离原则：尽量依赖">
+快排：```package day24P">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>设计原则———线性(顺序)——二分(折半)查找！ | 岳阳-丁&#39;s blog</title>
+    <title>反射机制and快排算法 | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -272,13 +268,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        设计原则———线性(顺序)——二分(折半)查找！
+                        反射机制and快排算法
                     </div>
                 </div>
             </div>
@@ -430,78 +426,98 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="设计原则："><a href="#设计原则：" class="headerlink" title="设计原则："></a>设计原则：</h3><blockquote>
-<p>1.开闭原则：对扩展开放，对修改关闭，主要extends</p>
+                <h3 id="反射机制："><a href="#反射机制：" class="headerlink" title="反射机制："></a>反射机制：</h3><blockquote>
+<p>通常代码都是固定的，但在某些场合编写的代码不确定创建什么类型的对象，也不确定调用和方法，希望运行传递的参数来决定，这种动态编程技术叫反射</p>
 </blockquote>
 <blockquote>
-<p>2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念</p>
+<p>通俗讲就是动态创建对象并动态调用方法的机制</p>
 </blockquote>
-<blockquote>
-<p>3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，</p>
-</blockquote>
-<blockquote>
-<p>4.接口隔离原则：尽量依赖小借口，而不是大接口</p>
-</blockquote>
-<blockquote>
-<p>5.迪米特法则（最少知道原则）:一个实体应当少与其他类发生关联</p>
-</blockquote>
-<blockquote>
-<p>6.合成复用原则：就是例如 A类中的a需要在B类中可用，申明a在B，并且用构造传入它的引用；</p>
-</blockquote>
-<h3 id="线性和折半查找："><a href="#线性和折半查找：" class="headerlink" title="线性和折半查找："></a>线性和折半查找：</h3><pre><code>package day24PaiXuSuanFa;
-
-//线性查找（顺序）
-//从指定数组中查找参数指定的元素并返回下标；
-public class ChaZaoSuanFa {
-   //1.顺序查找（线性查找）：
-    public static int find(int[]arr, int num){
-        for(int i=0;i&lt;arr.length;i++){
-           if(num==arr[i]){
-               return i;
-           }
-        }
-        return -1; //查找失败
-    }
-
-    // 2. 二分查找法：
-    public static int findtwo(int[]arr,int left,int right,int tt) {
-        if (left&lt;=right) {
-            int z = (left + right)/2;
-            if (arr[z] == tt) {
-               return z;
+<h3 id="快排："><a href="#快排：" class="headerlink" title="快排："></a>快排：</h3><p>```<br>package day24PaiXuSuanFa;</p>
+<p>import java.lang.reflect.Array;<br>import java.util.Arrays;</p>
+<p>//快速排序算法：<br>public class TestSort {</p>
+<pre><code>//自定义成员方法实现冒泡排序算法
+public static void bubble(int[] arr){
+    //1.使用外层for循环用于控制比较的轮数
+    for(int i = 1; i &lt; arr.length; i++){
+        //声明boolean类型的变量作为本轮是否发生交换的标志位
+        boolean flag = true;
+        //2.使用内层for循环用于控制每轮中比较的次数
+        for(int j = 0; j &lt; arr.length-i; j++){
+            //3.若第一个元素比第二个元素大，则交换两个元素的位置
+            if(arr[j] &gt; arr[j+1]){
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                flag = false;
             }
-            if (arr[z] &gt; tt) {
-                return findtwo(arr, left, z - 1, tt);
-            }else {
-                return findtwo(arr, z + 1, right, tt);
         }
+        //若代码执行到这个位置后flag的数值还是true，则证明本轮比较没有发生交换
+        if(flag){
+            break; //省略剩下的比较轮数
         }
-                return -1;
-    }
-
-    public static void main(String[] args) {
-        int []brr ={10,23,44,22,341,12,3,2,0};
-        int []crr = {11,22,33,44,55,66,68,77};
-        int a=2;
-        int b=68;
-
-        //2.二分代码：
-        int two = findtwo(crr,0,7,b);
-        System.out.println(&quot;二分查找到的位置是：&quot;+two);
-
-       // 1.小马编写于main上
-        int t= ChaZaoSuanFa.find(brr,a);
-        System.out.println(&quot;线性查找的位置：&quot;+t);
-         /*  1. 自己编于main中
-        for(int i=0;i&lt;brr.length;i++){
-            if(a==brr[i]){
-                System.out.println(&quot;写在main方法里的获取位置：&quot;+i);
-                break;
-            }
-        }*/
     }
 }
-</code></pre>
+
+//自定义成员方法实现快速排序算法
+public static void quick(int[] arr, int left, int right){
+    //1.计算中间元素的下标并使用变量记录
+    int p = (left+right) / 2;
+    //2.选择中间元素作为基准值并单独保存起来
+    int pivot = arr[p];
+    //3.分别使用左右两边的元素依次与基准值比较大小，将所有小于基准值的元素放在左边，
+    //  将所有大于等于基准值的元素放在基准值的右边
+    //给左右两边的元素下标指定替身，为了递归方便
+    int i = left;
+    int j = right;
+    for( ; i &lt; j; ){
+        //若左边有元素并且左边的元素小于基准值，则使用下一个元素与基准值比较
+        while(i &lt; p &amp;&amp; arr[i] &lt; pivot){
+            i++;
+        }
+        //直到左边有元素但左边的元素不再小于基准值时，则将左边的元素赋值给p指向的
+        //位置，p指向该元素原来的位置
+        if(i &lt; p){
+            arr[p] = arr[i];
+            p = i;
+        }
+        //若右边有元素并且右边的元素大于等于基准值，则使用下一个元素与基准值比较
+        while(p &lt; j &amp;&amp; arr[j] &gt;= pivot){
+            j--;
+        }
+        //直到右边有元素但右边的元素不再大于等于基准值时，则将右边的元素赋值到p指向
+        //的位置，p指向该元素原来的位置
+        if(p &lt; j){
+            arr[p] = arr[j];
+            p = j;
+        }
+    }
+    //4.直到左右两边的元素下标重合时，将基准值放到重合的位置
+    arr[p] = pivot;
+    //5.分别对左右两边的分组进行再次分组，使用递归的思想
+    //左右两边的分组分别至少有2个元素才需要递归
+    if(p - left &gt; 1){
+        quick(arr, left, p-1);
+    }
+    if(right - p &gt; 1){
+        quick(arr, p+1, right);
+    }
+}
+
+public static void main(String[] args) {
+
+    int[] arr = {20, 8, 25, 3, 15, 20, 12, 18, 10};
+    //调用排序算法进行排序
+    // TestSort.bubble(arr);
+    TestSort.quick(arr, 0, arr.length-1);
+    Arrays.sort(arr);
+    //打印排序后的结果
+    System.out.print(&quot;排序后的结果是：&quot;);
+    for(int i : arr){
+        System.out.print(i + &quot; &quot;);
+    }
+    System.out.println();
+}</code></pre><p>}</p>
+
             </div>
             <hr/>
 
@@ -661,8 +677,8 @@ public class ChaZaoSuanFa {
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/29/2019-10-29-设计原则与线性与二分查找/">
-                    《设计原则———线性(顺序)——二分(折半)查找！》
+            <a  href="/2019/10/29/2019-10-30-反射与快排/">
+                    《反射机制and快排算法》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -707,24 +723,29 @@ public class ChaZaoSuanFa {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/29/2019-10-29-排序冒泡/">
+                <a href="/2019/10/29/2019-10-29-设计原则与线性与二分查找/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="冒泡排序!">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="设计原则———线性(顺序)——二分(折半)查找！">
                         
-                        <span class="card-title">冒泡排序!</span>
+                        <span class="card-title">设计原则———线性(顺序)——二分(折半)查找！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            package day24PaiXuSuanFa;
+                            设计原则：
+1.开闭原则：对扩展开放，对修改关闭，主要extends
 
-//冒泡排序：
-public class PaiXu {
-      public static void show(int []arr){
-          //注意此处的i从1开始
+
+2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念
+
+
+3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，
+
+
+4.接口隔离原则：尽量依赖
                         
                     </div>
                     <div class="publish-info">
@@ -761,30 +782,28 @@ public class PaiXu {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/29/2019-10-30-反射与快排/">
+                <a href="/2019/10/28/2019-10-28-线程同步机制加锁/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="反射机制and快排算法">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="线程同步机制加锁">
                         
-                        <span class="card-title">反射机制and快排算法</span>
+                        <span class="card-title">线程同步机制加锁</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            反射机制：
-通常代码都是固定的，但在某些场合编写的代码不确定创建什么类型的对象，也不确定调用和方法，希望运行传递的参数来决定，这种动态编程技术叫反射
+                            线程同步机制：
+多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）
 
-
-通俗讲就是动态创建对象并动态调用方法的机制
-
-快排：```package day24P
+主要上锁(synchronized)方式（3种）:
+1.在要执行的r
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-28
                             </span>
                         <span class="publish-author">
                             
