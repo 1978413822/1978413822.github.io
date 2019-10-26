@@ -4,18 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="设计原则———线性(顺序)——二分(折半)查找！, 岳阳-丁&#39;s blog">
-    <meta name="description" content="设计原则：
-1.开闭原则：对扩展开放，对修改关闭，主要extends
+    <meta name="keywords" content="Jdbc连接数据库方法及代码！, 岳阳-丁&#39;s blog">
+    <meta name="description" content="eclipse连数据库导入jar包：
+需要下载个jdbc的jar包，将jdbc6.jar的包复制到文件的包下，此时再右键此包，选取bulid path将包加入到项目中去，然后就按下面的连接代码即可
 
-
-2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念
-
-
-3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，
-
-
-4.接口隔离原则：尽量依赖">
+Idea连接数据库导入jar包；Orac">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>设计原则———线性(顺序)——二分(折半)查找！ | 岳阳-丁&#39;s blog</title>
+    <title>Jdbc连接数据库方法及代码！ | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -272,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        设计原则———线性(顺序)——二分(折半)查找！
+                        Jdbc连接数据库方法及代码！
                     </div>
                 </div>
             </div>
@@ -430,78 +423,40 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="设计原则："><a href="#设计原则：" class="headerlink" title="设计原则："></a>设计原则：</h3><blockquote>
-<p>1.开闭原则：对扩展开放，对修改关闭，主要extends</p>
+                <h3 id="eclipse连数据库导入jar包："><a href="#eclipse连数据库导入jar包：" class="headerlink" title="eclipse连数据库导入jar包："></a>eclipse连数据库导入jar包：</h3><blockquote>
+<p>需要下载个jdbc的jar包，将<code>jdbc6.jar</code>的包复制到文件的包下，此时再右键此包，选取<code>bulid path</code>将包加入到项目中去，然后就按下面的连接代码即可</p>
+</blockquote>
+<h3 id="Idea连接数据库导入jar包；"><a href="#Idea连接数据库导入jar包；" class="headerlink" title="Idea连接数据库导入jar包；"></a>Idea连接数据库导入jar包；</h3><h2 id="Oracle连接详解"><a href="#Oracle连接详解" class="headerlink" title="Oracle连接详解~"></a><a href="https://jingyan.baidu.com/article/f71d6037c919351ab641d1a8.html" target="_blank" rel="noopener">Oracle连接详解~</a></h2><h2 id="MySQL连接详解"><a href="#MySQL连接详解" class="headerlink" title="MySQL连接详解~"></a><a href="https://www.cnblogs.com/Ran-Chen/p/9646187.html" target="_blank" rel="noopener">MySQL连接详解~</a></h2><blockquote>
+<p>首先将数据库连上</p>
+</blockquote>
+<ul>
+<li><p>打开Idea，在最右侧导航栏中找到『DataBase』</p>
+</li>
+<li><p>单击『DataBase』，在展开的窗口中单击『+』号按钮，选择添加Oracle数据源</p>
+</li>
+<li><p>填写Oracle数据库连接信息，如果连接的Oracle安装在本机则直接用localhost即可，否则需要填写安装Oracle数据库的主机IP地址</p>
+</li>
+<li><p>配置Oracle数据库驱动</p>
+</li>
+<li><p>完成上面配置后，点击【Test Connection】测试Idea与Oracle的连通性，如果连接正常会有成功的提示。</p>
+</li>
+</ul>
+<blockquote>
+<p>导入jar包   <a href="https://blog.csdn.net/zwj1030711290/article/details/56678353/" target="_blank" rel="noopener">导入jar包的3种详解~~</a></p>
 </blockquote>
 <blockquote>
-<p>2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念</p>
+<p>1.打开 File -&gt; Project Structure （Ctrl + Shift + Alt + S）</p>
 </blockquote>
+<p><img src="http://dl2.iteye.com/upload/attachment/0104/8876/694f8b5c-70ac-3fec-8e89-bde24aa42424.png" alt="tu1"></p>
 <blockquote>
-<p>3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，</p>
+<p>2.单击 Modules -&gt; Dependencies -&gt; “+” -&gt; “Jars or directories”</p>
 </blockquote>
+<p><img src="http://dl2.iteye.com/upload/attachment/0104/8878/03160851-defd-3cbb-9334-792f1b1f7795.png" alt="tu2"></p>
 <blockquote>
-<p>4.接口隔离原则：尽量依赖小借口，而不是大接口</p>
+<p>3.选择硬盘上的jar包,Apply -&gt; OK</p>
 </blockquote>
-<blockquote>
-<p>5.迪米特法则（最少知道原则）:一个实体应当少与其他类发生关联</p>
-</blockquote>
-<blockquote>
-<p>6.合成复用原则：就是例如 A类中的a需要在B类中可用，申明a在B，并且用构造传入它的引用；</p>
-</blockquote>
-<h3 id="线性和折半查找："><a href="#线性和折半查找：" class="headerlink" title="线性和折半查找："></a>线性和折半查找：</h3><pre><code>package day24PaiXuSuanFa;
+<p><img src="http://dl2.iteye.com/upload/attachment/0104/8880/d19fb3d1-0342-3e8c-bf1b-ec31006015cc.png" alt="tu3"></p>
 
-//线性查找（顺序）
-//从指定数组中查找参数指定的元素并返回下标；
-public class ChaZaoSuanFa {
-   //1.顺序查找（线性查找）：
-    public static int find(int[]arr, int num){
-        for(int i=0;i&lt;arr.length;i++){
-           if(num==arr[i]){
-               return i;
-           }
-        }
-        return -1; //查找失败
-    }
-
-    // 2. 二分查找法：
-    public static int findtwo(int[]arr,int left,int right,int tt) {
-        if (left&lt;=right) {
-            int z = (left + right)/2;
-            if (arr[z] == tt) {
-               return z;
-            }
-            if (arr[z] &gt; tt) {
-                return findtwo(arr, left, z - 1, tt);
-            }else {
-                return findtwo(arr, z + 1, right, tt);
-        }
-        }
-                return -1;
-    }
-
-    public static void main(String[] args) {
-        int []brr ={10,23,44,22,341,12,3,2,0};
-        int []crr = {11,22,33,44,55,66,68,77};
-        int a=2;
-        int b=68;
-
-        //2.二分代码：
-        int two = findtwo(crr,0,7,b);
-        System.out.println(&quot;二分查找到的位置是：&quot;+two);
-
-       // 1.小马编写于main上
-        int t= ChaZaoSuanFa.find(brr,a);
-        System.out.println(&quot;线性查找的位置：&quot;+t);
-         /*  1. 自己编于main中
-        for(int i=0;i&lt;brr.length;i++){
-            if(a==brr[i]){
-                System.out.println(&quot;写在main方法里的获取位置：&quot;+i);
-                break;
-            }
-        }*/
-    }
-}
-</code></pre>
             </div>
             <hr/>
 
@@ -661,8 +616,8 @@ public class ChaZaoSuanFa {
                 </a>
             </div>
             <br/>
-            <a  href="/2019/10/29/2019-10-29-设计原则与线性与二分查找/">
-                    《设计原则———线性(顺序)——二分(折半)查找！》
+            <a  href="/2019/10/29/2019-10-31-jdbc/">
+                    《Jdbc连接数据库方法及代码！》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -707,24 +662,29 @@ public class ChaZaoSuanFa {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/29/2019-10-29-排序冒泡/">
+                <a href="/2019/10/29/2019-10-29-设计原则与线性与二分查找/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="冒泡排序!">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="设计原则———线性(顺序)——二分(折半)查找！">
                         
-                        <span class="card-title">冒泡排序!</span>
+                        <span class="card-title">设计原则———线性(顺序)——二分(折半)查找！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            package day24PaiXuSuanFa;
+                            设计原则：
+1.开闭原则：对扩展开放，对修改关闭，主要extends
 
-//冒泡排序：
-public class PaiXu {
-      public static void show(int []arr){
-          //注意此处的i从1开始
+
+2.里氏代换原则:任何父类课出现的地方，子类都可出现，多用继承和多态理念
+
+
+3.依赖倒转原则：尽量多用抽象类或接口，不是具体实现类，
+
+
+4.接口隔离原则：尽量依赖
                         
                     </div>
                     <div class="publish-info">
@@ -761,27 +721,28 @@ public class PaiXu {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/29/2019-10-31-jdbc/">
+                <a href="/2019/10/28/2019-10-28-线程同步机制加锁/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Jdbc连接数据库方法及代码！">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="线程同步机制加锁">
                         
-                        <span class="card-title">Jdbc连接数据库方法及代码！</span>
+                        <span class="card-title">线程同步机制加锁</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            eclipse连数据库导入jar包：
-需要下载个jdbc的jar包，将jdbc6.jar的包复制到文件的包下，此时再右键此包，选取bulid path将包加入到项目中去，然后就按下面的连接代码即可
+                            线程同步机制：
+多个线程访问同一资源时，造成数据不一致，此时需对多个线程间进行协调。（例如：银行取钱时线程同时过去，会导致数据判断不正确，此时需将并行的的操作改为串行）
 
-Idea连接数据库导入jar包；Orac
+主要上锁(synchronized)方式（3种）:
+1.在要执行的r
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-28
                             </span>
                         <span class="publish-author">
                             

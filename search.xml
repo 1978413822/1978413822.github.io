@@ -104,6 +104,31 @@
     
     
     <entry>
+      <title>Jdbc连接数据库方法及代码！</title>
+      <link href="/2019/10/29/2019-10-31-jdbc/"/>
+      <url>/2019/10/29/2019-10-31-jdbc/</url>
+      
+        <content type="html"><![CDATA[<h3 id="eclipse连数据库导入jar包："><a href="#eclipse连数据库导入jar包：" class="headerlink" title="eclipse连数据库导入jar包："></a>eclipse连数据库导入jar包：</h3><blockquote><p>需要下载个jdbc的jar包，将<code>jdbc6.jar</code>的包复制到文件的包下，此时再右键此包，选取<code>bulid path</code>将包加入到项目中去，然后就按下面的连接代码即可</p></blockquote><h3 id="Idea连接数据库导入jar包；"><a href="#Idea连接数据库导入jar包；" class="headerlink" title="Idea连接数据库导入jar包；"></a>Idea连接数据库导入jar包；</h3><h2 id="Oracle连接详解"><a href="#Oracle连接详解" class="headerlink" title="Oracle连接详解~"></a><a href="https://jingyan.baidu.com/article/f71d6037c919351ab641d1a8.html" target="_blank" rel="noopener">Oracle连接详解~</a></h2><h2 id="MySQL连接详解"><a href="#MySQL连接详解" class="headerlink" title="MySQL连接详解~"></a><a href="https://www.cnblogs.com/Ran-Chen/p/9646187.html" target="_blank" rel="noopener">MySQL连接详解~</a></h2><blockquote><p>首先将数据库连上</p></blockquote><ul><li><p>打开Idea，在最右侧导航栏中找到『DataBase』</p></li><li><p>单击『DataBase』，在展开的窗口中单击『+』号按钮，选择添加Oracle数据源</p></li><li><p>填写Oracle数据库连接信息，如果连接的Oracle安装在本机则直接用localhost即可，否则需要填写安装Oracle数据库的主机IP地址</p></li><li><p>配置Oracle数据库驱动</p></li><li><p>完成上面配置后，点击【Test Connection】测试Idea与Oracle的连通性，如果连接正常会有成功的提示。</p></li></ul><blockquote><p>导入jar包   <a href="https://blog.csdn.net/zwj1030711290/article/details/56678353/" target="_blank" rel="noopener">导入jar包的3种详解~~</a></p></blockquote><blockquote><p>1.打开 File -&gt; Project Structure （Ctrl + Shift + Alt + S）</p></blockquote><p><img src="http://dl2.iteye.com/upload/attachment/0104/8876/694f8b5c-70ac-3fec-8e89-bde24aa42424.png" alt="tu1"></p><blockquote><p>2.单击 Modules -&gt; Dependencies -&gt; “+” -&gt; “Jars or directories”</p></blockquote><p><img src="http://dl2.iteye.com/upload/attachment/0104/8878/03160851-defd-3cbb-9334-792f1b1f7795.png" alt="tu2"></p><blockquote><p>3.选择硬盘上的jar包,Apply -&gt; OK</p></blockquote><p><img src="http://dl2.iteye.com/upload/attachment/0104/8880/d19fb3d1-0342-3e8c-bf1b-ec31006015cc.png" alt="tu3"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>线程同步机制加锁</title>
       <link href="/2019/10/28/2019-10-28-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6%E5%8A%A0%E9%94%81/"/>
       <url>/2019/10/28/2019-10-28-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6%E5%8A%A0%E9%94%81/</url>
