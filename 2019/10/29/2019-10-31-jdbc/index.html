@@ -456,7 +456,49 @@ Idea连接数据库导入jar包；Orac">
 <p>3.选择硬盘上的jar包,Apply -&gt; OK</p>
 </blockquote>
 <p><img src="http://dl2.iteye.com/upload/attachment/0104/8880/d19fb3d1-0342-3e8c-bf1b-ec31006015cc.png" alt="tu3"></p>
+<h3 id="实现代码2种："><a href="#实现代码2种：" class="headerlink" title="实现代码2种："></a>实现代码2种：</h3><blockquote>
+<p>1.<code>Statement</code>和防止sql注入的<code>PreparedStatement</code></p>
+</blockquote>
+<pre><code>//1.Stastment法:
 
+  //加载驱动：
+  Class.forName(&quot;oracle.jdbc.OracleDriver&quot;);
+  //创建连接：
+  DriverManger.getConnection(&quot;jdbc:oracle:thin:@localhost:1521:xe&quot;
+    ,&quot;system&quot;,&quot;123456&quot;);
+  //操作数据库语句：
+  String ss = &quot;select *from yueyang&quot;;
+  //建立实现环境：
+    Statement st = coon.createStament();  
+  //执行,这里不是select查询语句局不需要返回值Reultset
+    Resultset rs =  st.excuteQuery(ss);
+    if(rs.next()){
+        System.out.println(&quot;登录成功&quot;)
+    }else{
+        System.out.println(&quot;没输对！&quot;)
+
+    }
+
+//2.PreparedStatement法:
+
+ //加载驱动：
+  Class.forName(&quot;oracle.jdbc.OracleDriver&quot;);
+  //创建连接：
+  DriverManger.getConnection(&quot;jdbc:oracle:thin:@localhost:1521:xe&quot;
+    ,&quot;system&quot;,&quot;123456&quot;);
+  //操作数据库语句：
+   String ss = &quot;select name,id from yueyang where name=? id=?&quot;;
+  //建立环境此处会加入ss
+    PreparedStatement ps = coon.createPreparedStament(ss);  
+    ps.setString(1,&quot;改个名&quot;);
+    ps.setInt(2,12345);
+    ResultSet rs = ps.excuteQuery();
+    if(rs.next()){
+        System.out.println(&quot;登录成功&quot;)
+    }else{
+        System.out.println(&quot;没输对！&quot;)
+
+    }</code></pre>
             </div>
             <hr/>
 
