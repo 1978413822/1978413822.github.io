@@ -30,31 +30,6 @@
     
     <entry>
       <title>永久破解Pycharm！</title>
-      <link href="/2019/11/02/2019-11-2-pycharm%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3/"/>
-      <url>/2019/11/02/2019-11-2-pycharm%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pycharm永久破解链接"><a href="#pycharm永久破解链接" class="headerlink" title="pycharm永久破解链接~"></a><a href="https://www.cnblogs.com/lizhewei/p/11698532.html" target="_blank" rel="noopener">pycharm永久破解链接~</a></h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 19年11月 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>永久破解Pycharm！</title>
       <link href="/2019/11/02/2019-11-4-idea%E9%85%8Dtomcat%E8%BF%90%E8%A1%8C/"/>
       <url>/2019/11/02/2019-11-4-idea%E9%85%8Dtomcat%E8%BF%90%E8%A1%8C/</url>
       
@@ -84,6 +59,31 @@
       <url>/2019/11/02/2019-11-5-tomcat%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BA%95%E9%83%A8%E7%AA%97%E5%8F%A3%E4%B9%B1%E7%A0%81/</url>
       
         <content type="html"><![CDATA[<blockquote><p>首先去到tomcat安装的<code>bin</code>目录下，找到<code>catalina.bat</code>文件夹<br>下的大概在211行<code>set &quot;JAVA_OPTS=%JAVA_OPTS% %JSSE_OPTS%&quot;</code>。在它的后面加上<code>-Dfile.encoding=UTF-8</code>中间记得空格隔开。</p></blockquote><blockquote><p>之后去到conf目录中<code>logging.properties</code>中在差不多47行<code>java.util.logging.ConsoleHandler.encoding = UTF-8</code>最后的UTF-8改为<code>GBK</code>;即完成</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年11月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>永久破解Pycharm！</title>
+      <link href="/2019/11/02/2019-11-2-pycharm%E5%92%8Cgo%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3/"/>
+      <url>/2019/11/02/2019-11-2-pycharm%E5%92%8Cgo%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pycharm永久破解链接"><a href="#pycharm永久破解链接" class="headerlink" title="pycharm永久破解链接~"></a><a href="https://www.cnblogs.com/lizhewei/p/11698532.html" target="_blank" rel="noopener">pycharm永久破解链接~</a></h1><h1 id="goland永久破解链接"><a href="#goland永久破解链接" class="headerlink" title="goland永久破解链接~"></a><a href="http://c.biancheng.net/view/6124.html" target="_blank" rel="noopener">goland永久破解链接~</a></h1>]]></content>
       
       
       <categories>
