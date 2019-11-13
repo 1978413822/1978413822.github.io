@@ -4,14 +4,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法, 岳阳-丁&#39;s blog">
-    <meta name="description" content="Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法
+    <meta name="keywords" content="ERROR Local hexo not found in D:\hexo。解决方法！, 岳阳-丁&#39;s blog">
+    <meta name="description" content="
+hexo g -d上传文件时显示以下错误：
 
-首先： 加上自己那个项目
 
-  
+ERROR Local hexo not found in D:\hexo
 
-其次：">
+ERROR Try running:’npm install hexo –save’
+
+
+
+导致这个原因为在自己">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +23,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法 | 岳阳-丁&#39;s blog</title>
+    <title>ERROR Local hexo not found in D:\hexo。解决方法！ | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -268,13 +272,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法
+                        ERROR Local hexo not found in D:\hexo。解决方法！
                     </div>
                 </div>
             </div>
@@ -410,7 +414,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-04
+                    2019-11-14
                 </div>
 
                 
@@ -426,19 +430,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Artifact-Project3-war-exploded-Error-during-artifact-deployment-See-server-log-for-details-解决方法"><a href="#Artifact-Project3-war-exploded-Error-during-artifact-deployment-See-server-log-for-details-解决方法" class="headerlink" title="Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法"></a>Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法</h3><p><img src="https://images2018.cnblogs.com/blog/1136277/201806/1136277-20180613141255056-903684250.png" alt="tu"></p>
-<blockquote>
-<p>首先： 加上自己那个项目</p>
+                <blockquote>
+<p>hexo g -d上传文件时显示以下错误：</p>
 </blockquote>
-<p> <img src="https://img-blog.csdn.net/20160831095425569" alt="tu1"> </p>
+<ul>
+<li><p>ERROR Local hexo not found in D:\hexo</p>
+</li>
+<li><p>ERROR Try running:’npm install hexo –save’</p>
+</li>
+</ul>
+<p><img src="https://img-blog.csdn.net/2018061315435176" alt="tu"></p>
+<p>导致这个原因为在自己的博客文件夹中,.gitignore文件中添加了node_modules/,导致更新的时候,这个文件夹被忽略,没有被更新上去。</p>
 <blockquote>
-<p>其次：在tomcat设置一下会将那个项目路径导入</p>
+<p>所以我们的解决方案:</p>
 </blockquote>
-<p> <img src="https://img-blog.csdn.net/20160831095722651" alt="tu2"></p>
+<p>  1.cmd进入博客当前文件夹路径</p>
+<p>  2.执行 npm install</p>
+<p> 3.执行 hexo server</p>
+<p> 4.执行成功后,再到博客下的git中执行 hexo d /hexo g 发现可以执行成功。</p>
 <blockquote>
-<p>再然后 ：即可成功</p>
+<p>这就ok了：</p>
 </blockquote>
-<p><img src="https://img-blog.csdn.net/20160831095809970" alt="tu3"></p>
+<p> <img src="https://img-blog.csdn.net/20180613154954194?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3llbGxvd211c2hyb29t/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="tu2"></p>
 
             </div>
             <hr/>
@@ -599,8 +612,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/11/04/2019-11-13-tomcat异常处理/">
-                    《Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法》
+            <a  href="/2019/11/14/2019-11-14-hexo模板异常处理/">
+                    《ERROR Local hexo not found in D:\hexo。解决方法！》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -641,29 +654,40 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/04/2019-11-04-idea配tomcat运行/">
+                <a href="/2019/11/14/2019-11-14-hexo模板异常处理/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="永久破解Pycharm！">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="ERROR Local hexo not found in D:\hexo。解决方法！">
                         
-                        <span class="card-title">永久破解Pycharm！</span>
+                        <span class="card-title">ERROR Local hexo not found in D:\hexo。解决方法！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            IDEA配置tomcat链接~
+                            
+hexo g -d上传文件时显示以下错误：
+
+
+ERROR Local hexo not found in D:\hexo
+
+ERROR Try running:’npm install hexo –save’
+
+
+
+导致这个原因为在自己
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -676,6 +700,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -694,27 +719,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/01/2019-11-01-连接池和数据库优化/">
+                <a href="/2019/11/13/2019-11-13-tomcat异常处理/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="数据库优化12点,连接池配置代码">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法">
                         
-                        <span class="card-title">数据库优化12点,连接池配置代码</span>
+                        <span class="card-title">Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据库优化12点：
-在进行表格查询时 , where子句中的条件执行顺序是从左至右 , 清除数据量较大的条件应该放在左边.(特别注意: 笛卡尔积消除条件必须放在最左边)
+                            Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法
 
-在进行表格查询时 , 列名列表应避免使用号 ! 数据库在执行查询操作
+首先： 加上自己那个项目
+
+  
+
+其次：
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-13
                             </span>
                         <span class="publish-author">
                             
@@ -731,8 +759,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/javaWeb/">
+                        <span class="chip bg-color">javaWeb</span>
                     </a>
                     
                 </div>
