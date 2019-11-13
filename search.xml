@@ -29,34 +29,9 @@
     
     
     <entry>
-      <title>永久破解Pycharm！</title>
-      <link href="/2019/11/02/2019-11-4-idea%E9%85%8Dtomcat%E8%BF%90%E8%A1%8C/"/>
-      <url>/2019/11/02/2019-11-4-idea%E9%85%8Dtomcat%E8%BF%90%E8%A1%8C/</url>
-      
-        <content type="html"><![CDATA[<h1 id="IDEA配置tomcat链接"><a href="#IDEA配置tomcat链接" class="headerlink" title="IDEA配置tomcat链接~"></a><a href="https://blog.csdn.net/qq_31914787/article/details/82529893" target="_blank" rel="noopener">IDEA配置tomcat链接~</a></h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 19年11月 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>tomcat8.5运行时运行窗口乱码问题！</title>
-      <link href="/2019/11/02/2019-11-5-tomcat%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BA%95%E9%83%A8%E7%AA%97%E5%8F%A3%E4%B9%B1%E7%A0%81/"/>
-      <url>/2019/11/02/2019-11-5-tomcat%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BA%95%E9%83%A8%E7%AA%97%E5%8F%A3%E4%B9%B1%E7%A0%81/</url>
+      <link href="/2019/11/05/2019-11-05-tomcat%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BA%95%E9%83%A8%E7%AA%97%E5%8F%A3%E4%B9%B1%E7%A0%81/"/>
+      <url>/2019/11/05/2019-11-05-tomcat%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BA%95%E9%83%A8%E7%AA%97%E5%8F%A3%E4%B9%B1%E7%A0%81/</url>
       
         <content type="html"><![CDATA[<blockquote><p>首先去到tomcat安装的<code>bin</code>目录下，找到<code>catalina.bat</code>文件夹<br>下的大概在211行<code>set &quot;JAVA_OPTS=%JAVA_OPTS% %JSSE_OPTS%&quot;</code>。在它的后面加上<code>-Dfile.encoding=UTF-8</code>中间记得空格隔开。</p></blockquote><blockquote><p>之后去到conf目录中<code>logging.properties</code>中在差不多47行<code>java.util.logging.ConsoleHandler.encoding = UTF-8</code>最后的UTF-8改为<code>GBK</code>;即完成</p></blockquote>]]></content>
       
@@ -80,8 +55,8 @@
     
     <entry>
       <title>永久破解Pycharm！</title>
-      <link href="/2019/11/02/2019-11-2-pycharm%E5%92%8Cgo%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3/"/>
-      <url>/2019/11/02/2019-11-2-pycharm%E5%92%8Cgo%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3/</url>
+      <link href="/2019/11/04/2019-11-02-pycharm%E5%92%8Cgo%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3/"/>
+      <url>/2019/11/04/2019-11-02-pycharm%E5%92%8Cgo%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3/</url>
       
         <content type="html"><![CDATA[<h1 id="pycharm永久破解链接"><a href="#pycharm永久破解链接" class="headerlink" title="pycharm永久破解链接~"></a><a href="https://www.cnblogs.com/lizhewei/p/11698532.html" target="_blank" rel="noopener">pycharm永久破解链接~</a></h1><h1 id="goland永久破解链接"><a href="#goland永久破解链接" class="headerlink" title="goland永久破解链接~"></a><a href="http://c.biancheng.net/view/6124.html" target="_blank" rel="noopener">goland永久破解链接~</a></h1>]]></content>
       
@@ -104,9 +79,59 @@
     
     
     <entry>
+      <title>永久破解Pycharm！</title>
+      <link href="/2019/11/04/2019-11-04-idea%E9%85%8Dtomcat%E8%BF%90%E8%A1%8C/"/>
+      <url>/2019/11/04/2019-11-04-idea%E9%85%8Dtomcat%E8%BF%90%E8%A1%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="IDEA配置tomcat链接"><a href="#IDEA配置tomcat链接" class="headerlink" title="IDEA配置tomcat链接~"></a><a href="https://blog.csdn.net/qq_31914787/article/details/82529893" target="_blank" rel="noopener">IDEA配置tomcat链接~</a></h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年11月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法</title>
+      <link href="/2019/11/04/2019-11-13-tomcat%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+      <url>/2019/11/04/2019-11-13-tomcat%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Artifact-Project3-war-exploded-Error-during-artifact-deployment-See-server-log-for-details-解决方法"><a href="#Artifact-Project3-war-exploded-Error-during-artifact-deployment-See-server-log-for-details-解决方法" class="headerlink" title="Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法"></a>Artifact Project3:war exploded  Error during artifact deployment. See server log for details.解决方法</h3><p><img src="https://images2018.cnblogs.com/blog/1136277/201806/1136277-20180613141255056-903684250.png" alt="tu"></p><blockquote><p>首先： 加上自己那个项目</p></blockquote><p> <img src="https://img-blog.csdn.net/20160831095425569" alt="tu1"> </p><blockquote><p>其次：在tomcat设置一下会将那个项目路径导入</p></blockquote><p> <img src="https://img-blog.csdn.net/20160831095722651" alt="tu2"></p><blockquote><p>再然后 ：即可成功</p></blockquote><p><img src="https://img-blog.csdn.net/20160831095809970" alt="tu3"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年11月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库优化12点,连接池配置代码</title>
-      <link href="/2019/11/01/2019-11-1-%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
-      <url>/2019/11/01/2019-11-1-%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/</url>
+      <link href="/2019/11/01/2019-11-01-%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
+      <url>/2019/11/01/2019-11-01-%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/</url>
       
         <content type="html"><![CDATA[<h3 id="数据库优化12点："><a href="#数据库优化12点：" class="headerlink" title="数据库优化12点："></a>数据库优化12点：</h3><ol><li><p>在进行表格查询时 , where子句中的条件执行顺序是从左至右 , 清除数据量较大的条件应该放在左边.(特别注意: 笛卡尔积消除条件必须放在最左边)</p></li><li><p>在进行表格查询时 , 列名列表应避免使用<em>号 ! 数据库在执行查询操作时, 会先将</em>号展开, 转换为所有的列名, 再进行查询.</p></li><li><p>在进行表格查询时 , 能使用where条件筛选的数据, 应尽量避免使用having子句来筛选. 因为where条件执行在having之前 , 在早期筛选掉大量数据, 可以让程序执行的更顺畅.</p></li><li><p>在进行多表查询时 , 查询的表顺序是从右至左的. 应把表中数据量最少的表放在查询的最右边.</p></li><li><p>在进行多表查询时 , 应尽可能的给所有的表添加别名, 能明确的区分有冲突的列.</p></li><li><p>在使用事务时 ,  应尽量多的commit , 尽量早的commit ! 原因是: 事务在未提交时, 数据库会耗费大量的内存 , 来缓存未提交的SQL结果 !</p></li><li><p>尽可能多的使用函数 来提高SQL执行的效率. </p></li><li><p>SQL语句编写时, 除字符串以外 , 应使用大写字母 ! 因为SQL语句执行时, 会先将小写字母 转换为 大写字母, 再执行.</p></li><li><p>应尽可能少的访问数据库 (多次数据访问的结果可能相同, 如果缓存起来 ,可以提高程序的执行效率)</p></li><li><p>在索引列上 , 尽可能避免使用not来判断. not关键字如果判断了索引列 , 会导致此次查询索引失效 , 转而使用全表扫描的方式查询.</p></li><li><p>在索引列上, 不能使用算数运算 , 算数运算也会导致索引列使用, 使用全表扫描的方式进行查询.</p></li><li><p>在查询数据时, 如果需要使用&gt;或&lt;的条件, 应替换为&gt;= 或 &lt;= ! </p><pre><code>原因是&gt;和&lt;符号 , 查询时, 是按照&gt;= 和 &lt;= 进行查询, 然后在撇去=的结果</code></pre></li></ol><h3 id="连接池"><a href="#连接池" class="headerlink" title="连接池"></a>连接池</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1.  引入相关的jar文件</span><br><span class="line">        -   dbcp    :   连接池的代码</span><br><span class="line">        -   poll    :   连接池的依赖库</span><br><span class="line"></span><br><span class="line">2.  创建一个properties文件, 描述连接池的配置 , 内容如下:</span><br><span class="line">    #数据库连接地址</span><br><span class="line">    <span class="attribute">url</span>=jdbc:oracle:thin:@localhost:1521:XE</span><br><span class="line">    #数据库驱动地址</span><br><span class="line">    <span class="attribute">driverClassName</span>=oracle.jdbc.OracleDriver</span><br><span class="line">    #数据库帐号</span><br><span class="line">    <span class="attribute">username</span>=system</span><br><span class="line">    #数据库密码</span><br><span class="line">    <span class="attribute">password</span>=123</span><br><span class="line"></span><br><span class="line">    #扩展配置:</span><br><span class="line">    #初始化连接池时, 创建的连接数量:</span><br><span class="line">    <span class="attribute">initialSize</span>=5</span><br><span class="line">    #最大允许存在的连接数量</span><br><span class="line">    <span class="attribute">maxActive</span>=200</span><br><span class="line">    #空闲时允许保留的最大连接数量</span><br><span class="line">    <span class="attribute">maxIdle</span>=10</span><br><span class="line">    #空闲时允许保留的最小连接数量</span><br><span class="line">    <span class="attribute">minIdle</span>=5</span><br><span class="line">    #排队等候的超时时间</span><br><span class="line">    <span class="attribute">maxWait</span>=20000</span><br><span class="line"></span><br><span class="line">3.  将properties文件, 转换为Properties对象.</span><br><span class="line">    Properties ppt = new Properties();</span><br><span class="line">    ppt.load(文件输入流);</span><br><span class="line">4.  通过连接池工厂类(BasicDataSourceFactory) , 创建连接池对象 (一次程序启动, 创建一个连接池就够了.)</span><br><span class="line">    DataSource ds = BasicDataSourceFactory.createDataSource(ppt);</span><br><span class="line">5.  通过连接池对象, 获取池中的连接</span><br><span class="line">   <span class="built_in"> Connection </span>conn = ds.getConnection();</span><br><span class="line">6.  正常JDBC操作</span><br></pre></td></tr></table></figure><h3 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h3><pre><code>// DBCPUtil工具类 *public class DBCPUtil {    private static DataSource dataSource;    static {        //在类加载时, 读取配置文件, 配置连接池        //1.    创建Properites对象        Properties ppt = new Properties();        //2.    读取配置文件,         InputStream is = DBCPUtil.class.getClassLoader().getResourceAsStream(&quot;dbcp.properties&quot;);        //3.    将配置文件 加载到Properties对象中        try {            ppt.load(is);        //4.    通过连接池工厂类, 创建连接池            dataSource = BasicDataSourceFactory.createDataSource(ppt);        } catch (Exception e) {            e.printStackTrace();        }    }    /**     * 用于从连接池中 获取一个连接对象     * @return 连接对象 , 如果获取失败返回null     */    public static Connection getConnection() {        try {            return dataSource.getConnection();        } catch (Exception e) {            e.printStackTrace();            return null;        }    }    /**     * 用于释放资源     * @param conn  连接对象     * @param state 执行环境     * @param result 结果集     */    public static void close(Connection conn , Statement state ,ResultSet result) {        if(result!=null) {            try {                result.close();            } catch (SQLException e) {                e.printStackTrace();            }        }        if(state!=null) {            try {                state.close();            } catch (SQLException e) {                // TODO Auto-generated catch block                e.printStackTrace();            }        }        if(conn!=null) {            try {                conn.close();            } catch (SQLException e) {                // TODO Auto-generated catch block                e.printStackTrace();            }        }    }}</code></pre>]]></content>
       
