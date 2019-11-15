@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）</title>
+      <link href="/2019/11/15/2019-11-15-Spring%E5%A4%B4%E9%83%A8%E6%96%87%E4%BB%B6http%E9%82%A3%E4%B8%AA%E5%BC%82%E5%B8%B8/"/>
+      <url>/2019/11/15/2019-11-15-Spring%E5%A4%B4%E9%83%A8%E6%96%87%E4%BB%B6http%E9%82%A3%E4%B8%AA%E5%BC%82%E5%B8%B8/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>首先不要慌：</p></blockquote><p> IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）</p><p>中文翻译就是统一资源标识符没有注册。</p><blockquote><p>我们就需要把这个不被识别的统一资源标识符添加到IDEA中，步骤如下：</p></blockquote><p>file–&gt;settings…–&gt;languages &amp; frameworks –&gt; Schemas and DTDs</p><p><img src="https://img-blog.csdn.net/2018051215103119?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xhY3JpbWFycnVt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="tu"></p><blockquote><p><a href="https://blog.csdn.net/lacrimarrum/article/details/80291589" target="_blank" rel="noopener">详情可见~</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年11月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javaSpring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ERROR Local hexo not found in D:\hexo。解决方法！</title>
       <link href="/2019/11/14/2019-11-14-hexo%E6%A8%A1%E6%9D%BF%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
       <url>/2019/11/14/2019-11-14-hexo%E6%A8%A1%E6%9D%BF%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</url>
@@ -46,31 +71,6 @@
         <tags>
             
             <tag> javaWeb </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）</title>
-      <link href="/2019/11/13/2019-11-15-Spring%E5%A4%B4%E9%83%A8%E6%96%87%E4%BB%B6http%E9%82%A3%E4%B8%AA%E5%BC%82%E5%B8%B8/"/>
-      <url>/2019/11/13/2019-11-15-Spring%E5%A4%B4%E9%83%A8%E6%96%87%E4%BB%B6http%E9%82%A3%E4%B8%AA%E5%BC%82%E5%B8%B8/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>首先不要慌：</p></blockquote><p> IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）</p><p>中文翻译就是统一资源标识符没有注册。</p><blockquote><p>我们就需要把这个不被识别的统一资源标识符添加到IDEA中，步骤如下：</p></blockquote><p>file–&gt;settings…–&gt;languages &amp; frameworks –&gt; Schemas and DTDs</p><p><img src="https://img-blog.csdn.net/2018051215103119?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xhY3JpbWFycnVt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="tu"></p><blockquote><p><a href="https://blog.csdn.net/lacrimarrum/article/details/80291589" target="_blank" rel="noopener">详情可见~</a></p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 19年11月 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> javaSpring </tag>
             
         </tags>
       
