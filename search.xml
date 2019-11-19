@@ -554,31 +554,6 @@
     
     
     <entry>
-      <title>泛型机制！</title>
-      <link href="/2019/10/19/2019-10-20-%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/"/>
-      <url>/2019/10/19/2019-10-20-%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/</url>
-      
-        <content type="html"><![CDATA[<h3 id="泛型机制："><a href="#泛型机制：" class="headerlink" title="泛型机制："></a>泛型机制：</h3><p>泛型其实是在jdk1.5中才添加的。在jdk1.5之前我们要创建一个容器对象，是这样往里面添加内容的。</p><figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">List</span> <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"><span class="built_in">list</span>.add(<span class="string">"我是字符串"</span>);<span class="comment">//可以添加字符串</span></span><br><span class="line"><span class="built_in">list</span>.add(<span class="number">10.67</span>);<span class="comment">//可以添加float</span></span><br><span class="line"><span class="built_in">list</span>.add(<span class="literal">false</span>);<span class="comment">//可以添加boolean</span></span><br></pre></td></tr></table></figure><p>也就是说我们创建了一个容器之后，我们可以往里面添加任何东西，这时候就麻烦了，如果我们只想保存字符串，但是一不小心存了一个int类型的值，在输出的时候肯定会报错误的。那怎么办呢？于是乎，在jdk1.5添加了泛型机制，去规范我们输入的值。</p><p><code>List&lt;String&gt; list = new ArrayList&lt;String&gt;();</code><br>这时候我们的list就只能保存String类型的值了，如果我们保存了int类型的值，那么就会在编译期报错</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 19年10月 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>List集合！</title>
       <link href="/2019/10/19/2019-10-20-List%E9%9B%86%E5%90%88/"/>
       <url>/2019/10/19/2019-10-20-List%E9%9B%86%E5%90%88/</url>
@@ -604,11 +579,11 @@
     
     
     <entry>
-      <title>统计字符串中大小写，数字，符号个数</title>
-      <link href="/2019/10/18/2019-10-18-%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0/"/>
-      <url>/2019/10/18/2019-10-18-%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0/</url>
+      <title>泛型机制！</title>
+      <link href="/2019/10/19/2019-10-20-%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/"/>
+      <url>/2019/10/19/2019-10-20-%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/</url>
       
-        <content type="html"><![CDATA[<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class ChouQuZiFu &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">String</span> ss=<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"ABCD123!@#$%ab"</span>);</span><br><span class="line"> <span class="comment">//定义数组，此数组默认给0，然后就是4个0;所以下面的arr[0]++,就是0++;</span></span><br><span class="line">        <span class="keyword">int</span> [] arr=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ss.length();i++) &#123;</span><br><span class="line">              <span class="keyword">char</span> a=ss.charAt(i);                </span><br><span class="line">     <span class="built_in">if</span>(a&gt;=<span class="string">'A'</span>&amp;&amp;a&lt;=<span class="string">'Z'</span>) &#123;</span><br><span class="line">     arr[<span class="number">0</span>]++;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">else</span> <span class="built_in">if</span>(a&gt;=<span class="string">'a'</span>&amp;&amp;a&lt;=<span class="string">'z'</span>) &#123;</span><br><span class="line">     arr[<span class="number">1</span>]++; </span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">else</span> <span class="built_in">if</span>(a&gt;=<span class="string">'0'</span>&amp;&amp;a&lt;=<span class="string">'9'</span>) &#123;</span><br><span class="line">     arr[<span class="number">2</span>]++;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">else</span> &#123;</span><br><span class="line">     arr[<span class="number">3</span>]++;</span><br><span class="line">     &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.<span class="built_in">println</span>(<span class="string">"大写字母："</span>+arr[<span class="number">0</span>]+<span class="string">";小写子母："</span>+arr[<span class="number">1</span>]+<span class="string">";数字"</span>+arr[<span class="number">2</span>]+<span class="string">";符号："</span>+arr[<span class="number">3</span>]);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h3 id="泛型机制："><a href="#泛型机制：" class="headerlink" title="泛型机制："></a>泛型机制：</h3><p>泛型其实是在jdk1.5中才添加的。在jdk1.5之前我们要创建一个容器对象，是这样往里面添加内容的。</p><figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">List</span> <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"><span class="built_in">list</span>.add(<span class="string">"我是字符串"</span>);<span class="comment">//可以添加字符串</span></span><br><span class="line"><span class="built_in">list</span>.add(<span class="number">10.67</span>);<span class="comment">//可以添加float</span></span><br><span class="line"><span class="built_in">list</span>.add(<span class="literal">false</span>);<span class="comment">//可以添加boolean</span></span><br></pre></td></tr></table></figure><p>也就是说我们创建了一个容器之后，我们可以往里面添加任何东西，这时候就麻烦了，如果我们只想保存字符串，但是一不小心存了一个int类型的值，在输出的时候肯定会报错误的。那怎么办呢？于是乎，在jdk1.5添加了泛型机制，去规范我们输入的值。</p><p><code>List&lt;String&gt; list = new ArrayList&lt;String&gt;();</code><br>这时候我们的list就只能保存String类型的值了，如果我们保存了int类型的值，那么就会在编译期报错</p>]]></content>
       
       
       <categories>
@@ -634,6 +609,31 @@
       <url>/2019/10/18/2019-10-18-String%EF%BC%8Cstringbuffer%EF%BC%8Cstringbulider/</url>
       
         <content type="html"><![CDATA[<h3 id="三者区别："><a href="#三者区别：" class="headerlink" title="三者区别："></a>三者区别：</h3><blockquote><p><code>String</code>描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用<code>StringBulider</code>来描述，该类描述是可改变的，线程的不安全的，但效率低。<code>StringBuffer</code>是线程的安全的，但效率高。</p></blockquote><h3 id="string："><a href="#string：" class="headerlink" title="string："></a>string：</h3><blockquote><p>一些string重要方法（常用的一些）：</p></blockquote><p>String（）</p><p>String(byte[]byte ,int of,int length) —用byte数组，下标从of开始到length个字节构造对象;</p><p>String(byte[]byte)—用数组构造对象; </p><blockquote><p>一些基本方法：</p></blockquote><blockquote><p>char charAt(int index) —返回字符串指定位置的字符；<br><br><br>int length()==得长度</p></blockquote><blockquote><p>boolean contains()     -是否含参数指定内容<br>String toLowerCase(),<br>String toUpperCase(),<br>String trim()          -去掉前后导的空白<br>boolean stratsWith()   -判断字符是否以括号内的开头<br>boolean endsWith()     -判断字符是否以括号内的结尾<br>boolean equals（）      -判断是否相同<br>boolean equalsIgnore（） -忽略大小写判断是否相同</p></blockquote><blockquote><p>int index of(String str) –在字符串中检索str第一次出现的位置（打印出现位置的数字），没有返回-1;<br><br>int index of(String str,int num)  —从num位置开始找：</p></blockquote><blockquote><p>String subString(int start,intend) —打印出开始到结尾的字符串<br><br>String subString(int start) —打印开始到最后所有字符串</p></blockquote><h3 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder:"></a>StringBuilder:</h3><blockquote><p>初始容量为16,再加上字符串的长度； </p></blockquote><blockquote><p>一些常用方法：</p></blockquote><blockquote><p>int cpacity()–返回当前容量<br><br>int length()–返回长度</p></blockquote><blockquote><p>StringBuilser中常用方法：</p></blockquote><p><br>返回值都是StringBuilder的：</p><p>insert (int of,String str)–将str插入of位置处；</p><p>append (string str)—在字符串最后加上str</p><p>delete （int start，int end）—删除从start开始到end结束的字符串</p><p>replace (int start,int end,string str)—start到end的字符串用str替换</p><p>reverse （）—字符串翻转 </p><p>int indexOf（str）—查找字符串位置  </p><h3 id="String和StringBuilder互换；"><a href="#String和StringBuilder互换；" class="headerlink" title="String和StringBuilder互换；"></a>String和StringBuilder互换；</h3><blockquote><p>从String—&gt;StringBuilder：<br>StringBuilder sb = new StringBuilder(str); </p></blockquote><blockquote><p>调用toString从StringBuilder—&gt;String：<br>String s = sb1.toString();</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年10月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>统计字符串中大小写，数字，符号个数</title>
+      <link href="/2019/10/18/2019-10-18-%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0/"/>
+      <url>/2019/10/18/2019-10-18-%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class ChouQuZiFu &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">String</span> ss=<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"ABCD123!@#$%ab"</span>);</span><br><span class="line"> <span class="comment">//定义数组，此数组默认给0，然后就是4个0;所以下面的arr[0]++,就是0++;</span></span><br><span class="line">        <span class="keyword">int</span> [] arr=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ss.length();i++) &#123;</span><br><span class="line">              <span class="keyword">char</span> a=ss.charAt(i);                </span><br><span class="line">     <span class="built_in">if</span>(a&gt;=<span class="string">'A'</span>&amp;&amp;a&lt;=<span class="string">'Z'</span>) &#123;</span><br><span class="line">     arr[<span class="number">0</span>]++;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">else</span> <span class="built_in">if</span>(a&gt;=<span class="string">'a'</span>&amp;&amp;a&lt;=<span class="string">'z'</span>) &#123;</span><br><span class="line">     arr[<span class="number">1</span>]++; </span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">else</span> <span class="built_in">if</span>(a&gt;=<span class="string">'0'</span>&amp;&amp;a&lt;=<span class="string">'9'</span>) &#123;</span><br><span class="line">     arr[<span class="number">2</span>]++;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">else</span> &#123;</span><br><span class="line">     arr[<span class="number">3</span>]++;</span><br><span class="line">     &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.<span class="built_in">println</span>(<span class="string">"大写字母："</span>+arr[<span class="number">0</span>]+<span class="string">";小写子母："</span>+arr[<span class="number">1</span>]+<span class="string">";数字"</span>+arr[<span class="number">2</span>]+<span class="string">";符号："</span>+arr[<span class="number">3</span>]);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>

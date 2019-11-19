@@ -626,28 +626,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/19/2019-10-20-List集合/">
+                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="List集合！">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
                         
-                        <span class="card-title">List集合！</span>
+                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-list集合是我们collection集合的一个子集合；元素有先后放入顺序且可重复，主要实现类有ArraryList,LinkList,Static,Vector
-
-
-ArraryList底层是数组，访问元素方便，增删不便；LinkLis
+                            三者区别：
+String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-18
                         </span>
                         <span class="publish-author">
                             
@@ -679,20 +676,23 @@ ArraryList底层是数组，访问元素方便，增删不便；LinkLis
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/18/2019-10-18-String，stringbuffer，stringbulider/">
+                <a href="/2019/10/18/2019-10-19-sleep和wait区别/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="String，Stringbulider，Stringbuffer （String和StringBuilder可互换）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="sleep和wait区别！">
                         
-                        <span class="card-title">String，Stringbulider，Stringbuffer （String和StringBuilder可互换）</span>
+                        <span class="card-title">sleep和wait区别！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三者区别：
-String描述的字符串是常量，一旦创建就不可更改，当程序出现大量的类似字符串都要单独存储，浪费内存，为了解决单独存储问题可用StringBulider来描述，该类描述是可改变的，线程的不安全的，但效率低。StringBuffe
+                            
+它们最大本质的区别是:sleep()不释放同步锁,wait()释放同步锁.   
+
+
+还有用法的上的不同是:sleep(milliseconds)可以用时间指定来使他自动醒过来,如果时间不到你只能调用interreput()来强行打断;w
                         
                     </div>
                     <div class="publish-info">
