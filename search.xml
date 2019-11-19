@@ -554,11 +554,11 @@
     
     
     <entry>
-      <title>泛型机制！</title>
-      <link href="/2019/10/19/2019-10-20-%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/"/>
-      <url>/2019/10/19/2019-10-20-%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/</url>
+      <title>List集合！</title>
+      <link href="/2019/10/19/2019-10-20-List%E9%9B%86%E5%90%88/"/>
+      <url>/2019/10/19/2019-10-20-List%E9%9B%86%E5%90%88/</url>
       
-        <content type="html"><![CDATA[<h3 id="泛型机制："><a href="#泛型机制：" class="headerlink" title="泛型机制："></a>泛型机制：</h3><p>泛型其实是在jdk1.5中才添加的。在jdk1.5之前我们要创建一个容器对象，是这样往里面添加内容的。</p><figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">List</span> <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"><span class="built_in">list</span>.add(<span class="string">"我是字符串"</span>);<span class="comment">//可以添加字符串</span></span><br><span class="line"><span class="built_in">list</span>.add(<span class="number">10.67</span>);<span class="comment">//可以添加float</span></span><br><span class="line"><span class="built_in">list</span>.add(<span class="literal">false</span>);<span class="comment">//可以添加boolean</span></span><br></pre></td></tr></table></figure><p>也就是说我们创建了一个容器之后，我们可以往里面添加任何东西，这时候就麻烦了，如果我们只想保存字符串，但是一不小心存了一个int类型的值，在输出的时候肯定会报错误的。那怎么办呢？于是乎，在jdk1.5添加了泛型机制，去规范我们输入的值。</p><p><code>List&lt;String&gt; list = new ArrayList&lt;String&gt;();</code><br>这时候我们的list就只能保存String类型的值了，如果我们保存了int类型的值，那么就会在编译期报错</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>list集合是我们collection集合的一个子集合；元素有先后放入顺序且可重复，主要实现类有<code>ArraryList,LinkList,Static,Vector</code></p></blockquote><blockquote><p>ArraryList底层是数组，访问元素方便，增删不便；<br>LinkList底层链表管理，访问不便，增删方便；<br>Strack底层数组管理，具有先进先出的特性，为栈；<br>Vectory底层数组管理，与ArraryList比属于线程安全类</p></blockquote><h3 id="List常用方法："><a href="#List常用方法：" class="headerlink" title="List常用方法："></a>List常用方法：</h3><blockquote><p>增加的方法： void add (int index，E str) –将str加入到index位置<br>删除：E remove(int index) —删除指定位置元素；<code>E</code>代表被删除的对象的类型，以此做返回值<br>修改：E set (int index ,E ele) –像index位置插入ele的str<br>查找：int indexOf() –查元素<br>E get (int index) –获取index位置的元素，返回类型时获取到的类型；</p></blockquote><h3 id="List集合的增，删，改代码："><a href="#List集合的增，删，改代码：" class="headerlink" title="List集合的增，删，改代码："></a>List集合的增，删，改代码：</h3><pre><code>import java.util.LinkedList;import java.util.List;public class ListTest {    public static void main(String[] args) {        // 1.声明List类型的引用指向实现类的对象        List lt1 = new LinkedList();        System.out.println(&quot;lt1 = &quot; + lt1); // [啥也没有]        // 2.向集合中添加元素并打印        // 向下标为0的位置插入元素one  向开头位置插入元素        lt1.add(0, &quot;one&quot;);        System.out.println(&quot;lt1 = &quot; + lt1); // [one]        // 向下标为1的位置插入元素3   向末尾位置插入元素        lt1.add(1, 3);        System.out.println(&quot;lt1 = &quot; + lt1); // [one, 3]        // 向下标为1的位置插入元素&quot;two&quot;，向中间位置插入元素        lt1.add(1, &quot;two&quot;);        System.out.println(&quot;lt1 = &quot; + lt1); // [one, two, 3]        System.out.println(&quot;--------------------------------------&quot;);        // 3.实现集合中元素的查找        // 集合中之所以可以放入不同类型的对象，是因为这些对象都被看做Object        // 类型放入的，那么取出来的元素类型也是Object类型        String str1 = (String) lt1.get(0);        System.out.println(&quot;获取到的元素是：&quot; + str1); // one        Integer it1 = (Integer) lt1.get(2);        System.out.println(&quot;获取到的元素是：&quot; + it1); // 3        System.out.println(&quot;--------------------------------------&quot;);        // 练习：使用get方法获取元素并拼接成toString方法的效果        StringBuilder sb2 = new StringBuilder();        sb2.append(&quot;[&quot;);        for(int i = 0; i &lt; lt1.size(); i++) {            if(lt1.size()-1 == i) {                sb2.append(lt1.get(i)).append(&quot;]&quot;);            } else {                // 将第一个字符串中的每个字符取出放入第二个字符串并跟随逗号                sb2.append(lt1.get(i)).append(&quot;,&quot;).append(&quot; &quot;);            }        }        System.out.println(&quot;lt1 = &quot; + sb2);        System.out.println(&quot;--------------------------------------&quot;);        // 4.实现集合中元素的修改功能        // [one, two, 3]        Integer it2 = (Integer) lt1.set(2, &quot;three&quot;);        System.out.println(&quot;下标为2的旧元素是：&quot; + it2); // 3        System.out.println(&quot;lt1 = &quot; + lt1); // [one, two, three]        System.out.println(&quot;--------------------------------------&quot;);        // 5.实现集合中元素的删除功能        String str2 = (String) lt1.remove(1);        System.out.println(&quot;被删除的元素是：&quot; + str2); // two        System.out.println(&quot;删除后集合中的元素有：&quot; + lt1); // [one, three]        System.out.println(&quot;--------------------------------------&quot;);        // 练习：使用remove方法删除集合中的所有元素        //for (int i = 0; i &lt; lt1.size(); /* i++ */) {        /*        for (int i = lt1.size()-1; i &gt;= 0; i--) {            System.out.println(&quot;被删除的元素是：&quot; + lt1.remove(i));        }        System.out.println(&quot;集合中最终的元素有：&quot; + lt1);        */        System.out.println(&quot;--------------------------------------&quot;);        // 6.获取List集合中的一部分内容，从下标0开始一直到下标1，但取不到1        List lt2 = lt1.subList(0, 1);        System.out.println(&quot;lt2 = &quot; + lt2); // [one]        lt2.set(0, 2);        System.out.println(&quot;lt2 = &quot; + lt2); // [2]        System.out.println(&quot;lt1 = &quot; + lt1); // [2, three]    }}</code></pre>]]></content>
       
       
       <categories>
@@ -579,11 +579,11 @@
     
     
     <entry>
-      <title>List集合！</title>
-      <link href="/2019/10/19/2019-10-20-List%E9%9B%86%E5%90%88/"/>
-      <url>/2019/10/19/2019-10-20-List%E9%9B%86%E5%90%88/</url>
+      <title>泛型机制！</title>
+      <link href="/2019/10/19/2019-10-20-%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/"/>
+      <url>/2019/10/19/2019-10-20-%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>list集合是我们collection集合的一个子集合；元素有先后放入顺序且可重复，主要实现类有<code>ArraryList,LinkList,Static,Vector</code></p></blockquote><blockquote><p>ArraryList底层是数组，访问元素方便，增删不便；<br>LinkList底层链表管理，访问不便，增删方便；<br>Strack底层数组管理，具有先进先出的特性，为栈；<br>Vectory底层数组管理，与ArraryList比属于线程安全类</p></blockquote><h3 id="List常用方法："><a href="#List常用方法：" class="headerlink" title="List常用方法："></a>List常用方法：</h3><blockquote><p>增加的方法： void add (int index，E str) –将str加入到index位置<br>删除：E remove(int index) —删除指定位置元素；<code>E</code>代表被删除的对象的类型，以此做返回值<br>修改：E set (int index ,E ele) –像index位置插入ele的str<br>查找：int indexOf() –查元素<br>E get (int index) –获取index位置的元素，返回类型时获取到的类型；</p></blockquote><h3 id="List集合的增，删，改代码："><a href="#List集合的增，删，改代码：" class="headerlink" title="List集合的增，删，改代码："></a>List集合的增，删，改代码：</h3><pre><code>import java.util.LinkedList;import java.util.List;public class ListTest {    public static void main(String[] args) {        // 1.声明List类型的引用指向实现类的对象        List lt1 = new LinkedList();        System.out.println(&quot;lt1 = &quot; + lt1); // [啥也没有]        // 2.向集合中添加元素并打印        // 向下标为0的位置插入元素one  向开头位置插入元素        lt1.add(0, &quot;one&quot;);        System.out.println(&quot;lt1 = &quot; + lt1); // [one]        // 向下标为1的位置插入元素3   向末尾位置插入元素        lt1.add(1, 3);        System.out.println(&quot;lt1 = &quot; + lt1); // [one, 3]        // 向下标为1的位置插入元素&quot;two&quot;，向中间位置插入元素        lt1.add(1, &quot;two&quot;);        System.out.println(&quot;lt1 = &quot; + lt1); // [one, two, 3]        System.out.println(&quot;--------------------------------------&quot;);        // 3.实现集合中元素的查找        // 集合中之所以可以放入不同类型的对象，是因为这些对象都被看做Object        // 类型放入的，那么取出来的元素类型也是Object类型        String str1 = (String) lt1.get(0);        System.out.println(&quot;获取到的元素是：&quot; + str1); // one        Integer it1 = (Integer) lt1.get(2);        System.out.println(&quot;获取到的元素是：&quot; + it1); // 3        System.out.println(&quot;--------------------------------------&quot;);        // 练习：使用get方法获取元素并拼接成toString方法的效果        StringBuilder sb2 = new StringBuilder();        sb2.append(&quot;[&quot;);        for(int i = 0; i &lt; lt1.size(); i++) {            if(lt1.size()-1 == i) {                sb2.append(lt1.get(i)).append(&quot;]&quot;);            } else {                // 将第一个字符串中的每个字符取出放入第二个字符串并跟随逗号                sb2.append(lt1.get(i)).append(&quot;,&quot;).append(&quot; &quot;);            }        }        System.out.println(&quot;lt1 = &quot; + sb2);        System.out.println(&quot;--------------------------------------&quot;);        // 4.实现集合中元素的修改功能        // [one, two, 3]        Integer it2 = (Integer) lt1.set(2, &quot;three&quot;);        System.out.println(&quot;下标为2的旧元素是：&quot; + it2); // 3        System.out.println(&quot;lt1 = &quot; + lt1); // [one, two, three]        System.out.println(&quot;--------------------------------------&quot;);        // 5.实现集合中元素的删除功能        String str2 = (String) lt1.remove(1);        System.out.println(&quot;被删除的元素是：&quot; + str2); // two        System.out.println(&quot;删除后集合中的元素有：&quot; + lt1); // [one, three]        System.out.println(&quot;--------------------------------------&quot;);        // 练习：使用remove方法删除集合中的所有元素        //for (int i = 0; i &lt; lt1.size(); /* i++ */) {        /*        for (int i = lt1.size()-1; i &gt;= 0; i--) {            System.out.println(&quot;被删除的元素是：&quot; + lt1.remove(i));        }        System.out.println(&quot;集合中最终的元素有：&quot; + lt1);        */        System.out.println(&quot;--------------------------------------&quot;);        // 6.获取List集合中的一部分内容，从下标0开始一直到下标1，但取不到1        List lt2 = lt1.subList(0, 1);        System.out.println(&quot;lt2 = &quot; + lt2); // [one]        lt2.set(0, 2);        System.out.println(&quot;lt2 = &quot; + lt2); // [2]        System.out.println(&quot;lt1 = &quot; + lt1); // [2, three]    }}</code></pre>]]></content>
+        <content type="html"><![CDATA[<h3 id="泛型机制："><a href="#泛型机制：" class="headerlink" title="泛型机制："></a>泛型机制：</h3><p>泛型其实是在jdk1.5中才添加的。在jdk1.5之前我们要创建一个容器对象，是这样往里面添加内容的。</p><figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">List</span> <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"><span class="built_in">list</span>.add(<span class="string">"我是字符串"</span>);<span class="comment">//可以添加字符串</span></span><br><span class="line"><span class="built_in">list</span>.add(<span class="number">10.67</span>);<span class="comment">//可以添加float</span></span><br><span class="line"><span class="built_in">list</span>.add(<span class="literal">false</span>);<span class="comment">//可以添加boolean</span></span><br></pre></td></tr></table></figure><p>也就是说我们创建了一个容器之后，我们可以往里面添加任何东西，这时候就麻烦了，如果我们只想保存字符串，但是一不小心存了一个int类型的值，在输出的时候肯定会报错误的。那怎么办呢？于是乎，在jdk1.5添加了泛型机制，去规范我们输入的值。</p><p><code>List&lt;String&gt; list = new ArrayList&lt;String&gt;();</code><br>这时候我们的list就只能保存String类型的值了，如果我们保存了int类型的值，那么就会在编译期报错</p>]]></content>
       
       
       <categories>
@@ -1573,31 +1573,6 @@
     
     
     <entry>
-      <title>note.js安装</title>
-      <link href="/2019/08/28/2019-8-28-notejs/"/>
-      <url>/2019/08/28/2019-8-28-notejs/</url>
-      
-        <content type="html"><![CDATA[<br><p>第一种安装方法：</p><p>安装nodejs ：</p><p><code>sudo apt-get install nodejs</code></p><p>运行 nodejs -v 会弹出安装node的版本号</p><p>这里使用的是 nodejs 并不是常用的node ，可以通过</p><p><code>sudo ln -s /usr/bin/nodejs /usr/bin/node</code></p><p>命令让node与nodejs建立软连接，接着就可以使用 node命令</p><p>安装npm:</p><p><code>sudo apt-get install npm</code></p><p>测试安装是否成功: npm -v 弹出安装的版本号，即可证明安装成功</p><p>第二种安装方法：</p><p>先安装，nvm，即是Node Version Manager(Node版本管理器)</p><p><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh|bash</code><br>或者使用 wget</p><p><code>wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh|bash</code><br>之后需要激活nvm:</p><p><code>source ~/.nvm/nvm.sh</code></p><p>激活完成后，安装node</p><p><code>nvm install node</code></p><p>安装完成后，切换到该版本</p><p><code>nvm use node</code></p><hr><p><a href="https://www.w3cschool.cn/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">w3cschool的详细介绍安装windows版本</a></p><p><a href="https://www.cnblogs.com/xingyunfashi/p/9272041.html" target="_blank" rel="noopener">notejs的安装</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 19年8月 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 技术文档 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>第15天,定时器，选择对象，改css，创建对象，弹出框，流程控制</title>
       <link href="/2019/08/28/2019-8-28-zfiften/"/>
       <url>/2019/08/28/2019-8-28-zfiften/</url>
@@ -1623,11 +1598,11 @@
     
     
     <entry>
-      <title>sublime安装便于写HTML，Css的插件Emmet介绍</title>
-      <link href="/2019/08/27/2019-8-27-sublimeHtmlCss/"/>
-      <url>/2019/08/27/2019-8-27-sublimeHtmlCss/</url>
+      <title>note.js安装</title>
+      <link href="/2019/08/28/2019-8-28-notejs/"/>
+      <url>/2019/08/28/2019-8-28-notejs/</url>
       
-        <content type="html"><![CDATA[<br><h3 id="1-按住快捷键Ctrl-Shift-P或者在菜单栏选择Perferences–-gt-Package-Control，出现可输入命令行。"><a href="#1-按住快捷键Ctrl-Shift-P或者在菜单栏选择Perferences–-gt-Package-Control，出现可输入命令行。" class="headerlink" title="1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&gt;Package Control，出现可输入命令行。"></a>1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&gt;Package Control，出现可输入命令行。<br></h3><h3 id="2-找到package-control-install-package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。"><a href="#2-找到package-control-install-package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。" class="headerlink" title="2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。"></a>2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。</h3><br><h3 id="3-最后可通过Perferences–-gt-Package-Settings–-gt-Emmet查看是否成功，如果Emmet在说明安装成功"><a href="#3-最后可通过Perferences–-gt-Package-Settings–-gt-Emmet查看是否成功，如果Emmet在说明安装成功" class="headerlink" title="3.最后可通过Perferences–&gt;Package Settings–&gt;Emmet查看是否成功，如果Emmet在说明安装成功"></a>3.最后可通过Perferences–&gt;Package Settings–&gt;Emmet查看是否成功，如果Emmet在说明安装成功<br></h3><h3 id="最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。"><a href="#最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。" class="headerlink" title="最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。"></a>最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。</h3><h2 id="若没看明白还可详见～此处"><a href="#若没看明白还可详见～此处" class="headerlink" title="若没看明白还可详见～此处"></a><a href="https://jingyan.baidu.com/article/ce43664935b90c3772afd377.html" target="_blank" rel="noopener">若没看明白还可详见～此处</a></h2>]]></content>
+        <content type="html"><![CDATA[<br><p>第一种安装方法：</p><p>安装nodejs ：</p><p><code>sudo apt-get install nodejs</code></p><p>运行 nodejs -v 会弹出安装node的版本号</p><p>这里使用的是 nodejs 并不是常用的node ，可以通过</p><p><code>sudo ln -s /usr/bin/nodejs /usr/bin/node</code></p><p>命令让node与nodejs建立软连接，接着就可以使用 node命令</p><p>安装npm:</p><p><code>sudo apt-get install npm</code></p><p>测试安装是否成功: npm -v 弹出安装的版本号，即可证明安装成功</p><p>第二种安装方法：</p><p>先安装，nvm，即是Node Version Manager(Node版本管理器)</p><p><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh|bash</code><br>或者使用 wget</p><p><code>wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh|bash</code><br>之后需要激活nvm:</p><p><code>source ~/.nvm/nvm.sh</code></p><p>激活完成后，安装node</p><p><code>nvm install node</code></p><p>安装完成后，切换到该版本</p><p><code>nvm use node</code></p><hr><p><a href="https://www.w3cschool.cn/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">w3cschool的详细介绍安装windows版本</a></p><p><a href="https://www.cnblogs.com/xingyunfashi/p/9272041.html" target="_blank" rel="noopener">notejs的安装</a></p>]]></content>
       
       
       <categories>
@@ -1653,6 +1628,31 @@
       <url>/2019/08/27/2019-8-27-sublimeChinese/</url>
       
         <content type="html"><![CDATA[<br><h2 id="首先进入官网下载sublime，以下链接转到后按照apt下载。"><a href="#首先进入官网下载sublime，以下链接转到后按照apt下载。" class="headerlink" title="首先进入官网下载sublime，以下链接转到后按照apt下载。"></a>首先进入官网下载sublime，以下链接转到后按照apt下载。</h2><p> <a href="https://www.sublimetext.com/docs/3/linux_repositories.html#apt" target="_blank" rel="noopener">sublime官网下载地址</a><br> <br></p><p>1.SublimeText 3菜单栏中，找到“Preference”，在弹出的下拉菜单中找到的“Package Control”,如果没有就ctrl+shift+p，输入PackageContal。<br><br><br>2.打开“package control” ，在弹出的下框输入“install”，搜索会自动联想到“install package”<br>3.等待系统自动搜索完成，弹出安装对话框找到‘ChineseLocalizations’点击就安上了，等待几分钟，界面会出现一大群字符，就会自动换成中文。<br>4.，想要切换会原本的英文状态，在菜单栏中找到“帮助”，在弹出的下拉菜单中，选择“Language”，在弹出的下拉菜单中，选择“English”，不过我相信大家并不会犯傻。</p><h3 id="没看懂可参照-–-汉化过程–操作"><a href="#没看懂可参照-–-汉化过程–操作" class="headerlink" title="没看懂可参照   – 汉化过程–操作"></a>没看懂可参照   – <a href="https://jingyan.baidu.com/article/295430f1878f530c7f005040.html" target="_blank" rel="noopener">汉化过程</a>–操作</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 19年8月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术文档 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>sublime安装便于写HTML，Css的插件Emmet介绍</title>
+      <link href="/2019/08/27/2019-8-27-sublimeHtmlCss/"/>
+      <url>/2019/08/27/2019-8-27-sublimeHtmlCss/</url>
+      
+        <content type="html"><![CDATA[<br><h3 id="1-按住快捷键Ctrl-Shift-P或者在菜单栏选择Perferences–-gt-Package-Control，出现可输入命令行。"><a href="#1-按住快捷键Ctrl-Shift-P或者在菜单栏选择Perferences–-gt-Package-Control，出现可输入命令行。" class="headerlink" title="1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&gt;Package Control，出现可输入命令行。"></a>1.按住快捷键Ctrl+Shift+P或者在菜单栏选择Perferences–&gt;Package Control，出现可输入命令行。<br></h3><h3 id="2-找到package-control-install-package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。"><a href="#2-找到package-control-install-package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。" class="headerlink" title="2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。"></a>2.找到package control install package，或者在命令面板输入”pcip”即这四个单词的首字母，便会出现新的安装package的面板，搜索emmet找到后点击回车键，会自动安装。</h3><br><h3 id="3-最后可通过Perferences–-gt-Package-Settings–-gt-Emmet查看是否成功，如果Emmet在说明安装成功"><a href="#3-最后可通过Perferences–-gt-Package-Settings–-gt-Emmet查看是否成功，如果Emmet在说明安装成功" class="headerlink" title="3.最后可通过Perferences–&gt;Package Settings–&gt;Emmet查看是否成功，如果Emmet在说明安装成功"></a>3.最后可通过Perferences–&gt;Package Settings–&gt;Emmet查看是否成功，如果Emmet在说明安装成功<br></h3><h3 id="最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。"><a href="#最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。" class="headerlink" title="最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。"></a>最后我们写代码只需要“！tab”就会自动生成。写标签等都会很方便。</h3><h2 id="若没看明白还可详见～此处"><a href="#若没看明白还可详见～此处" class="headerlink" title="若没看明白还可详见～此处"></a><a href="https://jingyan.baidu.com/article/ce43664935b90c3772afd377.html" target="_blank" rel="noopener">若没看明白还可详见～此处</a></h2>]]></content>
       
       
       <categories>
