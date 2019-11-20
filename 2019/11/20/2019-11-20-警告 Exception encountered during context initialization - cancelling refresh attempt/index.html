@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）, 岳阳-丁&#39;s blog">
+    <meta name="keywords" content="警告 Exception encountered during context initialization, 岳阳-丁&#39;s blog">
     <meta name="description" content="
-首先不要慌：
-
- IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp;amp; Frameworks | Schemas and DTDs）
-中文翻译就是统一资源标识符没有">
+这种弟弟错误我真的是;
+警告 Exception encountered during context initialization - cancelling refresh attempt
+这种情况我们首先检查jar包导入没有（血哭）一">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs） | 岳阳-丁&#39;s blog</title>
+    <title>警告 Exception encountered during context initialization | 岳阳-丁&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）
+                        警告 Exception encountered during context initialization
                     </div>
                 </div>
             </div>
@@ -384,8 +383,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javaSpring/">
-                                <span class="chip bg-color">javaSpring</span>
+                            <a href="/tags/Spring/">
+                                <span class="chip bg-color">Spring</span>
                             </a>
                         
                     </div>
@@ -408,7 +407,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-15
+                    2019-11-20
                 </div>
 
                 
@@ -425,19 +424,59 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>首先不要慌：</p>
+<h3 id="这种弟弟错误我真的是"><a href="#这种弟弟错误我真的是" class="headerlink" title="这种弟弟错误我真的是;"></a>这种弟弟错误我真的是;</h3></blockquote>
+<h2 id="警告-Exception-encountered-during-context-initialization-cancelling-refresh-attempt"><a href="#警告-Exception-encountered-during-context-initialization-cancelling-refresh-attempt" class="headerlink" title="警告 Exception encountered during context initialization - cancelling refresh attempt"></a>警告 Exception encountered during context initialization - cancelling refresh attempt</h2><blockquote>
+<p>这种情况我们首先检查jar包导入没有（血哭）一定导入对的jar包，之后再检查标注是否标错就ok了;</p>
 </blockquote>
-<p> IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）</p>
-<p>中文翻译就是统一资源标识符没有注册。</p>
-<blockquote>
-<p>我们就需要把这个不被识别的统一资源标识符添加到IDEA中，步骤如下：</p>
-</blockquote>
-<p>file–&gt;settings…–&gt;languages &amp; frameworks –&gt; Schemas and DTDs</p>
-<p><img src="https://img-blog.csdn.net/2018051215103119?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xhY3JpbWFycnVt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="tu"></p>
-<blockquote>
-<p><a href="https://blog.csdn.net/lacrimarrum/article/details/80291589" target="_blank" rel="noopener">详情可见~</a></p>
-</blockquote>
-
+<pre><code> 警告: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name &apos;injectionServiceImpl&apos; defined in file [F:\xiangmu3\Xin\FuQiang\Spring\ddwei-dao\target\classes\com\imooc\beanannotation\injection\service\InjectionServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type &apos;com.imooc.bean.ioc.interfaces.InjectionDao&apos; available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name &apos;injectionServiceImpl&apos; defined in file [F:\xiangmu3\Xin\FuQiang\Spring\ddwei-dao\target\classes\com\imooc\beanannotation\injection\service\InjectionServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type &apos;com.imooc.bean.ioc.interfaces.InjectionDao&apos; available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+    at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+    at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1193)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1095)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+    at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+    at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+    at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+    at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+    at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+    at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+    at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+    at org.springframework.context.support.ClassPathXmlApplicationContext.&lt;init&gt;(ClassPathXmlApplicationContext.java:139)
+    at org.springframework.context.support.ClassPathXmlApplicationContext.&lt;init&gt;(ClassPathXmlApplicationContext.java:93)
+    at com.imooc.test.base.UnitTestBase.before(UnitTestBase.java:43)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:606)
+    at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+    at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+    at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+    at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+    at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+    at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+    at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+    at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+    at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+    at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+    at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+    at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+    at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+    at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+    at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+    at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+    at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+    at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+    at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+    at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type &apos;com.imooc.bean.ioc.interfaces.InjectionDao&apos; available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+    at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1493)
+    at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104)
+    at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+    at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+    at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+    ... 39 more</code></pre>
             </div>
             <hr/>
 
@@ -597,8 +636,8 @@
                 </a>
             </div>
             <br/>
-            <a  href="/2019/11/15/2019-11-15-Spring头部文件http那个异常/">
-                    《IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）》
+            <a  href="/2019/11/20/2019-11-20-警告 Exception encountered during context initialization - cancelling refresh attempt/">
+                    《警告 Exception encountered during context initialization》
             </a> 由
             <a href="http://yoursite.com">
                 岳阳
@@ -639,9 +678,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/11/20/2019-11-20-警告 Exception encountered during context initialization - cancelling refresh attempt/">
                     <div class="card-image">
@@ -662,9 +702,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -677,6 +717,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -695,34 +736,28 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/14/2019-11-14-hexo模板异常处理/">
+                <a href="/2019/11/15/2019-11-15-Spring头部文件http那个异常/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="ERROR Local hexo not found in D:\hexo。解决方法！">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="IDEA中xml文件头报错：URI is not registered (Settings | Languages & Frameworks | Schemas and DTDs）">
                         
-                        <span class="card-title">ERROR Local hexo not found in D:\hexo。解决方法！</span>
+                        <span class="card-title">IDEA中xml文件头报错：URI is not registered (Settings | Languages & Frameworks | Schemas and DTDs）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-hexo g -d上传文件时显示以下错误：
+首先不要慌：
 
-
-ERROR Local hexo not found in D:\hexo
-
-ERROR Try running:’npm install hexo –save’
-
-
-
-导致这个原因为在自己
+ IDEA中xml文件头报错：URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs）
+中文翻译就是统一资源标识符没有
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-15
                             </span>
                         <span class="publish-author">
                             
@@ -739,8 +774,8 @@ ERROR Try running:’npm install hexo –save’
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/javaSpring/">
+                        <span class="chip bg-color">javaSpring</span>
                     </a>
                     
                 </div>
